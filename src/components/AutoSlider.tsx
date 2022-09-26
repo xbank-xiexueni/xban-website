@@ -3,41 +3,52 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import Slider from 'react-slick';
+import { Box } from '@chakra-ui/react';
 const settings = {
-  dots: true,
+  // dots: true,
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 2000,
-  autoplaySpeed: 2000,
+  speed: 3500,
+  autoplaySpeed: 3500,
   cssEase: 'linear',
+  variableWidth: true,
+  arrows: false,
+  pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
-const AutoSlider = () => {
+const FeaturedBox = ({ title }: { title: any }) => {
   return (
-    <div>
-      <h2>Auto Play</h2>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+    <Box
+      borderRadius={10}
+      w={216}
+      h={70}
+      display='inline-block'
+      bg='#FFF'
+      ml={2}
+    >
+      {title}
+    </Box>
+  );
+};
+const AutoSlider = ({ data, isRtl }: { data: any[]; isRtl?: boolean }) => {
+  return (
+    <Box mb={5}>
+      <Slider {...settings} rtl={isRtl}>
+        {data.map((item) => (
+          <FeaturedBox title={item} />
+        ))}
       </Slider>
-    </div>
+    </Box>
   );
 };
 

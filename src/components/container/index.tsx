@@ -1,13 +1,25 @@
-import { Container as ChakraContainer } from '@chakra-ui/react';
+import { Container, ContainerProps } from '@chakra-ui/react';
 import React from 'react';
-const Container: React.FunctionComponent<{
-  children: React.ReactElement;
-}> = ({ children }) => {
+const MyContainer: React.FunctionComponent<
+  {
+    children: React.ReactNode;
+  } & ContainerProps
+> = ({ children, bg, ...rest }) => {
   return (
-    <ChakraContainer maxW={{ sm: '345px', md: '706px', lg: '1000px' }}>
+    <Container
+      maxW={{
+        xs: 345,
+        sm: 648,
+        md: 900,
+        lg: 1200,
+      }}
+      paddingX={0}
+      bg={bg}
+      {...rest}
+    >
       {children}
-    </ChakraContainer>
+    </Container>
   );
 };
 
-export default Container;
+export default MyContainer;
