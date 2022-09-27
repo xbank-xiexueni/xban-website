@@ -18,12 +18,21 @@ export const DATA = [
 
 const Summary = () => {
   return (
-    <Flex justify={'center'}>
+    <Flex justify={'center'} mt={50}>
       {DATA.map(({ label, value }, index) => (
         <Flex>
-          <Box>
-            <Text align={'center'}>{value}</Text>
-            <Text>{label}</Text>
+          <Box textAlign={'center'}>
+            <Text
+              align={'center'}
+              fontSize={60}
+              fontWeight={700}
+              color='font.primary'
+            >
+              {value}
+            </Text>
+            <Text fontSize={14} color='font.gray'>
+              {label}
+            </Text>
           </Box>
           {index !== DATA.length - 1 && (
             <Divider orientation='vertical' mx={10} />

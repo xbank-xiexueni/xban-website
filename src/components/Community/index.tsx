@@ -2,27 +2,10 @@ import { Box, Flex, Heading, Highlight, Text } from '@chakra-ui/react';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import Slider from 'react-slick';
+import { LINKEDIN_URL, TWITTER_URL } from '../../constants/URL';
 import MyContainer from '../container';
+import Title from '../Title';
 import CardBorder from './CardBorder';
-
-// const SOCIAL_DATA = [
-//   {
-//     title: 'Twitter',
-//     src: '../../images/social/twitter.png',
-//   },
-//   {
-//     title: 'Discord',
-//     src: '../../images/social/discord.png',
-//   },
-//   {
-//     title: 'Linked in',
-//     src: '../../images/social/linked.png',
-//   },
-//   {
-//     title: 'Medium',
-//     src: '../../images/social/medium.png',
-//   },
-// ];
 
 const COMMENT_DATA = [
   {
@@ -128,7 +111,8 @@ const settings = {
   slidesToScroll: 3,
   //  vertical: true,
   //  verticalSwiping: true,
-  // autoplay: true,
+  autoplay: true,
+  autoPlaySpeed: 3000,
   arrows: true,
   speed: 200,
   dotsClass: 'dots-class',
@@ -164,9 +148,7 @@ const settings = {
 const Community = () => {
   return (
     <MyContainer py={100}>
-      <Heading textAlign={'center'} fontSize={60}>
-        Join Our Community
-      </Heading>
+      <Title>Join Our Community</Title>
       <Text textAlign={'center'} py={8} fontSize={28} fontWeight={700}>
         <Highlight query={'5 USDT + 500 BUSD'} styles={{ color: 'primary' }}>
           Follow us & Grab a 5 USDT + 500 BUSD Registration Reward
@@ -174,35 +156,62 @@ const Community = () => {
       </Text>
       {/* 社媒 */}
       <Flex alignItems={'center'} justify='center' mb={10}>
-        <Box textAlign={'center'}>
+        <Box
+          textAlign={'center'}
+          onClick={() => {
+            window.open(TWITTER_URL);
+          }}
+          cursor='pointer'
+        >
           <StaticImage
             src={'../../images/social/twitter.png'}
             alt={''}
-            height={50}
+            height={45}
           />
           <Text color={'font.tip'}>Twitter</Text>
         </Box>
-        <Box textAlign={'center'} ml={10}>
+        <Box
+          textAlign={'center'}
+          ml={10}
+          onClick={() => {
+            window.open('');
+          }}
+          cursor='pointer'
+        >
           <StaticImage
             src={'../../images/social/discord.png'}
             alt={''}
-            height={50}
+            height={45}
           />
           <Text color={'font.tip'}>Discord</Text>
         </Box>
-        <Box textAlign={'center'} ml={10}>
+        <Box
+          textAlign={'center'}
+          ml={10}
+          onClick={() => {
+            window.open(LINKEDIN_URL);
+          }}
+          cursor='pointer'
+        >
           <StaticImage
             src={'../../images/social/linked.png'}
             alt={''}
-            height={50}
+            height={45}
           />
           <Text color={'font.tip'}>Linked in</Text>
         </Box>
-        <Box textAlign={'center'} ml={10}>
+        <Box
+          textAlign={'center'}
+          ml={10}
+          onClick={() => {
+            window.open('');
+          }}
+          cursor='pointer'
+        >
           <StaticImage
             src={'../../images/social/medium.png'}
             alt={''}
-            height={50}
+            height={45}
           />
           <Text color={'font.tip'}>Medium</Text>
         </Box>

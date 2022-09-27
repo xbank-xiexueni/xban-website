@@ -1,8 +1,14 @@
 import React from 'react';
 import { Box, Button, Center, Flex, Text, Highlight } from '@chakra-ui/react';
-import { StaticImage } from 'gatsby-plugin-image';
+import {
+  GatsbyImage,
+  IGatsbyImageData,
+  StaticImage,
+} from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import '../../style/global.scss';
+import ModalButton from '../ModalButton';
+import Title from '../Title';
 
 type ItemProps = {
   title: string;
@@ -10,6 +16,7 @@ type ItemProps = {
   extra?: React.ReactNode;
   buttonTitle: string;
   titleHighlight?: string[];
+  image: IGatsbyImageData;
 };
 
 const Item: React.FunctionComponent<ItemProps> = ({
@@ -17,15 +24,17 @@ const Item: React.FunctionComponent<ItemProps> = ({
   description,
   buttonTitle,
   titleHighlight,
+  image,
 }) => {
   return (
-    <Box paddingY={100} overflow={'hidden'}>
+    <Box paddingY={100}>
       <Header />
       <Box
         display={{
           sm: 'block',
           md: 'flex',
         }}
+        gap={10}
         justifyContent={'space-between'}
         alignItems='center'
       >
@@ -48,9 +57,13 @@ const Item: React.FunctionComponent<ItemProps> = ({
           <Text fontSize={16} lineHeight={'24px'} color='font.tip' my={6}>
             {description}
           </Text>
-          <Button bg='primary' color={'#FFFFFF'} borderRadius={40}>
-            {buttonTitle}
-          </Button>
+          <ModalButton
+            title={buttonTitle}
+            w={257}
+            h={68}
+            color='#FFF'
+            fontSize={24}
+          />
         </Box>
         <Box
           w={{
@@ -58,16 +71,15 @@ const Item: React.FunctionComponent<ItemProps> = ({
             md: '50%',
           }}
         >
-          <Box bg='pink' w='100%' height={500}></Box>
-          插图
+          <GatsbyImage image={image} alt='' loading='lazy' />
         </Box>
       </Box>
     </Box>
   );
 };
 
-const Header = () => {
-  const DATA = ['11111', '22222'];
+export const Header = () => {
+  const DATA = ['Token', 'Token'];
   const settings = {
     // dots: false,
     infinite: true,
@@ -81,23 +93,35 @@ const Header = () => {
     // variableWidth: true,
   };
   return (
-    <Box>
-      <Center fontSize={60} flexWrap='wrap'>
+    <Box bg='bg.gray' py={6}>
+      <Title display={'flex'}>
         Why choose&nbsp;
-        <StaticImage alt='name' src='../../images/xBank.png' height={70} />?
-      </Center>
-      {/* <Center> */}
+        <Text
+          bgGradient={
+            'linear-gradient(258.47deg, #EA01E5 17.23%, #5844F5 50.33%, #1CFEF0 92.82%)'
+          }
+          bgClip='text'
+          fontWeight={900}
+        >
+          xBank
+        </Text>
+      </Title>
       <Flex alignItems='center' justifyContent={'center'} flexWrap='wrap'>
         <Box w={100}>
           <Slider {...settings} className='d-inline-block '>
-            {DATA.map((item) => (
-              <Text color={'primary'} fontWeight={500} fontSize={32} key={item}>
+            {DATA.map((item, index) => (
+              <Text
+                color={'primary'}
+                fontWeight={500}
+                fontSize={32}
+                key={`${item}${index}`}
+              >
                 {item}
               </Text>
             ))}
           </Slider>
         </Box>
-        <Text fontWeight={500} fontSize={32}>
+        <Text fontWeight={500} fontSize={32} lineHeight={'48px'}>
           &nbsp;Never Been Easy Like This
         </Text>
       </Flex>

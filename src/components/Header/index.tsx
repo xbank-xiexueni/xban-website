@@ -1,13 +1,34 @@
-import { Box, Button, Collapse, Flex } from '@chakra-ui/react';
+import { Box, Button, Collapse, Flex, Text } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import MyContainer from '../container';
 import './index.scss';
 import MyMenu from './MyMenu';
 import { StaticImage } from 'gatsby-plugin-image';
 import StickySummary from '../Summary/StickySummary';
+import {
+  ABOUT_US_ID,
+  COMMUNITY_ID,
+  CONVERT_MONEY_ID,
+  DISCOVER_WEB3_ID,
+} from '../../constants/ID';
+import ModalButton from '../ModalButton';
+
+const ARROW = (
+  <svg
+    width='8'
+    height='4'
+    viewBox='0 0 8 4'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path d='M1 1L4 3L7 1' stroke='#00000F' />
+  </svg>
+);
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  // const [show2, setShow2] = useState(true);
+
   useEffect(() => {
     // 添加滚动事件
     window.addEventListener('scroll', handleScroll);
@@ -26,6 +47,12 @@ const Header = () => {
     const dom = document.getElementById('content1');
     const height: number = dom?.offsetHeight || 500;
     setShow(scrollTop > height);
+  }, []);
+
+  const scrollTo = useCallback((id: string) => {
+    const dom = document.getElementById(id);
+    const offset = dom?.offsetTop || 0;
+    window.scrollTo(0, offset - 100);
   }, []);
 
   return (
@@ -52,26 +79,54 @@ const Header = () => {
               }}
             >
               <MyMenu
-                title='Products'
+                title={
+                  <Text display={'flex'} alignItems='center'>
+                    Products&nbsp;{ARROW}
+                  </Text>
+                }
                 data={[
                   {
-                    label: 'sss',
-                    onClick: () => console.log('xcxc'),
+                    label: 'Discover Web3',
+                    onClick: () => {
+                      console.log('121');
+                      scrollTo(DISCOVER_WEB3_ID);
+                    },
+                  },
+                  {
+                    label: 'Convert Money',
+                    onClick: () => {
+                      console.log('asas');
+                      scrollTo(CONVERT_MONEY_ID);
+                    },
                   },
                 ]}
               />
               <MyMenu
-                title='Company'
+                title={
+                  <Text display={'flex'} alignItems='center'>
+                    Company&nbsp;{ARROW}
+                  </Text>
+                }
                 data={[
                   {
-                    label: 'sss',
-                    onClick: () => console.log('xcxc'),
+                    label: 'About Us',
+                    onClick: () => {
+                      console.log('xcxc');
+                      scrollTo(ABOUT_US_ID);
+                    },
+                  },
+                  {
+                    label: 'Comminitty',
+                    onClick: () => {
+                      console.log('xcxc');
+                      scrollTo(COMMUNITY_ID);
+                    },
                   },
                 ]}
               />
             </Flex>
           </Flex>
-          <Button
+          {/* <Button
             display={{
               xs: 'none',
               sm: 'block',
@@ -82,7 +137,19 @@ const Header = () => {
             h={'35px'}
           >
             Get xBank
-          </Button>
+          </Button> */}
+          <ModalButton
+            arrow={false}
+            title='Get xBank'
+            h={35}
+            display={{
+              xs: 'none',
+              sm: 'block',
+            }}
+            bg='secondary'
+            color='#FFF'
+            borderRadius={26}
+          />
           <Button
             display={{
               xs: 'block',

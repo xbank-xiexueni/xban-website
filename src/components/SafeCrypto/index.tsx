@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Flex, Heading } from '@chakra-ui/react';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
+import Title from '../Title';
 
 const SafeCrypto = () => {
   const query = useStaticQuery(graphql`
@@ -30,21 +31,62 @@ const SafeCrypto = () => {
     }
   `);
 
+  const DATA = [
+    {
+      key: 'one',
+      url: 'https://www.fincen.gov',
+      style: {
+        width: 169,
+        height: 111,
+      },
+    },
+    {
+      key: 'two',
+      url: 'https://www.austrac.gov.au',
+      style: {
+        width: 214,
+        height: 70,
+      },
+    },
+    {
+      key: 'three',
+      url: 'https://www.fca.org.uk',
+      style: {
+        width: 112,
+        height: 112,
+      },
+    },
+    {
+      key: 'four',
+      url: 'https://www.fintrac-canafe.gc.ca',
+      style: {
+        width: 174,
+        height: 106,
+      },
+    },
+  ];
+
   return (
     <MyContainer py={100}>
-      <Heading textAlign='center' mb={90}>
-        Safe Crypto Service
-      </Heading>
-      <Flex justify={'space-around'}>
-        <GatsbyImage
-          loading='lazy'
-          image={query['one']?.childImageSharp?.gatsbyImageData}
-          alt=''
-          style={{
-            width: 169,
-            height: 111,
-          }}
-        />
+      <Title>Safe Crypto Service</Title>
+      <Flex justify={'space-around'} alignItems='center'>
+        {DATA.map(({ url, key, style }) => (
+          <Box
+            key={key}
+            onClick={() => {
+              console.log('asa');
+              window.open(url);
+            }}
+          >
+            <GatsbyImage
+              loading='lazy'
+              image={query[key]?.childImageSharp?.gatsbyImageData}
+              alt=''
+              style={style}
+            />
+          </Box>
+        ))}
+        {/* 
         <GatsbyImage
           loading='lazy'
           image={query['two']?.childImageSharp?.gatsbyImageData}
@@ -58,9 +100,6 @@ const SafeCrypto = () => {
           loading='lazy'
           image={query['three']?.childImageSharp?.gatsbyImageData}
           alt=''
-          // style={{
-          //   textAlign: 'center',
-          // }}
           style={{
             width: 112,
             height: 112,
@@ -74,7 +113,7 @@ const SafeCrypto = () => {
             width: 174,
             height: 106,
           }}
-        />
+        /> */}
       </Flex>
     </MyContainer>
   );

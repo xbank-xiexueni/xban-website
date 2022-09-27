@@ -10,7 +10,7 @@ import {
 import React from 'react';
 
 type MyMenuProps = {
-  title: string;
+  title: React.ReactNode;
   data: any[];
 };
 
@@ -19,7 +19,7 @@ const MyMenu: React.FunctionComponent<MyMenuProps> = ({ title, data }) => {
     <Menu>
       <MenuButton ml={10}>{title}</MenuButton>
       <Portal>
-        <MenuList>
+        <MenuList zIndex={10}>
           {data?.map(({ label, onClick }) => (
             <MenuItem onClick={onClick}>{label}</MenuItem>
           ))}

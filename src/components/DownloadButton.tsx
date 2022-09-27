@@ -1,26 +1,55 @@
-import { Box, Heading, Text, Button, Flex } from '@chakra-ui/react';
+import { Box, BoxProps, ButtonProps, Text } from '@chakra-ui/react';
 import React from 'react';
-import MyContainer from '../container';
-import DownloadButton from '../DownloadButton';
+import { IOS_URL, ANDROID_URL } from '../constants/URL';
 
-const DownloadApp = () => {
+const DownloadButton: React.FunctionComponent<
+  BoxProps & {
+    onClick?: () => void;
+    dType: 'ios' | 'android';
+    onHover?: () => void;
+    onLeave?: () => void;
+  }
+> = ({ onClick, dType, bg, ...rest }) => {
   return (
-    <Box bg='bg.gray' py={100}>
-      <MyContainer bg='primary' borderRadius={26}>
-        <Flex justify={'center'} py={12}>
-          <Box w={'40%'} height={200} bg='pink'></Box>
-          <Box color={'#FFFFFF'} w={'50%'}>
-            <Heading>Download xBank Apps for iOS & Android</Heading>
-            <Text mt={5} mb={6}>
-              xBank currently support more than 70 different kinds of fiats to
-              purchase.
-            </Text>
-
-            <DownloadButton dType='ios' bg='#6867F5' mr={2} w={130} />
-            <DownloadButton dType='android' bg='#6867F5' w={130} />
-          </Box>
-        </Flex>
-      </MyContainer>
+    <Box
+      display={'inline-flex'}
+      bg={bg}
+      alignItems={'center'}
+      justifyContent='center'
+      borderRadius={10}
+      py={2}
+      px={dType === 'ios' ? 2 : 1}
+      // onMouseOver={onHover}
+      // onMouseLeave={onLeave}
+      cursor='pointer'
+      {...rest}
+      onClick={() => {
+        if (dType === 'ios') {
+          window.location.href = IOS_URL;
+        }
+        if (dType === 'android') {
+          window.location.href = ANDROID_URL;
+        }
+      }}
+    >
+      {dType === 'ios' && IOS_ICON}
+      {dType === 'android' && GOOGLE_PLAY_ICON}
+      <Box color='#FFFFFF' ml={1}>
+        <Text fontSize={8}>
+          {dType === 'ios' && 'Download on the'}
+          {dType === 'android' && 'GET IT NOW'}
+        </Text>
+        {dType === 'ios' && (
+          <Text fontSize={14} lineHeight={'14px'} fontWeight={700}>
+            App Store
+          </Text>
+        )}
+        {dType === 'android' && (
+          <Text fontSize={14} lineHeight={'14px'} fontWeight={700}>
+            Google Play
+          </Text>
+        )}
+      </Box>
     </Box>
   );
 };
@@ -126,4 +155,4 @@ const GOOGLE_PLAY_ICON = (
   </svg>
 );
 
-export default DownloadApp;
+export default DownloadButton;

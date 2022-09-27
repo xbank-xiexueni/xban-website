@@ -5,45 +5,17 @@ import '../../style/global.scss';
 import AutoSlider from '../AutoSlider';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import Title from '../Title';
 
-const Introduce = () => {
+const Team = () => {
   return (
     <Box bg='bg.gray' py={100}>
-      <MyContainer>
-        <Item1 />
-      </MyContainer>
-      <Item2 />
       <MyContainer>
         <Item3 />
       </MyContainer>
     </Box>
   );
 };
-
-const Item1 = () => (
-  <Box>
-    <Center>
-      <Heading>Backed By</Heading>
-    </Center>
-    <Flex justify={'space-around'} my={50}>
-      {[1, 2, 3, 4, 6].map((item) => (
-        <Box w={150} h={150} borderRadius={'100%'} bg='pink'>
-          {item}
-        </Box>
-      ))}
-    </Flex>
-  </Box>
-);
-
-const Item2 = () => (
-  <Box>
-    <Center mb={100}>
-      <Heading>As Featured In </Heading>
-    </Center>
-    <AutoSlider data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]} />
-    <AutoSlider data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]} isRtl />
-  </Box>
-);
 
 const AVATAR_DATA = new Map([
   [
@@ -138,9 +110,7 @@ const Item3 = () => {
   const [showIndex, setShowIndex] = useState<string | undefined>();
   return (
     <Box>
-      <Center mb={100}>
-        <Heading>Team & Advisors </Heading>
-      </Center>
+      <Title>Team & Advisors</Title>
       <Flex flexWrap={'wrap'} justify='space-between'>
         {Object.keys(query)?.map((item) => (
           <Box
@@ -216,4 +186,4 @@ const Item3 = () => {
   );
 };
 
-export default Introduce;
+export default Team;
