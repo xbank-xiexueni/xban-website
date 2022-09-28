@@ -30,7 +30,15 @@ const Content1 = () => {
   return (
     <Box position={'relative'}>
       <Box position={'absolute'} zIndex={2} left={0} top={0}>
-        <Image src={bg} alt='' w={'50%'} />
+        <Image
+          src={bg}
+          alt=''
+          w={{
+            md: '50%',
+            sm:'100%',
+            xs:'100%'
+          }}
+        />
       </Box>
       <Box
         id='content1'
@@ -77,19 +85,13 @@ const Content1 = () => {
               <Text>Find the Hottest&nbsp;</Text>
               <Box w={150} position='relative' top={1}>
                 <Slider className='d-inline-block' {...settings}>
-                  {['Assets', 'Web3 Events', 'Communities'].map(
-                    (item) => (
-                      <Box w={150} textAlign='center' key={item}>
-                        <Text
-                          color={'primary'}
-                          fontWeight={500}
-                          fontSize={24}
-                        >
-                          {item}
-                        </Text>
-                      </Box>
-                    )
-                  )}
+                  {['Assets', 'Web3 Events', 'Communities'].map((item) => (
+                    <Box w={150} textAlign='center' key={item}>
+                      <Text color={'primary'} fontWeight={500} fontSize={24}>
+                        {item}
+                      </Text>
+                    </Box>
+                  ))}
                 </Slider>
               </Box>
               <Text>&nbsp;in xBank</Text>
