@@ -21,10 +21,14 @@ import {
   CONVERT_MONEY_ID,
   DISCOVER_WEB3_ID,
 } from '../constants/ID';
+import Advantage from '../components/Advantage';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+// import { Header as MyHeader } from '../components/WhyChoose/Item';
 
 const IndexPage = () => {
   // const { t, changeLanguage } = useI18next();
-  const { innerHeight } = window;
+  // const { innerHeight } = window;
   return (
     <Box>
       <Header />
@@ -37,6 +41,7 @@ const IndexPage = () => {
       <Box id={CONVERT_MONEY_ID}>
         <Pay />
       </Box>
+      <Advantage />
 
       <SafeCrypto />
       <Backed />

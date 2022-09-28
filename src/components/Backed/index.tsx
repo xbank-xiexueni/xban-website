@@ -118,7 +118,7 @@ const Backed = () => {
     <Box bg={'bg.gray'} pt={100}>
       <Title>Backed By</Title>
 
-      <Flex justify={'center'} gap={10}>
+      <Flex justify={'center'} gap={10} flexWrap='wrap'>
         {LIST.map(({ icon }) => (
           <Flex
             w={150}

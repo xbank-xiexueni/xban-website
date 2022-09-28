@@ -2,7 +2,13 @@ import { Box, Flex, Heading, Highlight, Text } from '@chakra-ui/react';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import Slider from 'react-slick';
-import { LINKEDIN_URL, TWITTER_URL } from '../../constants/URL';
+import {
+  DISCORD_URL,
+  LINKEDIN_URL,
+  MEDIUM_URL,
+  TWITTER_URL,
+} from '../../constants/URL';
+import { handleNavigate } from '../../utils/navagate';
 import MyContainer from '../container';
 import Title from '../Title';
 import CardBorder from './CardBorder';
@@ -34,7 +40,7 @@ const COMMENT_DATA = [
     name: 'Bpurcell95',
     state: 'United States',
     comment:
-      'They hit this one out of the ballpark. The incentives to join and more importantly stay & invest to watch your portfolio grow in a way that may have never been possible without this company. They make it fun with all of the daily bonuses, Etc but also very straightforward, blunt, and the information is processed and retained. Perfect for everyone but most certainly newer investors, or people who are looking to make MONEY! Congratulations everyone on the xBank & Legend teams, you’ve made investing interesting again!',
+      'On xBank, I can easily buy digital currency through funds, and the price is very cheap. I can buy when it is low and sell it when it is high to earn more income. I can also withdraw my digital currency to my wallet.',
   },
   {
     p: 'XBank',
@@ -159,14 +165,14 @@ const Community = () => {
         <Box
           textAlign={'center'}
           onClick={() => {
-            window.open(TWITTER_URL);
+            handleNavigate(TWITTER_URL, true);
           }}
           cursor='pointer'
         >
           <StaticImage
             src={'../../images/social/twitter.png'}
             alt={''}
-            height={45}
+            height={35}
           />
           <Text color={'font.tip'}>Twitter</Text>
         </Box>
@@ -174,14 +180,14 @@ const Community = () => {
           textAlign={'center'}
           ml={10}
           onClick={() => {
-            window.open('');
+            handleNavigate(DISCORD_URL, true);
           }}
           cursor='pointer'
         >
           <StaticImage
             src={'../../images/social/discord.png'}
             alt={''}
-            height={45}
+            height={35}
           />
           <Text color={'font.tip'}>Discord</Text>
         </Box>
@@ -189,14 +195,14 @@ const Community = () => {
           textAlign={'center'}
           ml={10}
           onClick={() => {
-            window.open(LINKEDIN_URL);
+            handleNavigate(LINKEDIN_URL, true);
           }}
           cursor='pointer'
         >
           <StaticImage
             src={'../../images/social/linked.png'}
             alt={''}
-            height={45}
+            height={35}
           />
           <Text color={'font.tip'}>Linked in</Text>
         </Box>
@@ -204,14 +210,14 @@ const Community = () => {
           textAlign={'center'}
           ml={10}
           onClick={() => {
-            window.open('');
+            handleNavigate(MEDIUM_URL, true);
           }}
           cursor='pointer'
         >
           <StaticImage
             src={'../../images/social/medium.png'}
             alt={''}
-            height={45}
+            height={35}
           />
           <Text color={'font.tip'}>Medium</Text>
         </Box>

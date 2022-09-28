@@ -1,7 +1,14 @@
 import { Box, Divider, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
-import { FACEBOOK_URL, INS_URL, LINKEDIN_URL } from '../../constants/URL';
+import {
+  DISCORD_URL,
+  FACEBOOK_URL,
+  INS_URL,
+  LINKEDIN_URL,
+} from '../../constants/URL';
 import MyContainer from '../container';
+import { Link } from 'gatsby';
+import { handleNavigate } from '../../utils/navagate';
 
 const DES = [
   'Initial Blockchain Tech Inc (EntityID#20218185210) is a company registered with the office of the secretary of state of the state of Colorado, with its principal office address at 4255 South Buckley Road#1296, Aurora, Colorado. It is a regulated money service provider which has registered with FinCEN as a Money Service Business (MSB) with the registration number of 31000205541338.',
@@ -17,23 +24,23 @@ const Footer = () => {
           &nbsp;xBank
         </Text>
       </Flex>
-      <Flex justify={'space-between'} mb={70} gap={10}>
+      <Flex justify={'space-between'} mb={70} gap={10} flexWrap='wrap'>
         <Box>
           <Text
             display={'flex'}
             alignItems='center'
             cursor={'pointer'}
             onClick={() => {
-              window.location.href = 'mailto:help@xbank.plus';
+              handleNavigate('mailto:help@xbank.plus');
             }}
           >
             {EMAIL}&nbsp;help@xbank.plus
           </Text>
-          <Flex mt={5} gap={2}>
+          {/* <Flex mt={5} gap={2}>
             {DATA.map(({ url, icon }) => (
               <Box
                 onClick={() => {
-                  window.open(url);
+                  handleNavigate(url)
                 }}
                 key={icon.toString()}
                 cursor='pointer'
@@ -41,7 +48,7 @@ const Footer = () => {
                 {icon}
               </Box>
             ))}
-          </Flex>
+          </Flex> */}
         </Box>
         <Flex direction={'column'} gap={6}>
           {DES.map((item) => (
@@ -62,10 +69,12 @@ const Footer = () => {
           {new Date().getFullYear()}2022 © All Rights Reserved
         </Text>
         <Text color={'font.primary'} opacity={0.5} fontSize={12}>
-          Terms of Services
+          <Link to='https://xbank.plus/terms-of-service/en'>
+            Terms of Services
+          </Link>
         </Text>
         <Text color={'font.primary'} opacity={0.5} fontSize={12}>
-          Private Policy
+          <Link to='https://xbank.plus/privacy-policy/en'>Private Policy</Link>
         </Text>
       </Flex>
     </MyContainer>
@@ -311,7 +320,7 @@ const DATA = [
     icon: FACEBOOK,
   },
   {
-    url: '',
+    url: DISCORD_URL,
     icon: DISCORD,
   },
   {

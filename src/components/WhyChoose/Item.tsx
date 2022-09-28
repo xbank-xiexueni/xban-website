@@ -1,5 +1,15 @@
-import React from 'react';
-import { Box, Button, Center, Flex, Text, Highlight } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  Text,
+  Highlight,
+  useStatStyles,
+  ScaleFade,
+  Divider,
+} from '@chakra-ui/react';
 import {
   GatsbyImage,
   IGatsbyImageData,
@@ -9,6 +19,7 @@ import Slider from 'react-slick';
 import '../../style/global.scss';
 import ModalButton from '../ModalButton';
 import Title from '../Title';
+import { DIVIDE } from '../../constants/paddingY';
 
 type ItemProps = {
   title: string;
@@ -27,8 +38,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
   image,
 }) => {
   return (
-    <Box paddingY={100}>
-      <Header />
+    <Box py={DIVIDE}>
       <Box
         display={{
           sm: 'block',
@@ -37,6 +47,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
         gap={10}
         justifyContent={'space-between'}
         alignItems='center'
+        mt={DIVIDE}
       >
         {/* 左边 */}
         <Box
@@ -71,7 +82,8 @@ const Item: React.FunctionComponent<ItemProps> = ({
             md: '50%',
           }}
         >
-          <GatsbyImage image={image} alt='' loading='lazy' />
+          {image && <GatsbyImage image={image} alt='' loading='lazy' />}
+          {!image && <Box w='500px' h='500px' bg='pink'></Box>}
         </Box>
       </Box>
     </Box>
@@ -79,7 +91,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
 };
 
 export const Header = () => {
-  const DATA = ['Token', 'Token'];
+  const DATA = ['Token', ' NFT', 'Game', 'Defi', 'DAO'];
   const settings = {
     // dots: false,
     infinite: true,
@@ -90,13 +102,16 @@ export const Header = () => {
     autoplay: true,
     arrows: false,
     autoPlaySpeed: 200,
+
     // variableWidth: true,
   };
   return (
-    <Box bg='bg.gray' py={6}>
-      <Title display={'flex'}>
+    // <Box position={'sticky'} top={130} bg='bg.gray' zIndex={20} py={'4px'}>
+    <Box>
+      <Title mb={4} w='100%' textAlign={'center'}>
         Why choose&nbsp;
         <Text
+          as='span'
           bgGradient={
             'linear-gradient(258.47deg, #EA01E5 17.23%, #5844F5 50.33%, #1CFEF0 92.82%)'
           }
@@ -107,22 +122,24 @@ export const Header = () => {
         </Text>
       </Title>
       <Flex alignItems='center' justifyContent={'center'} flexWrap='wrap'>
-        <Box w={100}>
-          <Slider {...settings} className='d-inline-block '>
-            {DATA.map((item, index) => (
+        <Box w='80px' position={'relative'} top={1}>
+          <Slider {...settings} className='d-inline-block'>
+            {DATA.map((item) => (
               <Text
+                as='span'
                 color={'primary'}
                 fontWeight={500}
                 fontSize={32}
-                key={`${item}${index}`}
+                key={item}
               >
                 {item}
               </Text>
             ))}
           </Slider>
         </Box>
+
         <Text fontWeight={500} fontSize={32} lineHeight={'48px'}>
-          &nbsp;Never Been Easy Like This
+          &nbsp;New Internet Never Been Easy Like This
         </Text>
       </Flex>
     </Box>

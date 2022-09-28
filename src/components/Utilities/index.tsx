@@ -10,7 +10,15 @@ const des =
 const Utilities = () => {
   return (
     <MyContainer py={40}>
-      <Flex justify={'space-between'} alignItems='center' gap={10}>
+      <Box
+        justifyContent={'space-between'}
+        alignItems='center'
+        gap={10}
+        display={{
+          sm: 'block',
+          md: 'flex',
+        }}
+      >
         <Box>
           <Box h={400} w={400} bg='pink'></Box>
         </Box>
@@ -26,7 +34,7 @@ const Utilities = () => {
           <Text
             fontSize={16}
             lineHeight='30px'
-            color={'font.gray'}
+            color={'font.tip'}
             mt={6}
             mb={12}
           >
@@ -42,7 +50,7 @@ const Utilities = () => {
             />
           </Box>
         </Box>
-      </Flex>
+      </Box>
     </MyContainer>
   );
 };

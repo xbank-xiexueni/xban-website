@@ -1,9 +1,8 @@
-import React from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { ReactNode } from 'react';
 
 import Slider from 'react-slick';
-import { Box } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
+import { handleNavigate } from '../utils/navagate';
 const settings = {
   // dots: true,
   infinite: true,
@@ -15,7 +14,7 @@ const settings = {
   cssEase: 'linear',
   variableWidth: true,
   arrows: false,
-  pauseOnHover: false,
+  pauseOnHover: true,
   responsive: [
     {
       breakpoint: 480,
@@ -26,26 +25,36 @@ const settings = {
     },
   ],
 };
-const FeaturedBox = ({ title }: { title: any }) => {
+const FeaturedBox = ({ icon, url }: { icon: ReactNode; url: string }) => {
   return (
     <Box
+      onClick={() => {
+        handleNavigate(url, true);
+      }}
       borderRadius={10}
       w={216}
       h={70}
-      display='inline-block'
+      display='inline-flex'
       bg='#FFF'
+      alignItems={'center'}
+      justifyContent='center'
       ml={2}
+      cursor={url ? 'pointer' : 'default'}
     >
-      {title}
+      {icon}
     </Box>
   );
 };
-const AutoSlider = ({ data, isRtl }: { data: any[]; isRtl?: boolean }) => {
+const AutoSlider = ({
+  data,
+  isRtl,
+  ...rest
+}: { data: any[]; isRtl?: boolean } & BoxProps) => {
   return (
-    <Box mb={5}>
+    <Box {...rest}>
       <Slider {...settings} rtl={isRtl}>
-        {data.map((item) => (
-          <FeaturedBox title={item} />
+        {data.map(({ url, icon }) => (
+          <FeaturedBox icon={icon} url={url} />
         ))}
       </Slider>
     </Box>

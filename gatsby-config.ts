@@ -1,7 +1,9 @@
 import { GatsbyConfig } from 'gatsby';
-import theme from './src/theme';
 
 const config: GatsbyConfig = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `xbank-website`,
     siteUrl: `https://www.yourdomain.tld`,

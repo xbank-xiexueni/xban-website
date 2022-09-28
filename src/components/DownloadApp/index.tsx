@@ -7,17 +7,26 @@ const DownloadApp = () => {
   return (
     <Box bg='bg.gray' py={100}>
       <MyContainer bg='primary' borderRadius={26}>
-        <Flex justify={'center'} py={12}>
-          <Box w={'40%'} height={200} bg='pink'></Box>
+        <Flex justify={'center'} py={12} flexWrap={'wrap'}>
+          <Box
+            w={{
+              md: '40%',
+              sm: '100%',
+              xs: '100%',
+            }}
+            height={200}
+            bg='pink'
+          ></Box>
           <Box color={'#FFFFFF'} w={'50%'}>
-            <Heading>Download xBank Apps for iOS & Android</Heading>
+            <Heading>Download xBank Apps for iOS</Heading>
+            {/* <Heading>Download xBank Apps for iOS & Android</Heading> */}
             <Text mt={5} mb={6}>
               xBank currently support more than 70 different kinds of fiats to
               purchase.
             </Text>
 
             <DownloadButton dType='ios' bg='#6867F5' mr={2} w={130} />
-            <DownloadButton dType='android' bg='#6867F5' w={130} />
+            {/* <DownloadButton dType='android' bg='#6867F5' w={130} /> */}
           </Box>
         </Flex>
       </MyContainer>

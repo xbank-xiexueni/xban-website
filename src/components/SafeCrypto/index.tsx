@@ -4,6 +4,7 @@ import { Box, Flex, Heading } from '@chakra-ui/react';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title';
+import { handleNavigate } from '../../utils/navagate';
 
 const SafeCrypto = () => {
   const query = useStaticQuery(graphql`
@@ -69,13 +70,13 @@ const SafeCrypto = () => {
   return (
     <MyContainer py={100}>
       <Title>Safe Crypto Service</Title>
-      <Flex justify={'space-around'} alignItems='center'>
+      <Flex justify={'space-around'} alignItems='center' flexWrap='wrap'>
         {DATA.map(({ url, key, style }) => (
           <Box
             key={key}
             onClick={() => {
               console.log('asa');
-              window.open(url);
+              handleNavigate(url, true);
             }}
           >
             <GatsbyImage

@@ -41,6 +41,7 @@ const ModalButton: React.FunctionComponent<
 > = ({ title, arrow = true, ...rest }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef(null);
+  const isBrowser = typeof window !== 'undefined';
 
   const query = useStaticQuery(graphql`
     query {
@@ -124,12 +125,12 @@ const ModalButton: React.FunctionComponent<
                       <Box onClick={() => console.log('打开 app store')}>
                         <DownloadButton dType='ios' bg='#000000' w={120} />
                       </Box>
-                      <Box
+                      {/* <Box
                         mt={2}
                         onClick={() => console.log('打开 google play')}
                       >
                         <DownloadButton dType='android' bg='#000000' w={120} />
-                      </Box>
+                      </Box> */}
                     </Box>
                     {/* <ScaleFade initialScale={0.9} in={!!showIndex}> */}
                     <Box
@@ -139,7 +140,9 @@ const ModalButton: React.FunctionComponent<
                       borderRadius={10}
                     >
                       <QRCodeSVG
-                        value={`${window.location.host}/download`}
+                        value={
+                          isBrowser ? `${window?.location?.host}/download` : ''
+                        }
                         width={75}
                         height={75}
                         includeMargin

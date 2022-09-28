@@ -6,11 +6,11 @@ import '../../style/global.scss';
 const StickySummary = () => {
   return (
     <Flex
-      bgColor={'rgba(255, 255, 255, 0.8)'}
-      // backdropBlur={'lg'}
+      bgColor={'rgba(255, 255, 255, 0.4)'}
+      backdropFilter={'blur(22px)'}
       alignItems='center'
       justify={'center'}
-      py={6}
+      py={4}
     >
       {DATA.map(({ label, value }, index) => (
         <Flex key={value}>
@@ -20,6 +20,7 @@ const StickySummary = () => {
               fontSize={14}
               display='flex'
               alignItems={'center'}
+              lineHeight='28px'
             >
               <Highlight
                 query={value}

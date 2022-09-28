@@ -7,7 +7,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const title = 'Pay with Credit Card and Get Your First Crypto Asset';
 const des =
-  'xBank currently support more than 50 different kinds of fiats to purchase Cryptos with credit cards, bank transfers, open banking and mobile payments.';
+  'xBank currently support more than 70 different kinds of fiats to purchase Cryptos with credit cards, bank transfers, open banking and mobile payments.';
 
 const Pay = () => {
   const query = useStaticQuery(graphql`
@@ -22,11 +22,15 @@ const Pay = () => {
 
   return (
     <MyContainer py={40}>
-      <Flex
-        justify={'space-between'}
+      <Box
+        justifyContent={'space-between'}
         alignItems='center'
         gap={10}
-        direction='row-reverse'
+        flexDirection='row-reverse'
+        display={{
+          sm: 'block',
+          md: 'flex',
+        }}
       >
         <Box>
           <GatsbyImage
@@ -47,7 +51,7 @@ const Pay = () => {
           <Text
             fontSize={16}
             lineHeight='30px'
-            color={'font.gray'}
+            color={'font.tip'}
             mt={6}
             mb={12}
           >
@@ -63,7 +67,7 @@ const Pay = () => {
             />
           </Box>
         </Box>
-      </Flex>
+      </Box>
     </MyContainer>
   );
 };

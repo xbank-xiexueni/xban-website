@@ -1,6 +1,7 @@
-import { Box, BoxProps, ButtonProps, Text } from '@chakra-ui/react';
+import { Box, BoxProps, ButtonProps, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import { IOS_URL, ANDROID_URL } from '../constants/URL';
+import { handleNavigate } from '../utils/navagate';
 
 const DownloadButton: React.FunctionComponent<
   BoxProps & {
@@ -25,31 +26,35 @@ const DownloadButton: React.FunctionComponent<
       {...rest}
       onClick={() => {
         if (dType === 'ios') {
-          window.location.href = IOS_URL;
+          handleNavigate(IOS_URL, true);
         }
         if (dType === 'android') {
-          window.location.href = ANDROID_URL;
+          handleNavigate(ANDROID_URL, true);
         }
       }}
     >
-      {dType === 'ios' && IOS_ICON}
-      {dType === 'android' && GOOGLE_PLAY_ICON}
-      <Box color='#FFFFFF' ml={1}>
-        <Text fontSize={8}>
-          {dType === 'ios' && 'Download on the'}
-          {dType === 'android' && 'GET IT NOW'}
-        </Text>
-        {dType === 'ios' && (
-          <Text fontSize={14} lineHeight={'14px'} fontWeight={700}>
-            App Store
+      <Flex justify={'space-between'}>
+        <Box>
+          {dType === 'ios' && IOS_ICON}
+          {dType === 'android' && GOOGLE_PLAY_ICON}
+        </Box>
+        <Box color='#FFFFFF' ml={1}>
+          <Text fontSize={8}>
+            {dType === 'ios' && 'Download on the'}
+            {dType === 'android' && 'GET IT NOW'}
           </Text>
-        )}
-        {dType === 'android' && (
-          <Text fontSize={14} lineHeight={'14px'} fontWeight={700}>
-            Google Play
-          </Text>
-        )}
-      </Box>
+          {dType === 'ios' && (
+            <Text fontSize={14} lineHeight={'14px'} fontWeight={700}>
+              App Store
+            </Text>
+          )}
+          {dType === 'android' && (
+            <Text fontSize={14} lineHeight={'14px'} fontWeight={700}>
+              Google Play
+            </Text>
+          )}
+        </Box>
+      </Flex>
     </Box>
   );
 };

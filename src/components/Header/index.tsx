@@ -31,16 +31,20 @@ const Header = () => {
 
   useEffect(() => {
     // 添加滚动事件
-    window.addEventListener('scroll', handleScroll);
+    addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const isBrowser = typeof window !== 'undefined';
 
   const handleScroll = useCallback(() => {
+    if(!isBrowser) {
+      return
+    }
     const scrollTop =
       document.documentElement.scrollTop ||
-      window.pageYOffset ||
+      window?.pageYOffset ||
       document.body.scrollTop;
 
     //  高度
@@ -52,81 +56,94 @@ const Header = () => {
   const scrollTo = useCallback((id: string) => {
     const dom = document.getElementById(id);
     const offset = dom?.offsetTop || 0;
-    window.scrollTo(0, offset - 100);
+    if (!isBrowser) {
+      return;
+    }
+    window?.scrollTo(0, offset - 100);
   }, []);
 
   return (
-    <Box position={'sticky'} top={0} bg='#FFFFFF' zIndex={10}>
+    <Box position={'sticky'} top={0} zIndex={21}>
       <Box
         bg='linear-gradient(270deg, #E404E6 0%, #5843F4 53.65%, #1EF6F0
       100%)'
         h={3}
       />
-      <MyContainer>
-        <Flex justify={'space-between'} h={70} alignItems='center'>
-          <Flex>
-            <StaticImage
-              src='../../images/LOGO_NAME.png'
-              loading='lazy'
-              title='logo'
-              alt='logo'
-              width={127}
-            />
-            <Flex
-              display={{
-                xs: 'none',
-                sm: 'flex',
-              }}
-            >
-              <MyMenu
-                title={
-                  <Text display={'flex'} alignItems='center'>
-                    Products&nbsp;{ARROW}
-                  </Text>
-                }
-                data={[
-                  {
-                    label: 'Discover Web3',
-                    onClick: () => {
-                      console.log('121');
-                      scrollTo(DISCOVER_WEB3_ID);
+      <Box bg='#FFFFFF'>
+        <MyContainer>
+          <Flex justify={'space-between'} h={58} alignItems='center'>
+            <Flex>
+              <Box
+                onClick={() => {
+                  if (isBrowser) {
+                    window?.scrollTo(0, 0);
+                  }
+                }}
+              >
+                <StaticImage
+                  src='../../images/LOGO_NAME.png'
+                  loading='lazy'
+                  title='logo'
+                  alt='logo'
+                  width={127}
+                />
+              </Box>
+
+              <Flex
+                display={{
+                  xs: 'none',
+                  sm: 'flex',
+                }}
+              >
+                <MyMenu
+                  title={
+                    <Text display={'flex'} alignItems='center'>
+                      Products&nbsp;{ARROW}
+                    </Text>
+                  }
+                  data={[
+                    {
+                      label: 'Discover Web3',
+                      onClick: () => {
+                        console.log('121');
+                        scrollTo(DISCOVER_WEB3_ID);
+                      },
                     },
-                  },
-                  {
-                    label: 'Convert Money',
-                    onClick: () => {
-                      console.log('asas');
-                      scrollTo(CONVERT_MONEY_ID);
+                    {
+                      label: 'Convert Money',
+                      onClick: () => {
+                        console.log('asas');
+                        scrollTo(CONVERT_MONEY_ID);
+                      },
                     },
-                  },
-                ]}
-              />
-              <MyMenu
-                title={
-                  <Text display={'flex'} alignItems='center'>
-                    Company&nbsp;{ARROW}
-                  </Text>
-                }
-                data={[
-                  {
-                    label: 'About Us',
-                    onClick: () => {
-                      console.log('xcxc');
-                      scrollTo(ABOUT_US_ID);
+                  ]}
+                />
+                <MyMenu
+                  title={
+                    <Text display={'flex'} alignItems='center'>
+                      Company&nbsp;{ARROW}
+                    </Text>
+                  }
+                  data={[
+                    {
+                      label: 'About Us',
+                      onClick: () => {
+                        console.log(ABOUT_US_ID);
+                        scrollTo(ABOUT_US_ID);
+                      },
                     },
-                  },
-                  {
-                    label: 'Comminitty',
-                    onClick: () => {
-                      console.log('xcxc');
-                      scrollTo(COMMUNITY_ID);
+                    {
+                      label: 'Comminitty',
+                      onClick: () => {
+                        console.log('xcxc');
+                        scrollTo(COMMUNITY_ID);
+                      },
                     },
-                  },
-                ]}
-              />
+                  ]}
+                />
+              </Flex>
             </Flex>
-          </Flex>
-          {/* <Button
+            {/* <Button
             display={{
               xs: 'none',
               sm: 'block',
@@ -138,29 +155,30 @@ const Header = () => {
           >
             Get xBank
           </Button> */}
-          <ModalButton
-            arrow={false}
-            title='Get xBank'
-            h={35}
-            display={{
-              xs: 'none',
-              sm: 'block',
-            }}
-            bg='secondary'
-            color='#FFF'
-            borderRadius={26}
-          />
-          <Button
-            display={{
-              xs: 'block',
-              sm: 'none',
-            }}
-            colorScheme='primary'
-          >
-            展开
-          </Button>
-        </Flex>
-      </MyContainer>
+            <ModalButton
+              arrow={false}
+              title='Get xBank'
+              h={35}
+              display={{
+                xs: 'none',
+                sm: 'block',
+              }}
+              bg='secondary'
+              color='#FFF'
+              borderRadius={26}
+            />
+            <Button
+              display={{
+                xs: 'block',
+                sm: 'none',
+              }}
+              colorScheme='primary'
+            >
+              展开
+            </Button>
+          </Flex>
+        </MyContainer>
+      </Box>
 
       <Collapse in={show} animateOpacity>
         <StickySummary />

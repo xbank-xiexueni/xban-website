@@ -18,9 +18,9 @@ export const DATA = [
 
 const Summary = () => {
   return (
-    <Flex justify={'center'} mt={50}>
+    <Flex justify={'center'} flexWrap='wrap' my={16}>
       {DATA.map(({ label, value }, index) => (
-        <Flex>
+        <Flex justify={'center'}>
           <Box textAlign={'center'}>
             <Text
               align={'center'}
@@ -30,12 +30,20 @@ const Summary = () => {
             >
               {value}
             </Text>
-            <Text fontSize={14} color='font.gray'>
+            <Text fontSize={14} color='font.tip'>
               {label}
             </Text>
           </Box>
           {index !== DATA.length - 1 && (
-            <Divider orientation='vertical' mx={10} />
+            <Divider
+              orientation='vertical'
+              mx={10}
+              display={{
+                xs: 'none',
+                sm: 'none',
+                md: 'block',
+              }}
+            />
           )}
         </Flex>
       ))}

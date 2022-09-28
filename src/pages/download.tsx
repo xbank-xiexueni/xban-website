@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { IOS_URL, ANDROID_URL } from '../constants/URL';
+import { handleNavigate } from '../utils/navagate';
 
 const download = () => {
   useEffect(() => {
@@ -29,9 +30,9 @@ const download = () => {
       browser.versions.iPhone ||
       browser.versions.iPad
     ) {
-      window.location.href = IOS_URL;
+      handleNavigate(IOS_URL);
     } else if (browser.versions.android) {
-      window.location.href = ANDROID_URL;
+      handleNavigate(ANDROID_URL);
     } else {
       console.log('qwqw');
       alert('nonono');

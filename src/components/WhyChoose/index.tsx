@@ -1,11 +1,19 @@
-import { Box } from '@chakra-ui/react';
-import React, { useCallback, useEffect, useState } from 'react';
-import ReactPageScroller from 'react-page-scroller';
+import { Box, Divider } from '@chakra-ui/react';
+import React, {
+  Component,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+// import ReactPageScroller from 'react-page-scroller';
 import MyContainer from '../container';
 import Item, { Header } from './Item';
 // @ts-ignore
 import Zoom from 'react-reveal/Zoom';
 import { graphql, useStaticQuery } from 'gatsby';
+import { DIVIDE } from '../../constants/paddingY';
+import Slider from 'react-slick';
 
 const DATA = [
   {
@@ -28,7 +36,7 @@ const DATA = [
     key: 'why3',
     title: 'Participate Popular DAO with Friends',
     titleHighlight: ['DAO'],
-    buttonTitle: 'Link my wallet',
+    buttonTitle: 'Connect my wallet',
     description:
       'Interact with Your New Friends From Decentralized Communities Based on Your Hobbies, Interests, Visions and Wishes..',
   },
@@ -66,50 +74,111 @@ const WhyChoose = () => {
       }
     }
   `);
+  const [flag, setFlag] = useState(false);
+
+  useEffect(() => {
+    // document.addEventListener(
+    //   'wheel',
+    //   function (event) {
+    //     if (!flag) {
+    //       document.removeEventListener('wheel', () => {});
+    //       return;
+    //     }
+    //     console.log(flag, 'wheel');
+    //     ref?.current?.goToPage(2);
+    //     event.preventDefault();
+    //   },
+    //   { passive: false }
+    // );
+    // document.addEventListener('scroll', function (event) {
+    //   console.log('1212');
+    // });
+  }, [flag]);
+  console.log(flag);
+
+  useEffect(() => {
+    // 添加滚动事件
+    addEventListener('scroll', handleScroll);
+    return () => {
+      removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    // rot.style.width = innerot.clientHeight + 3 + 'px'; // 3px 预留滚动条
+    // innerot.style.transform = `translateY(-${innerot.clientHeight}px) rotateZ(90deg) rotateX(180deg) translateY(${innerot.clientHeight}px)`;
+    // const scrollTop =
+    //   document.documentElement.scrollTop ||
+    //   window?.pageYOffset ||
+    //   document.body.scrollTop;
+    // //  高度
+    // const dom = document.getElementById('content1');
+    // const top: number = dom?.offsetTop || 500;
+    // console.log(scrollTop);
+    // if (scrollTop > top || (scrollTop > top && scrollTop < top + innerHeight)) {
+    //   setFlag(true);
+    // } else {
+    //   setFlag(false);
+    // }
+  }, []);
 
   return (
-    <Box bg='bg.gray'>
-      <MyContainer>
-        {/* <Box
-          position={'sticky'}
-          top={170}
-          left={0}
-          right={0}
-          w='100%'
-          zIndex={9}
-        >
-          <Header />
-        </Box> */}
-        {DATA.map((item) => (
-          <Zoom ssrFadeout key={item.key}>
+    <Box bg='bg.gray' py={DIVIDE}>
+      {/* <MyContainer> */}
+      <Header />
+      {DATA.map((item, index) => (
+        <Box position={'sticky'} top={130} zIndex={11 + index} bg='bg.gray'>
+          <MyContainer>
+            {index !== 0 && <Divider color={'gray'} borderWidth={2} />}
+
             <Item
               {...item}
-              image={query[item.key]?.childImageSharp?.gatsbyImageData}
+              image={query[item?.key]?.childImageSharp?.gatsbyImageData}
             />
-          </Zoom>
-        ))}
-      </MyContainer>
-    </Box>
-  );
-  return (
-    <Box h={4 * (innerHeight - 170)}>
-      <Box position={'fixed'} top={170} left={0} h={innerHeight - 170}>
-        <ReactPageScroller containerHeight={innerHeight - 170}>
-          <Box h='100%' bg='blue'>
-            121
-          </Box>
-          <Box h='100%' bg='orange'>
-            121
-          </Box>
-          <Box h='100%' bg='black'>
-            121
-          </Box>
-          <Box h={innerHeight - 170} bg='yellow'>
-            xxxx
-          </Box>
-        </ReactPageScroller>
-        {/* <Box bg='#FFF' h={1}></Box> */}
+          </MyContainer>
+        </Box>
+      ))}
+      {/* <Box position={'sticky'} top={130} zIndex={15} bg='bg.gray'>
+        <MyContainer>
+          <Divider color={'gray'} borderWidth={2} />
+
+          <Item
+            {...DATA[0]}
+            image={query[DATA[0].key]?.childImageSharp?.gatsbyImageData}
+          />
+        </MyContainer>
       </Box>
+
+      <Box position={'sticky'} top={130} zIndex={16} bg='bg.gray'>
+        <MyContainer>
+          <Item
+            {...DATA[1]}
+            image={query[DATA[1].key]?.childImageSharp?.gatsbyImageData}
+          />
+          <Divider color={'gray'} borderWidth={2} />
+        </MyContainer>
+      </Box>
+
+      <Box position={'sticky'} top={130} zIndex={17} bg='bg.gray'>
+        <MyContainer>
+          <Item
+            {...DATA[2]}
+            image={query[DATA[2].key]?.childImageSharp?.gatsbyImageData}
+          />
+          <Divider color={'gray'} borderWidth={2} />
+        </MyContainer>
+      </Box>
+
+      <Box position={'sticky'} top={130} zIndex={18} bg='bg.gray'>
+        <MyContainer>
+          <Item
+            {...DATA[3]}
+            image={query[DATA[3].key]?.childImageSharp?.gatsbyImageData}
+          />
+          <Divider color={'gray'} borderWidth={2} />
+        </MyContainer>
+      </Box> */}
+      {/* </MyContainer> */}
     </Box>
   );
 };

@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { Box, Center, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Center, Flex, Text, Image } from '@chakra-ui/react';
 import MyContainer from '../container';
 import '../../style/global.scss';
-import AutoSlider from '../AutoSlider';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Title from '../Title';
+import left from '../../images/team/team-bg-left.png';
+import right from '../../images/team/team-bg-right.png';
 
 const Team = () => {
   return (
-    <Box bg='bg.gray' py={100}>
+    <Box bg='bg.gray' py={100} pos='relative'>
+      <Box position={'absolute'} bottom={0} left={0}>
+        <Image src={left} />
+      </Box>
+      <Box position={'absolute'} bottom={0} right={0}>
+        <Image src={right} />
+      </Box>
       <MyContainer>
         <Item3 />
       </MyContainer>
@@ -22,7 +29,7 @@ const AVATAR_DATA = new Map([
     'Rayi',
     {
       name: 'Rayi',
-      // hold: '职位',
+      hold: 'COO',
       intro:
         'Builder of First Generation of Cryptoexchanges. Lead of Product and Exchange Operation for 6+ Years at Huobi Global',
     },
@@ -49,6 +56,7 @@ const AVATAR_DATA = new Map([
     'Luo',
     {
       name: 'Luo',
+      hold: 'General Consul',
       intro:
         'Core of Oversea Compliant Team for Several Main Cryptoexchanges and Public Blockchain Projects',
     },
@@ -57,7 +65,7 @@ const AVATAR_DATA = new Map([
     'BruceChen',
     {
       name: 'Bruce Chen',
-      hold: 'Entrepreneur  & Co-Founder',
+      hold: ' Advisor',
       intro: 'CEO & Founder of xCurrency, Entrepreneur and Co-Founder of xBank',
     },
   ],
@@ -65,6 +73,7 @@ const AVATAR_DATA = new Map([
     'FlorianMSpiegal',
     {
       name: 'Florian M Spiegal',
+      hold: ' Advisor',
       intro:
         'Founder of FinFabrik, Entrepreneur and Investor. FinTech Advisory of HKSFC & HKSI, Chairman of HK FinTech Association',
     },
@@ -74,32 +83,32 @@ const AVATAR_DATA = new Map([
 const Item3 = () => {
   const query = useStaticQuery(graphql`
     query {
-      Kaiyang: file(relativePath: { eq: "avatar/avatar.png" }) {
+      Kaiyang: file(relativePath: { eq: "team/avatar.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      Dx: file(relativePath: { eq: "avatar/avatar.png" }) {
+      Dx: file(relativePath: { eq: "team/avatar.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      Rayi: file(relativePath: { eq: "avatar/avatar.png" }) {
+      Rayi: file(relativePath: { eq: "team/avatar.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      Luo: file(relativePath: { eq: "avatar/avatar.png" }) {
+      Luo: file(relativePath: { eq: "team/avatar.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      BruceChen: file(relativePath: { eq: "avatar/avatar.png" }) {
+      BruceChen: file(relativePath: { eq: "team/avatar.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      FlorianMSpiegal: file(relativePath: { eq: "avatar/avatar.png" }) {
+      FlorianMSpiegal: file(relativePath: { eq: "team/avatar.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
@@ -111,7 +120,13 @@ const Item3 = () => {
   return (
     <Box>
       <Title>Team & Advisors</Title>
-      <Flex flexWrap={'wrap'} justify='space-between'>
+      <Flex
+        flexWrap={'wrap'}
+        justify={{
+          sm: 'center',
+          md: 'space-between',
+        }}
+      >
         {Object.keys(query)?.map((item) => (
           <Box
             onMouseOver={() => setShowIndex(item)}
