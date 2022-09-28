@@ -12,7 +12,6 @@ const CardBorder: React.FunctionComponent<BoxProps> = ({
         borderWidth={4}
         borderStyle='solid'
         borderColor={'border'}
-        // borderColor={'pink'}
         borderRadius={8}
         {...rest}
       >

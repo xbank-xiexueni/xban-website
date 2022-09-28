@@ -1,6 +1,6 @@
 import React from 'react';
 import MyContainer from '../container';
-import { Flex, Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
 
 const title = 'Maximize the Utilities of Your Cryptos and Digital Collectibles';
@@ -20,7 +20,15 @@ const Utilities = () => {
         }}
       >
         <Box>
-          <Box h={400} w={400} bg='pink'></Box>
+          <Box
+            w={{
+              md: '40%',
+              sm: '100%',
+              xs: '100%',
+            }}
+            height={200}
+            bg='pink'
+          ></Box>
         </Box>
         <Box>
           <Heading

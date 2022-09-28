@@ -105,14 +105,12 @@ const Header = () => {
                     {
                       label: 'Discover Web3',
                       onClick: () => {
-                        console.log('121');
                         scrollTo(DISCOVER_WEB3_ID);
                       },
                     },
                     {
                       label: 'Convert Money',
                       onClick: () => {
-                        console.log('asas');
                         scrollTo(CONVERT_MONEY_ID);
                       },
                     },
@@ -128,14 +126,12 @@ const Header = () => {
                     {
                       label: 'About Us',
                       onClick: () => {
-                        console.log(ABOUT_US_ID);
                         scrollTo(ABOUT_US_ID);
                       },
                     },
                     {
                       label: 'Comminitty',
                       onClick: () => {
-                        console.log('xcxc');
                         scrollTo(COMMUNITY_ID);
                       },
                     },

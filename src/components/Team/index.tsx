@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Center, Flex, Text, Image } from '@chakra-ui/react';
+import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import MyContainer from '../container';
 import '../../style/global.scss';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -136,6 +136,7 @@ const Item3 = () => {
             pb={10}
             mb={10}
             cursor='pointer'
+            key={item}
           >
             <GatsbyImage
               loading='lazy'

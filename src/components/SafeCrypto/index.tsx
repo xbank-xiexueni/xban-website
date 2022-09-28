@@ -1,10 +1,10 @@
 import MyContainer from '../container';
 import React from 'react';
-import { Box, Flex, Heading } from '@chakra-ui/react';
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { Box, Flex } from '@chakra-ui/react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title';
-import { handleNavigate } from '../../utils/navagate';
+import { handleNavigate } from '../../utils/navigate';
 
 const SafeCrypto = () => {
   const query = useStaticQuery(graphql`
@@ -75,7 +75,6 @@ const SafeCrypto = () => {
           <Box
             key={key}
             onClick={() => {
-              console.log('asa');
               handleNavigate(url, true);
             }}
           >

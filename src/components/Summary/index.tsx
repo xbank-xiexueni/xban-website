@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Flex, Text } from '@chakra-ui/react';
+import { Box, Divider, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
 export const DATA = [
@@ -20,7 +20,7 @@ const Summary = () => {
   return (
     <Flex justify={'center'} flexWrap='wrap' my={16}>
       {DATA.map(({ label, value }, index) => (
-        <Flex justify={'center'}>
+        <Flex justify={'center'} key={value}>
           <Box textAlign={'center'}>
             <Text
               align={'center'}

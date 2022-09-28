@@ -1,20 +1,6 @@
-import React, { useState } from 'react';
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Text,
-  Highlight,
-  useStatStyles,
-  ScaleFade,
-  Divider,
-} from '@chakra-ui/react';
-import {
-  GatsbyImage,
-  IGatsbyImageData,
-  StaticImage,
-} from 'gatsby-plugin-image';
+import React from 'react';
+import { Box, Flex, Text, Highlight } from '@chakra-ui/react';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import '../../style/global.scss';
 import ModalButton from '../ModalButton';
@@ -24,7 +10,7 @@ import { DIVIDE } from '../../constants/paddingY';
 type ItemProps = {
   title: string;
   description: string;
-  extra?: React.ReactNode;
+  extra?: IGatsbyImageData;
   buttonTitle: string;
   titleHighlight?: string[];
   image: IGatsbyImageData;
@@ -36,6 +22,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
   buttonTitle,
   titleHighlight,
   image,
+  extra,
 }) => {
   return (
     <Box py={DIVIDE}>
@@ -47,7 +34,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
         gap={10}
         justifyContent={'space-between'}
         alignItems='center'
-        mt={DIVIDE}
+        // mt={DIVIDE}
       >
         {/* 左边 */}
         <Box
@@ -68,6 +55,17 @@ const Item: React.FunctionComponent<ItemProps> = ({
           <Text fontSize={16} lineHeight={'24px'} color='font.tip' my={6}>
             {description}
           </Text>
+          {extra && (
+            <Box mb={6}>
+              <GatsbyImage
+                image={extra}
+                alt=''
+                loading='lazy'
+                style={{ width: 250 }}
+              />
+            </Box>
+          )}
+
           <ModalButton
             title={buttonTitle}
             w={257}
@@ -83,7 +81,17 @@ const Item: React.FunctionComponent<ItemProps> = ({
           }}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}
-          {!image && <Box w='500px' h='500px' bg='pink'></Box>}
+          {!image && (
+            <Box
+              w={{
+                md: '40%',
+                sm: '100%',
+                xs: '100%',
+              }}
+              height={200}
+              bg='pink'
+            />
+          )}
         </Box>
       </Box>
     </Box>
@@ -122,18 +130,20 @@ export const Header = () => {
         </Text>
       </Title>
       <Flex alignItems='center' justifyContent={'center'} flexWrap='wrap'>
-        <Box w='80px' position={'relative'} top={1}>
+        <Box w='90px' position={'relative'} top={1}>
           <Slider {...settings} className='d-inline-block'>
             {DATA.map((item) => (
-              <Text
-                as='span'
-                color={'primary'}
-                fontWeight={500}
-                fontSize={32}
-                key={item}
-              >
-                {item}
-              </Text>
+              <Box w='90px' textAlign={'right'} key={item}>
+                <Text
+                  as='span'
+                  color={'primary'}
+                  fontWeight={500}
+                  fontSize={32}
+                  key={item}
+                >
+                  {item}
+                </Text>
+              </Box>
             ))}
           </Slider>
         </Box>

@@ -1,6 +1,6 @@
 import React from 'react';
 import MyContainer from '../container';
-import { Flex, Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';

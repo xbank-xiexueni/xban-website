@@ -78,15 +78,16 @@ const Content1 = () => {
               <Box w={150} position='relative' top={1}>
                 <Slider className='d-inline-block' {...settings}>
                   {['Assets', 'Web3 Events', 'Communities'].map(
-                    (item, index) => (
-                      <Text
-                        color={'primary'}
-                        fontWeight={500}
-                        fontSize={24}
-                        key={`${item}${index}`}
-                      >
-                        {item}
-                      </Text>
+                    (item) => (
+                      <Box w={150} textAlign='center' key={item}>
+                        <Text
+                          color={'primary'}
+                          fontWeight={500}
+                          fontSize={24}
+                        >
+                          {item}
+                        </Text>
+                      </Box>
                     )
                   )}
                 </Slider>

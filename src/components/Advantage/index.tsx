@@ -63,7 +63,7 @@ const Advantage = () => {
             Buy&Hold Newly Released NFTs as soon as faster
           </Text>
         </Center>
-        <Flex gap={10} mt={90} position='relative'>
+        <Flex gap={10} mt={90} position='relative' flexWrap={'wrap'}>
           <Box
             w={127}
             h={127}
@@ -79,7 +79,7 @@ const Advantage = () => {
             transform={'auto'}
             translate='yes'
             translateX={'-50%'}
-            translateY={'-50%'}
+            translateY='-50%'
             fontSize={58}
             fontWeight={700}
           >
@@ -111,9 +111,9 @@ const CHECKED_ICON = (
     <path
       d='M2 7.81888L7.61893 13.4378L18.8568 2.19995'
       stroke='#50B64D'
-      stroke-width='2.78989'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2.78989'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
@@ -129,16 +129,16 @@ const UNCHECKED_ICON = (
     <path
       d='M6 18C10.2 13.8 18 6 18 6'
       stroke='#F35C59'
-      stroke-width='3'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='3'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M18 18C13.8 13.8 6 6 6 6'
       stroke='#F35C59'
-      stroke-width='3'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='3'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
@@ -150,7 +150,17 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
   image,
 }) => {
   return (
-    <Box bg='#FFFFFF' borderRadius={10} py={'60px'} px='50px' w='48%'>
+    <Box
+      bg='#FFFFFF'
+      borderRadius={10}
+      py={'60px'}
+      px='50px'
+      w={{
+        md: '48%',
+        sm: '100%',
+        xs: '100%',
+      }}
+    >
       <Text fontSize={40} lineHeight='47px' fontWeight={700} mb={'40px'}>
         <Highlight query={checked ? 'xBank' : ''} styles={{ color: 'primary' }}>
           {title}

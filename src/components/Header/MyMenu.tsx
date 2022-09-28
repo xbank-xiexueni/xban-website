@@ -1,12 +1,4 @@
-import {
-  Button,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  MenuProps,
-  Portal,
-} from '@chakra-ui/react';
+import { Menu, MenuButton, MenuItem, MenuList, Portal } from '@chakra-ui/react';
 import React from 'react';
 
 type MyMenuProps = {
@@ -17,11 +9,15 @@ type MyMenuProps = {
 const MyMenu: React.FunctionComponent<MyMenuProps> = ({ title, data }) => {
   return (
     <Menu>
-      <MenuButton ml={10}>{title}</MenuButton>
+      <MenuButton ml={10} id='menu-button'>
+        {title}
+      </MenuButton>
       <Portal>
-        <MenuList zIndex={10}>
+        <MenuList zIndex={20}>
           {data?.map(({ label, onClick }) => (
-            <MenuItem onClick={onClick}>{label}</MenuItem>
+            <MenuItem onClick={onClick} key={label}>
+              {label}
+            </MenuItem>
           ))}
         </MenuList>
       </Portal>

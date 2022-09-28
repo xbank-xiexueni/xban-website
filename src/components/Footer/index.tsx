@@ -7,8 +7,7 @@ import {
   LINKEDIN_URL,
 } from '../../constants/URL';
 import MyContainer from '../container';
-import { Link } from 'gatsby';
-import { handleNavigate } from '../../utils/navagate';
+import { handleNavigate } from '../../utils/navigate';
 
 const DES = [
   'Initial Blockchain Tech Inc (EntityID#20218185210) is a company registered with the office of the secretary of state of the state of Colorado, with its principal office address at 4255 South Buckley Road#1296, Aurora, Colorado. It is a regulated money service provider which has registered with FinCEN as a Money Service Business (MSB) with the registration number of 31000205541338.',
@@ -69,12 +68,10 @@ const Footer = () => {
           {new Date().getFullYear()}2022 © All Rights Reserved
         </Text>
         <Text color={'font.primary'} opacity={0.5} fontSize={12}>
-          <Link to='https://xbank.plus/terms-of-service/en'>
-            Terms of Services
-          </Link>
+          <a href='https://xbank.plus/terms-of-service/en'>Terms of Services</a>
         </Text>
         <Text color={'font.primary'} opacity={0.5} fontSize={12}>
-          <Link to='https://xbank.plus/privacy-policy/en'>Private Policy</Link>
+          <a href='https://xbank.plus/privacy-policy/en'>Private Policy</a>
         </Text>
       </Flex>
     </MyContainer>
@@ -92,9 +89,9 @@ const EMAIL = (
     <path
       d='M18.3346 3.00065C18.3346 2.08398 17.5846 1.33398 16.668 1.33398H3.33464C2.41797 1.33398 1.66797 2.08398 1.66797 3.00065M18.3346 3.00065V13.0007C18.3346 13.9173 17.5846 14.6673 16.668 14.6673H3.33464C2.41797 14.6673 1.66797 13.9173 1.66797 13.0007V3.00065M18.3346 3.00065L10.0013 8.83398L1.66797 3.00065'
       stroke='#00000F'
-      stroke-width='1.66667'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.66667'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
@@ -112,7 +109,7 @@ const TWITTER = (
       height='31.4118'
       rx='15.7059'
       fill='black'
-      fill-opacity='0.1'
+      fillOpacity='0.1'
     />
     <path
       d='M21.9184 10.4121L22.4644 10.376C22.4499 10.1563 22.3051 9.96674 22.097 9.89488C21.8889 9.82302 21.658 9.8829 21.511 10.0468L21.9184 10.4121ZM21.5766 13.0555C21.5766 12.7533 21.3316 12.5083 21.0294 12.5083C20.7272 12.5083 20.4822 12.7533 20.4822 13.0555H21.5766ZM15.7051 13.8516V14.3988H16.2523V13.8516H15.7051ZM10.3616 10.4121L10.8743 10.2208C10.7981 10.0166 10.6079 9.87705 10.3902 9.86566C10.1725 9.85428 9.96884 9.97319 9.87173 10.1684L10.3616 10.4121ZM13.8354 18.5418L14.2233 18.9278C14.3568 18.7936 14.4115 18.6 14.3679 18.4158C14.3243 18.2317 14.1887 18.0831 14.0092 18.023L13.8354 18.5418ZM9.47266 20.2392V19.692C9.23176 19.692 9.0192 19.8496 8.94912 20.0801C8.87905 20.3105 8.96796 20.5597 9.16809 20.6938L9.47266 20.2392ZM20.3493 11.2817L19.9428 11.648L20.1401 11.867L20.4315 11.8227L20.3493 11.2817ZM21.3724 10.4482C21.418 11.1381 21.3747 11.5442 21.269 11.8429C21.1675 12.1301 20.9898 12.3712 20.6502 12.6978L21.4087 13.4867C21.8036 13.1069 22.1178 12.7253 22.3008 12.2077C22.4798 11.7016 22.5136 11.1207 22.4644 10.376L21.3724 10.4482ZM21.5766 13.7064V13.0922H20.4822V13.7064H21.5766ZM21.5766 13.0922V13.0555H20.4822V13.0922H21.5766ZM15.158 13.2262V13.8516H16.2523V13.2262H15.158ZM18.399 9.86492C16.5742 9.86492 15.158 11.454 15.158 13.2262H16.2523C16.2523 11.9976 17.2377 10.9593 18.399 10.9593V9.86492ZM20.4822 13.7064C20.4822 17.5181 17.2904 20.8088 13.5238 20.8088V21.9031C17.9196 21.9031 21.5766 18.0974 21.5766 13.7064H20.4822ZM9.84898 10.6034C10.3496 11.9451 12.2154 14.3988 15.7051 14.3988V13.3044C12.7943 13.3044 11.2626 11.2615 10.8743 10.2208L9.84898 10.6034ZM9.87173 10.1684C8.93147 12.0582 8.75993 13.9243 9.42649 15.5249C10.0932 17.1257 11.554 18.3547 13.6616 19.0607L14.0092 18.023C12.1164 17.3889 10.9513 16.3397 10.4368 15.1041C9.92205 13.8682 10.0138 12.3395 10.8515 10.6559L9.87173 10.1684ZM13.4475 18.1559C12.9326 18.6733 11.4287 19.692 9.47266 19.692V20.7864C11.7838 20.7864 13.5529 19.6015 14.2233 18.9278L13.4475 18.1559ZM20.7558 10.9154C20.1754 10.2714 19.3344 9.86492 18.399 9.86492V10.9593C19.0106 10.9593 19.5606 11.2238 19.9428 11.648L20.7558 10.9154ZM20.4315 11.8227C21.1334 11.716 21.8152 11.3469 22.3258 10.7774L21.511 10.0468C21.1628 10.4351 20.7078 10.6738 20.2671 10.7407L20.4315 11.8227ZM9.16809 20.6938C10.6202 21.6667 12.0191 21.9031 13.5238 21.9031V20.8088C12.1554 20.8088 10.9921 20.5986 9.77722 19.7846L9.16809 20.6938Z'
@@ -135,28 +132,28 @@ const FACEBOOK = (
       height='31.4118'
       rx='15.7059'
       fill='black'
-      fill-opacity='0.1'
+      fillOpacity='0.1'
     />
     <path
       d='M16.3535 21.5963C19.6062 21.5963 22.2432 18.9594 22.2432 15.7066C22.2432 12.4538 19.6062 9.81689 16.3535 9.81689C13.1007 9.81689 10.4637 12.4538 10.4637 15.7066C10.4637 18.9594 13.1007 21.5963 16.3535 21.5963Z'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M18.8075 13.2524H17.8259C17.4354 13.2524 17.0609 13.4076 16.7847 13.6837C16.5086 13.9598 16.3535 14.3344 16.3535 14.7249V21.5962'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M14.3902 16.688H18.3167'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
@@ -175,22 +172,22 @@ const DISCORD = (
       height='31.4118'
       rx='15.7059'
       fill='black'
-      fill-opacity='0.1'
+      fillOpacity='0.1'
     />
     <g clip-path='url(#clip0_1_873)'>
       <path
         d='M21.3473 10.3618L17.1623 22.3594L14.7709 16.9605L9.39026 14.561L21.3473 10.3618Z'
         stroke='#00000F'
-        stroke-width='1.19975'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.19975'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
       <path
         d='M21.3473 10.3618L14.7709 16.9605'
         stroke='#00000F'
-        stroke-width='1.19975'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.19975'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </g>
     <defs>
@@ -220,12 +217,12 @@ const INS = (
       height='31.4118'
       rx='15.7059'
       fill='black'
-      fill-opacity='0.1'
+      fillOpacity='0.1'
     />
     <path
       d='M19.7331 12.9118H20.2941M13.2825 10.0977H20.0136C21.2528 10.0977 22.2573 11.1056 22.2573 12.349V19.1029C22.2573 20.3462 21.2528 21.3542 20.0136 21.3542H13.2825C12.0434 21.3542 11.0388 20.3462 11.0388 19.1029V12.349C11.0388 11.1056 12.0434 10.0977 13.2825 10.0977ZM16.6481 17.9772C15.4089 17.9772 14.4044 16.9693 14.4044 15.7259C14.4044 14.4826 15.4089 13.4746 16.6481 13.4746C17.8872 13.4746 18.8918 14.4826 18.8918 15.7259C18.8918 16.9693 17.8872 17.9772 16.6481 17.9772Z'
       stroke='#00000F'
-      stroke-width='0.984945'
+      strokeWidth='0.984945'
     />
   </svg>
 );
@@ -244,35 +241,35 @@ const LINKEDIN = (
       height='31.4118'
       rx='15.7059'
       fill='black'
-      fill-opacity='0.1'
+      fillOpacity='0.1'
     />
     <path
       d='M21.2027 10.3076H11.3865C11.1154 10.3076 10.8957 10.5274 10.8957 10.7984V20.6146C10.8957 20.8857 11.1154 21.1054 11.3865 21.1054H21.2027C21.4737 21.1054 21.6935 20.8857 21.6935 20.6146V10.7984C21.6935 10.5274 21.4737 10.3076 21.2027 10.3076Z'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M15.8038 14.7246V18.6511'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M13.8405 14.7246V18.6511'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M15.8038 16.4424C15.8038 15.9868 15.9848 15.5499 16.3069 15.2278C16.6291 14.9056 17.066 14.7246 17.5216 14.7246C17.9772 14.7246 18.4141 14.9056 18.7363 15.2278C19.0584 15.5499 19.2394 15.9868 19.2394 16.4424V18.6511'
       stroke='#00000F'
-      stroke-width='1.30882'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.30882'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M13.8406 13.4978C14.2472 13.4978 14.5768 13.1682 14.5768 12.7616C14.5768 12.355 14.2472 12.0254 13.8406 12.0254C13.434 12.0254 13.1043 12.355 13.1043 12.7616C13.1043 13.1682 13.434 13.4978 13.8406 13.4978Z'
@@ -302,9 +299,9 @@ const ICON = (
         y2='31.56'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#EA01E5' />
-        <stop offset='0.437907' stop-color='#5844F5' />
-        <stop offset='1' stop-color='#1CFEF0' />
+        <stop stopColor='#EA01E5' />
+        <stop offset='0.437907' stopColor='#5844F5' />
+        <stop offset='1' stopColor='#1CFEF0' />
       </linearGradient>
     </defs>
   </svg>

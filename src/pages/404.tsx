@@ -1,49 +1,28 @@
-import * as React from "react"
-import { Link, HeadFC } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from 'react';
+import { Link, HeadFC } from 'gatsby';
+import { Flex, Button, Text, Heading, Box } from '@chakra-ui/react';
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Flex h='100vh' alignItems={'center'}>
+      <Box m={5} border='1px solid var(--chakra-colors-bg-gray)'>
+        <Heading bg={'bg.gray'} textAlign='center' py={2}>
+          Not Found
+        </Heading>
+        <Flex justify={'center'} p={6} flexWrap='wrap'>
+          <Text fontSize={16}>
+            Sorry, we couldn’t find what you were looking for.
+          </Text>
 
-export default NotFoundPage
+          <Button bg={'primary'} color='#FFFFFF' mt={6}>
+            <Link to='/'>Go home</Link>.
+          </Button>
+        </Flex>
+      </Box>
+    </Flex>
+  );
+};
 
-export const Head: HeadFC = () => <title>Not found</title>
+export default NotFoundPage;
+
+export const Head: HeadFC = () => <title>Not found</title>;

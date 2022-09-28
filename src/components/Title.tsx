@@ -1,11 +1,4 @@
-import {
-  Text,
-  Box,
-  Center,
-  Heading,
-  HeadingProps,
-  TextProps,
-} from '@chakra-ui/react';
+import { Text, TextProps } from '@chakra-ui/react';
 import React from 'react';
 
 const Title: React.FunctionComponent<TextProps> = ({ children, ...rest }) => {

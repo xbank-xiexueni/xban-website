@@ -25,9 +25,9 @@ const theme = {
   },
   breakpoints,
   fonts: {
-    body: 'Harmony',
-    heading: 'Harmony',
-    mono: 'Harmony',
+    body: 'HarmonyOS',
+    heading: 'HarmonyOS',
+    mono: 'HarmonyOS',
   },
 };
 

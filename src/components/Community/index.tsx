@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Highlight, Text } from '@chakra-ui/react';
+import { Box, Flex, Highlight, Text } from '@chakra-ui/react';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import Slider from 'react-slick';
@@ -8,7 +8,7 @@ import {
   MEDIUM_URL,
   TWITTER_URL,
 } from '../../constants/URL';
-import { handleNavigate } from '../../utils/navagate';
+import { handleNavigate } from '../../utils/navigate';
 import MyContainer from '../container';
 import Title from '../Title';
 import CardBorder from './CardBorder';
@@ -18,15 +18,34 @@ const COMMENT_DATA = [
     state: 'United Kingdom',
     name: '@qazim_rama',
     p: 'Qazim Rama | xbank.plus',
-    comment:
-      'So excited with @xBank_Official long time i am a part of xBank, I bought bitcoin and earned up to 5.56% APY with Crypto2. The best for crypto beginners. Come to xBank bit.ly/3pMAIYw',
+    comment: (
+      <Box>
+        So excited with
+        <Text color='primary' as='span'>
+          <a href={TWITTER_URL}>&nbsp;@xBank_Official&nbsp;</a>
+        </Text>
+        long time i am a part of xBank, I bought bitcoin and earned up to 5.56%
+        APY with Crypto2. The best for crypto beginners. Come to xBank
+        <Text color='primary' as='span'>
+          <a href={'http://www.bit.ly/3pMAIYw'}>&nbsp;bit.ly/3pMAIYw&nbsp;</a>
+        </Text>
+        ,
+      </Box>
+    ),
   },
   {
     p: 'Danielle Staggs',
     name: '@Billyswife94',
     state: 'United States',
-    comment:
-      '#NFT #web3 #xbank xBank is a platform that helps web2 users buy NFTs and digital currency directly @xBank_Official',
+    comment: (
+      <Box>
+        #NFT #web3 #xbank xBank is a platform that helps web2 users buy NFTs and
+        digital currency directly
+        <Text color='primary' as='span'>
+          <a href={TWITTER_URL}>&nbsp;@xBank_Official&nbsp;</a>
+        </Text>
+      </Box>
+    ),
   },
   {
     p: 'Top pour les novices!',
@@ -225,8 +244,16 @@ const Community = () => {
       {/* 评价 */}
       <Slider {...settings}>
         {COMMENT_DATA.map(({ name, comment, p }, index) => (
-          <Box>
-            <CardBorder p={6} mr={(index + 1) % 3 === 0 ? 0 : 6} minW={200}>
+          <Box key={name}>
+            <CardBorder
+              p={6}
+              mr={{
+                md: (index + 1) % 3 === 0 ? 0 : 6,
+                sm: 0,
+                xs: 0,
+              }}
+              minW={200}
+            >
               {comment}
             </CardBorder>
             <Flex ml={10} mt={-8}>

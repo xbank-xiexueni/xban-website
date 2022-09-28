@@ -1,25 +1,18 @@
 import { Box, Divider } from '@chakra-ui/react';
-import React, {
-  Component,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React from 'react';
 // import ReactPageScroller from 'react-page-scroller';
 import MyContainer from '../container';
 import Item, { Header } from './Item';
-// @ts-ignore
-import Zoom from 'react-reveal/Zoom';
 import { graphql, useStaticQuery } from 'gatsby';
 import { DIVIDE } from '../../constants/paddingY';
-import Slider from 'react-slick';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const DATA = [
   {
     key: 'why1',
     title: 'NFT lowest as $10, Join to Free Mint & Pre-Mint',
     titleHighlight: ['NFT', '$10'],
+    extra: <StaticImage src='../../images/why/process1.png' alt={''} />,
     buttonTitle: 'Buy my NFT',
     description:
       'Pick-Up and Own Your New Profile Picture by Artists; Find Interesting Digital Collectibles of Sport, Music and Photography.',
@@ -57,6 +50,11 @@ const WhyChoose = () => {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
+      why1extra: file(relativePath: { eq: "why/process1.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
       why2: file(relativePath: { eq: "why/why2.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
@@ -74,65 +72,26 @@ const WhyChoose = () => {
       }
     }
   `);
-  const [flag, setFlag] = useState(false);
-
-  useEffect(() => {
-    // document.addEventListener(
-    //   'wheel',
-    //   function (event) {
-    //     if (!flag) {
-    //       document.removeEventListener('wheel', () => {});
-    //       return;
-    //     }
-    //     console.log(flag, 'wheel');
-    //     ref?.current?.goToPage(2);
-    //     event.preventDefault();
-    //   },
-    //   { passive: false }
-    // );
-    // document.addEventListener('scroll', function (event) {
-    //   console.log('1212');
-    // });
-  }, [flag]);
-  console.log(flag);
-
-  useEffect(() => {
-    // 添加滚动事件
-    addEventListener('scroll', handleScroll);
-    return () => {
-      removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    // rot.style.width = innerot.clientHeight + 3 + 'px'; // 3px 预留滚动条
-    // innerot.style.transform = `translateY(-${innerot.clientHeight}px) rotateZ(90deg) rotateX(180deg) translateY(${innerot.clientHeight}px)`;
-    // const scrollTop =
-    //   document.documentElement.scrollTop ||
-    //   window?.pageYOffset ||
-    //   document.body.scrollTop;
-    // //  高度
-    // const dom = document.getElementById('content1');
-    // const top: number = dom?.offsetTop || 500;
-    // console.log(scrollTop);
-    // if (scrollTop > top || (scrollTop > top && scrollTop < top + innerHeight)) {
-    //   setFlag(true);
-    // } else {
-    //   setFlag(false);
-    // }
-  }, []);
 
   return (
     <Box bg='bg.gray' py={DIVIDE}>
       {/* <MyContainer> */}
       <Header />
       {DATA.map((item, index) => (
-        <Box position={'sticky'} top={130} zIndex={11 + index} bg='bg.gray'>
+        <Box
+          position={'sticky'}
+          top={130}
+          zIndex={11 + index}
+          bg='bg.gray'
+          key={item.key}
+        >
+          {index !== 0 && <Divider color={'gray'} borderWidth={2} />}
           <MyContainer>
-            {index !== 0 && <Divider color={'gray'} borderWidth={2} />}
-
             <Item
               {...item}
+              extra={
+                query[`${item?.key}extra`]?.childImageSharp?.gatsbyImageData
+              }
               image={query[item?.key]?.childImageSharp?.gatsbyImageData}
             />
           </MyContainer>

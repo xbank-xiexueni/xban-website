@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import DownloadButton from '../DownloadButton';
@@ -18,6 +18,8 @@ import {
   Text,
   ButtonProps,
 } from '@chakra-ui/react';
+import { handleNavigate } from '../../utils/navigate';
+import { IOS_URL } from '../../constants/URL';
 
 const ARROW = (
   <svg
@@ -98,7 +100,7 @@ const ModalButton: React.FunctionComponent<
             <AlertDialogCloseButton />
 
             <AlertDialogBody>
-              <Flex pb={8} gap={4}>
+              <Flex pb={8} gap={4} flexWrap='wrap'>
                 <Box>
                   <GatsbyImage
                     loading='lazy'
@@ -122,7 +124,11 @@ const ModalButton: React.FunctionComponent<
                   <Flex alignItems={'center'} mt={4}>
                     {/* 按钮 */}
                     <Box mr={6}>
-                      <Box onClick={() => console.log('打开 app store')}>
+                      <Box
+                        onClick={() => {
+                          handleNavigate(IOS_URL, true);
+                        }}
+                      >
                         <DownloadButton dType='ios' bg='#000000' w={120} />
                       </Box>
                       {/* <Box

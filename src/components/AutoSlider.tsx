@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import Slider from 'react-slick';
 import { Box, BoxProps } from '@chakra-ui/react';
-import { handleNavigate } from '../utils/navagate';
+import { handleNavigate } from '../utils/navigate';
 const settings = {
   // dots: true,
   infinite: true,
@@ -54,7 +54,7 @@ const AutoSlider = ({
     <Box {...rest}>
       <Slider {...settings} rtl={isRtl}>
         {data.map(({ url, icon }) => (
-          <FeaturedBox icon={icon} url={url} />
+          <FeaturedBox icon={icon} url={url} key={url} />
         ))}
       </Slider>
     </Box>

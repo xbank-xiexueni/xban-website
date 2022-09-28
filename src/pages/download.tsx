@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { IOS_URL, ANDROID_URL } from '../constants/URL';
-import { handleNavigate } from '../utils/navagate';
+import { handleNavigate } from '../utils/navigate';
 
 const download = () => {
   useEffect(() => {
@@ -34,8 +34,7 @@ const download = () => {
     } else if (browser.versions.android) {
       handleNavigate(ANDROID_URL);
     } else {
-      console.log('qwqw');
-      alert('nonono');
+      console.error('error userAgent');
       // navigate('/');
     }
   }, []);
