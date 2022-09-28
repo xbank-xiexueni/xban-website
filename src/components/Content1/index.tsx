@@ -35,8 +35,8 @@ const Content1 = () => {
           alt=''
           w={{
             md: '50%',
-            sm:'100%',
-            xs:'100%'
+            sm: '100%',
+            xs: '100%',
           }}
         />
       </Box>
@@ -118,9 +118,17 @@ const Content1 = () => {
             <ModalButton
               title='Try it !'
               color={'#FFFFFF'}
-              w={371}
+              w={{
+                md: 371,
+                sm: 232,
+                xs: 232,
+              }}
               fontSize={32}
-              height={78}
+              h={{
+                md: 78,
+                sm: 47,
+                xs: 47,
+              }}
               borderRadius={40}
               mt={70}
             />

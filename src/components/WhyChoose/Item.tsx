@@ -42,8 +42,20 @@ const Item: React.FunctionComponent<ItemProps> = ({
             sm: '100%',
             md: '50%',
           }}
+          textAlign={{
+            md: 'left',
+            sm: 'center',
+            xs: 'center',
+          }}
         >
-          <Text fontSize={40} lineHeight={'60px'} fontWeight={700}>
+          <Text
+            fontSize={{
+              md: 40,
+              sm: 18,
+              xs: 18,
+            }}
+            fontWeight={700}
+          >
             <Highlight
               query={titleHighlight || ''}
               styles={{ color: 'var(--chakra-colors-primary)' }}
@@ -52,7 +64,16 @@ const Item: React.FunctionComponent<ItemProps> = ({
             </Highlight>
           </Text>
 
-          <Text fontSize={16} lineHeight={'24px'} color='font.tip' my={6}>
+          <Text
+            fontSize={{
+              md: 16,
+              sm: 12,
+              xs: 12,
+            }}
+            lineHeight={'24px'}
+            color='font.tip'
+            my={6}
+          >
             {description}
           </Text>
           {extra && (
@@ -68,10 +89,18 @@ const Item: React.FunctionComponent<ItemProps> = ({
 
           <ModalButton
             title={buttonTitle}
-            w={257}
-            h={68}
+            w={{ md: 316, sm: 201, xs: 201 }}
+            h={{
+              md: 70,
+              sm: 12,
+              xs: 12,
+            }}
+            fontSize={{
+              md: 26,
+              sm: 12,
+              xs: 12,
+            }}
             color='#FFF'
-            fontSize={24}
           />
         </Box>
         <Box
@@ -138,7 +167,11 @@ export const Header = () => {
                   as='span'
                   color={'primary'}
                   fontWeight={500}
-                  fontSize={32}
+                  fontSize={{
+                    md: 32,
+                    sm: 14,
+                    xs: 14,
+                  }}
                   key={item}
                 >
                   {item}
@@ -148,7 +181,14 @@ export const Header = () => {
           </Slider>
         </Box>
 
-        <Text fontWeight={500} fontSize={32} lineHeight={'48px'}>
+        <Text
+          fontWeight={500}
+          fontSize={{
+            md: 32,
+            sm: 14,
+            xs: 14,
+          }}
+        >
           &nbsp;New Internet Never Been Easy Like This
         </Text>
       </Flex>

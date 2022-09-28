@@ -5,6 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title';
 import { handleNavigate } from '../../utils/navigate';
+import ResponsiveBox from '../ResponsiveBox';
 
 const SafeCrypto = () => {
   const query = useStaticQuery(graphql`
@@ -40,6 +41,10 @@ const SafeCrypto = () => {
         width: 169,
         height: 111,
       },
+      styleM: {
+        width: 104,
+        height: 68,
+      },
     },
     {
       key: 'two',
@@ -47,6 +52,10 @@ const SafeCrypto = () => {
       style: {
         width: 214,
         height: 70,
+      },
+      styleM: {
+        width: 118,
+        height: 40,
       },
     },
     {
@@ -56,6 +65,10 @@ const SafeCrypto = () => {
         width: 112,
         height: 112,
       },
+      styleM: {
+        width: 71,
+        height: 71,
+      },
     },
     {
       key: 'four',
@@ -64,6 +77,10 @@ const SafeCrypto = () => {
         width: 174,
         height: 106,
       },
+      styleM: {
+        width: 96,
+        height: 59,
+      },
     },
   ];
 
@@ -71,49 +88,49 @@ const SafeCrypto = () => {
     <MyContainer py={100}>
       <Title>Safe Crypto Service</Title>
       <Flex justify={'space-around'} alignItems='center' flexWrap='wrap'>
-        {DATA.map(({ url, key, style }) => (
-          <Box
-            key={key}
-            onClick={() => {
-              handleNavigate(url, true);
-            }}
-          >
-            <GatsbyImage
-              loading='lazy'
-              image={query[key]?.childImageSharp?.gatsbyImageData}
-              alt=''
-              style={style}
-            />
-          </Box>
+        {DATA.map(({ url, key, style, styleM }) => (
+          // <Box
+          //   key={key}
+          //   onClick={() => {
+          //     handleNavigate(url, true);
+          //   }}
+          // >
+          //   <GatsbyImage
+          //     loading='lazy'
+          //     image={query[key]?.childImageSharp?.gatsbyImageData}
+          //     alt=''
+          //     style={style}
+          //   />
+          // </Box>
+          <ResponsiveBox
+            pc={
+              <GatsbyImage
+                loading='lazy'
+                image={query[key]?.childImageSharp?.gatsbyImageData}
+                alt=''
+                style={style}
+              />
+            }
+            mobile={
+              <Flex
+                w={160}
+                alignItems='center'
+                justify={'center'}
+                bg={'bg.gray'}
+                height={90}
+                mb={2}
+                borderRadius={10}
+              >
+                <GatsbyImage
+                  loading='lazy'
+                  image={query[key]?.childImageSharp?.gatsbyImageData}
+                  alt=''
+                  style={styleM}
+                />
+              </Flex>
+            }
+          />
         ))}
-        {/* 
-        <GatsbyImage
-          loading='lazy'
-          image={query['two']?.childImageSharp?.gatsbyImageData}
-          alt=''
-          style={{
-            width: 214,
-            height: 70,
-          }}
-        />
-        <GatsbyImage
-          loading='lazy'
-          image={query['three']?.childImageSharp?.gatsbyImageData}
-          alt=''
-          style={{
-            width: 112,
-            height: 112,
-          }}
-        />
-        <GatsbyImage
-          loading='lazy'
-          image={query['four']?.childImageSharp?.gatsbyImageData}
-          alt=''
-          style={{
-            width: 174,
-            height: 106,
-          }}
-        /> */}
       </Flex>
     </MyContainer>
   );

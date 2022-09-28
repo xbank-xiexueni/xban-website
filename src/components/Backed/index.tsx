@@ -1,5 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
+import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 
 const LIST = [
@@ -114,23 +117,63 @@ const LIST = [
 ];
 
 const Backed = () => {
+  const query = useStaticQuery(graphql`
+    query {
+      b1: file(relativePath: { eq: "backed/1.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      b2: file(relativePath: { eq: "backed/2.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      b3: file(relativePath: { eq: "backed/3.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      b4: file(relativePath: { eq: "backed/4.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      b5: file(relativePath: { eq: "backed/5.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      b6: file(relativePath: { eq: "backed/6.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+    }
+  `);
   return (
     <Box bg={'bg.gray'} pt={100}>
       <Title>Backed By</Title>
 
       <Flex justify={'center'} gap={10} flexWrap='wrap'>
-        {LIST.map(({ icon, url }) => (
-          <Flex
-            w={150}
-            h={150}
-            borderRadius={'100%'}
-            bg='#FFFFFF'
-            justify={'center'}
-            alignItems='center'
-            key={url}
-          >
-            {icon}
-          </Flex>
+        {['b1', 'b2', 'b3', 'b4', 'b5', 'b6'].map((item) => (
+          <ResponsiveBox
+            key={item}
+            mobile={
+              <GatsbyImage
+                image={query[item]?.childImageSharp?.gatsbyImageData}
+                alt={''}
+                style={{ width: 80, height: 80 }}
+              />
+            }
+            pc={
+              <GatsbyImage
+                image={query[item]?.childImageSharp?.gatsbyImageData}
+                alt={''}
+                style={{ width: 150, height: 150 }}
+              />
+            }
+          />
         ))}
       </Flex>
     </Box>

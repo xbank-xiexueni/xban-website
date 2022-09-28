@@ -61,9 +61,17 @@ const Pay = () => {
             <ModalButton
               title='Buy Cryptos'
               color={'#FFFFFF'}
-              w={316}
-              h={70}
-              fontSize={26}
+              w={{ md: 316, sm: 201, xs: 201 }}
+              h={{
+                md: 70,
+                sm: 12,
+                xs: 12,
+              }}
+              fontSize={{
+                md: 26,
+                sm: 12,
+                xs: 12,
+              }}
             />
           </Box>
         </Box>

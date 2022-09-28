@@ -32,8 +32,17 @@ const Utilities = () => {
         </Box>
         <Box>
           <Heading
-            fontSize={40}
-            lineHeight='57px'
+            fontSize={{
+              md: 40,
+              sm: 28,
+              xs: 28,
+            }}
+            textAlign={{
+              md: 'left',
+              sm: 'center',
+              xs: 'center',
+            }}
+            // lineHeight='57px'
             fontWeight={700}
             color='font.primary'
           >
@@ -52,9 +61,16 @@ const Utilities = () => {
             <ModalButton
               title='Exploring Web3'
               color={'#FFFFFF'}
-              w={316}
-              h={70}
-              fontSize={26}
+              h={{
+                md: 70,
+                sm: 12,
+                xs: 12,
+              }}
+              fontSize={{
+                md: 26,
+                sm: 12,
+                xs: 12,
+              }}
             />
           </Box>
         </Box>

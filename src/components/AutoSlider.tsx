@@ -32,8 +32,16 @@ const FeaturedBox = ({ icon, url }: { icon: ReactNode; url: string }) => {
         handleNavigate(url, true);
       }}
       borderRadius={10}
-      w={216}
-      h={70}
+      w={{
+        md: 216,
+        sm: 160,
+        xs: 160,
+      }}
+      h={{
+        md: 70,
+        sm: 10,
+        xs: 10,
+      }}
       display='inline-flex'
       bg='#FFF'
       alignItems={'center'}

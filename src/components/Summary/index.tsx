@@ -7,11 +7,11 @@ export const DATA = [
     value: '70+',
   },
   {
-    label: 'Supported Countries',
+    label: 'Supported NFT/DAO/Defi/Game projects',
     value: '200,000+',
   },
   {
-    label: 'Supported Countries',
+    label: 'Available Cryptos',
     value: '1000+',
   },
 ];
@@ -20,17 +20,28 @@ const Summary = () => {
   return (
     <Flex justify={'center'} flexWrap='wrap' my={16}>
       {DATA.map(({ label, value }, index) => (
-        <Flex justify={'center'} key={value}>
+        <Flex justify={'center'} key={value} w='30%'>
           <Box textAlign={'center'}>
             <Text
               align={'center'}
-              fontSize={60}
+              fontSize={{
+                md: 60,
+                sm: 24,
+                xs: 24,
+              }}
               fontWeight={700}
               color='font.primary'
             >
               {value}
             </Text>
-            <Text fontSize={14} color='font.tip'>
+            <Text
+              fontSize={{
+                md: 14,
+                sm: 12,
+                xs: 12,
+              }}
+              color='font.tip'
+            >
               {label}
             </Text>
           </Box>

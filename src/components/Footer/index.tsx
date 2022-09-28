@@ -63,17 +63,26 @@ const Footer = () => {
         </Flex>
       </Flex>
       <Divider />
-      <Flex mt={3} maxW={406} justify='space-between'>
-        <Text color={'font.primary'} fontSize={12}>
+      <Box
+        display={{
+          md: 'flex',
+          sm: 'block',
+          xs: 'block',
+        }}
+        maxW={406}
+        justifyContent='space-between'
+        flexWrap='wrap'
+      >
+        <Text color={'font.primary'} fontSize={12} mt={3}>
           {new Date().getFullYear()}2022 © All Rights Reserved
         </Text>
-        <Text color={'font.primary'} opacity={0.5} fontSize={12}>
+        <Text color={'font.primary'} opacity={0.5} fontSize={12} mt={3}>
           <a href='https://xbank.plus/terms-of-service/en'>Terms of Services</a>
         </Text>
-        <Text color={'font.primary'} opacity={0.5} fontSize={12}>
+        <Text color={'font.primary'} opacity={0.5} fontSize={12} mt={3}>
           <a href='https://xbank.plus/privacy-policy/en'>Private Policy</a>
         </Text>
-      </Flex>
+      </Box>
     </MyContainer>
   );
 };

@@ -59,16 +59,44 @@ const Advantage = () => {
           </Text>
         </Title>
         <Center>
-          <Text fontSize={16} lineHeight='24px' color={'font.tip'}>
+          <Text
+            fontSize={{
+              md: 16,
+              sm: 12,
+              xs: 12,
+            }}
+            lineHeight='24px'
+            color={'font.tip'}
+          >
             Buy&Hold Newly Released NFTs as soon as faster
           </Text>
         </Center>
-        <Flex gap={10} mt={90} position='relative' flexWrap={'wrap'}>
+        <Flex
+          gap={{
+            md: 10,
+            sm: 2,
+            xs: 2,
+          }}
+          mt={{
+            md: 90,
+            sm: 8,
+            xs: 8,
+          }}
+          position='relative'
+        >
           <Box
-            w={127}
-            h={127}
+            w={{
+              md: 127,
+              xs: 34,
+              xm: 34,
+            }}
+            h={{
+              md: 127,
+              xs: 34,
+              xm: 34,
+            }}
             borderRadius={'50%'}
-            border='8px solid #F2F5FA'
+            border='4px solid #F2F5FA'
             backgroundColor='#FFFFFF'
             position={'absolute'}
             display='flex'
@@ -80,7 +108,11 @@ const Advantage = () => {
             translate='yes'
             translateX={'-50%'}
             translateY='-50%'
-            fontSize={58}
+            fontSize={{
+              md: 58,
+              sm: 16,
+              xs: 16,
+            }}
             fontWeight={700}
           >
             VS
@@ -153,24 +185,55 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
     <Box
       bg='#FFFFFF'
       borderRadius={10}
-      py={'60px'}
-      px='50px'
-      w={{
-        md: '48%',
-        sm: '100%',
-        xs: '100%',
+      py={{
+        md: 15,
+        sm: 4,
+        xs: 4,
       }}
+      px={{
+        md: '50px',
+        sm: 4,
+        xs: 4,
+      }}
+      w={'49%'}
     >
-      <Text fontSize={40} lineHeight='47px' fontWeight={700} mb={'40px'}>
+      <Text
+        fontSize={{
+          md: 40,
+          sm: 16,
+          xs: 16,
+        }}
+        fontWeight={700}
+        mb={{
+          md: 10,
+          xs: 25,
+          sm: 25,
+        }}
+      >
         <Highlight query={checked ? 'xBank' : ''} styles={{ color: 'primary' }}>
           {title}
         </Highlight>
       </Text>
 
       {data.map(({ value, highlight }) => (
-        <Flex gap={2} key={value} mb={6}>
+        <Flex
+          gap={2}
+          key={value}
+          mb={{
+            md: 6,
+            sm: 3,
+            xs: 3,
+          }}
+        >
           <Box>{checked ? CHECKED_ICON : UNCHECKED_ICON}</Box>
-          <Text fontSize={20} lineHeight='28px'>
+          <Text
+            fontSize={{
+              md: 20,
+              sm: 12,
+              xs: 12,
+            }}
+            // noOfLines={4}
+          >
             <Highlight query={highlight} styles={{ fontWeight: 700 }}>
               {value}
             </Highlight>
