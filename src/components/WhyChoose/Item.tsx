@@ -25,22 +25,35 @@ const Item: React.FunctionComponent<ItemProps> = ({
   extra,
 }) => {
   return (
-    <Box py={DIVIDE}>
-      <Box
-        display={{
-          sm: 'block',
-          md: 'flex',
+    <Box
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
+      <Flex
+        gap={{
+          md: 10,
+          sm: 0,
+          xs: 0,
         }}
-        gap={10}
         justifyContent={'space-between'}
         alignItems='center'
+        flexWrap={'wrap'}
         // mt={DIVIDE}
       >
         {/* 左边 */}
         <Box
+          order={{
+            md: 1,
+            sm: 2,
+            xs: 2,
+          }}
           w={{
-            sm: '100%',
             md: '50%',
+            sm: '100%',
+            xs: '100%',
           }}
           textAlign={{
             md: 'left',
@@ -105,8 +118,9 @@ const Item: React.FunctionComponent<ItemProps> = ({
         </Box>
         <Box
           w={{
+            md: '45%',
             sm: '100%',
-            md: '50%',
+            xs: '100%',
           }}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}
@@ -122,7 +136,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
             />
           )}
         </Box>
-      </Box>
+      </Flex>
     </Box>
   );
 };
@@ -145,7 +159,7 @@ export const Header = () => {
   return (
     // <Box position={'sticky'} top={130} bg='bg.gray' zIndex={20} py={'4px'}>
     <Box>
-      <Title mb={4} w='100%' textAlign={'center'}>
+      <Title mb={{ md: 4, sm: 1, xs: 1 }} w='100%' textAlign={'center'}>
         Why choose&nbsp;
         <Text
           as='span'
@@ -159,10 +173,26 @@ export const Header = () => {
         </Text>
       </Title>
       <Flex alignItems='center' justifyContent={'center'} flexWrap='wrap'>
-        <Box w='90px' position={'relative'} top={1}>
+        <Box
+          w={{ md: '90px', sm: '40px', xs: '40px' }}
+          position={'relative'}
+          top={{
+            md: 1,
+            sm: 0.5,
+            xs: 0.5,
+          }}
+        >
           <Slider {...settings} className='d-inline-block'>
             {DATA.map((item) => (
-              <Box w='90px' textAlign={'right'} key={item}>
+              <Box
+                // w={{ md: '90px', sm: '40px', xs: '40px' }}
+                textAlign={{
+                  md: 'right',
+                  sm: 'left',
+                  xs: 'left',
+                }}
+                key={item}
+              >
                 <Text
                   as='span'
                   color={'primary'}

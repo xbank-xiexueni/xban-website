@@ -24,13 +24,15 @@ import {
 import Advantage from '../components/Advantage';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 // import { Header as MyHeader } from '../components/WhyChoose/Item';
 
 const IndexPage = () => {
   // const { t, changeLanguage } = useI18next();
   // const { innerHeight } = window;
   return (
-    <Box>
+    <Box pb={{ xs: 70, sm: 70, md: 0 }}>
+      <MobileStickyFooter />
       <Header />
 
       <Content1 />

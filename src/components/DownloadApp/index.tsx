@@ -5,7 +5,15 @@ import DownloadButton from '../DownloadButton';
 
 const DownloadApp = () => {
   return (
-    <Box bg='bg.gray' py={100}>
+    <Box
+      bg='bg.gray'
+      py={100}
+      display={{
+        md: 'block',
+        sm: 'none',
+        xs: 'none',
+      }}
+    >
       <MyContainer bg='primary' borderRadius={26}>
         <Flex justify={'center'} py={12} flexWrap={'wrap'}>
           <Box

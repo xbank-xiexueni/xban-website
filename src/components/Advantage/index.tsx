@@ -1,6 +1,7 @@
 import { Box, BoxProps, Center, Flex, Highlight, Text } from '@chakra-ui/react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
+import { DIVIDE } from '../../constants/paddingY';
 import MyContainer from '../container';
 import Title from '../Title';
 
@@ -44,7 +45,14 @@ const WITHOUT = [
 
 const Advantage = () => {
   return (
-    <Box bg='bg.gray' py={100}>
+    <Box
+      bg='bg.gray'
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
       <MyContainer>
         <Title>
           Advantage&nbsp;
@@ -86,17 +94,21 @@ const Advantage = () => {
         >
           <Box
             w={{
-              md: 127,
+              md: 137,
               xs: 34,
               xm: 34,
             }}
             h={{
-              md: 127,
+              md: 137,
               xs: 34,
               xm: 34,
             }}
             borderRadius={'50%'}
-            border='4px solid #F2F5FA'
+            border={{
+              md: '10px solid #F2F5FA',
+              sm: '4px solid #F2F5FA',
+              xs: '4px solid #F2F5FA',
+            }}
             backgroundColor='#FFFFFF'
             position={'absolute'}
             display='flex'

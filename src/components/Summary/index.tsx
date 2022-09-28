@@ -18,7 +18,15 @@ export const DATA = [
 
 const Summary = () => {
   return (
-    <Flex justify={'center'} flexWrap='wrap' my={16}>
+    <Flex
+      justify={'center'}
+      flexWrap='wrap'
+      my={{
+        md: 16,
+        sm: 8,
+        xs: 8,
+      }}
+    >
       {DATA.map(({ label, value }, index) => (
         <Flex justify={'center'} key={value} w='30%'>
           <Box textAlign={'center'}>

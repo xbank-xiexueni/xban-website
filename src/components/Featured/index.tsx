@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
+import { DIVIDE } from '../../constants/paddingY';
 import AutoSlider from '../AutoSlider';
 import Title from '../Title';
 
@@ -47,8 +48,23 @@ const DATA = [
 
 const Featured = () => {
   return (
-    <Box bg='bg.gray' pt={100}>
-      <Title>As Featured In</Title>
+    <Box
+      bg='bg.gray'
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
+      <Title
+        mb={{
+          md: 20,
+          sm: 8,
+          xs: 8,
+        }}
+      >
+        As Featured In
+      </Title>
       <AutoSlider data={DATA} mb={5} />
       <AutoSlider data={DATA} isRtl />
     </Box>

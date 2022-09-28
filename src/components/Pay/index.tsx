@@ -1,6 +1,6 @@
 import React from 'react';
 import MyContainer from '../container';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -21,36 +21,77 @@ const Pay = () => {
   `);
 
   return (
-    <MyContainer py={40}>
-      <Box
-        justifyContent={'space-between'}
+    <MyContainer
+      py={{
+        md: 40,
+        xs: 10,
+        sm: 10,
+      }}
+    >
+      <Flex
+        justify={'space-between'}
         alignItems='center'
         gap={10}
-        flexDirection='row-reverse'
-        display={{
-          sm: 'block',
-          md: 'flex',
+        flexWrap='wrap'
+        textAlign={{
+          md: 'left',
+          sm: 'center',
+          xs: 'center',
         }}
       >
-        <Box>
+        <Box
+          order={2}
+          display={{
+            md: 'block',
+            sm: 'none',
+            xs: 'none',
+          }}
+          w={'45%'}
+        >
           <GatsbyImage
             image={query?.pay?.childImageSharp?.gatsbyImageData}
             alt=''
             loading='lazy'
           />
         </Box>
-        <Box>
+        <Box
+          w={{
+            md: '40%',
+            sm: '100%',
+            xs: '100%',
+          }}
+        >
           <Heading
-            fontSize={40}
-            lineHeight='57px'
+            fontSize={{
+              md: 40,
+              sm: 28,
+              xs: 28,
+            }}
             fontWeight={700}
             color='font.primary'
           >
             {title}
           </Heading>
+          <Box
+            display={{
+              md: 'none',
+              sm: 'block',
+              xs: 'block',
+            }}
+            my={8}
+          >
+            <GatsbyImage
+              image={query?.pay?.childImageSharp?.gatsbyImageData}
+              alt=''
+              loading='lazy'
+            />
+          </Box>
           <Text
-            fontSize={16}
-            lineHeight='30px'
+            fontSize={{
+              md: 16,
+              sm: 12,
+              xs: 12,
+            }}
             color={'font.tip'}
             mt={6}
             mb={12}
@@ -75,7 +116,7 @@ const Pay = () => {
             />
           </Box>
         </Box>
-      </Box>
+      </Flex>
     </MyContainer>
   );
 };

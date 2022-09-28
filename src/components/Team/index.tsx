@@ -7,10 +7,11 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import Title from '../Title';
 import left from '../../images/team/team-bg-left.png';
 import right from '../../images/team/team-bg-right.png';
+import { DIVIDE } from '../../constants/paddingY';
 
 const Team = () => {
   return (
-    <Box bg='bg.gray' py={100} pos='relative'>
+    <Box bg='bg.gray' pos='relative'>
       <Box position={'absolute'} bottom={0} left={0}>
         <Image src={left} />
       </Box>
@@ -118,8 +119,22 @@ const Item3 = () => {
 
   const [showIndex, setShowIndex] = useState<string | undefined>();
   return (
-    <Box>
-      <Title>Team & Advisors</Title>
+    <Box
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
+      <Title
+        mb={{
+          md: 20,
+          sm: 8,
+          xs: 8,
+        }}
+      >
+        Team & Advisors
+      </Title>
       <Flex
         flexWrap={'wrap'}
         justify={{

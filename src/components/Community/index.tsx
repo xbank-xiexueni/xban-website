@@ -2,6 +2,7 @@ import { Box, Flex, Highlight, Text } from '@chakra-ui/react';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import Slider from 'react-slick';
+import { DIVIDE } from '../../constants/paddingY';
 import {
   DISCORD_URL,
   LINKEDIN_URL,
@@ -10,6 +11,7 @@ import {
 } from '../../constants/URL';
 import { handleNavigate } from '../../utils/navigate';
 import MyContainer from '../container';
+import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 import CardBorder from './CardBorder';
 
@@ -172,9 +174,36 @@ const settings = {
 
 const Community = () => {
   return (
-    <MyContainer py={100}>
-      <Title>Join Our Community</Title>
-      <Text textAlign={'center'} py={8} fontSize={28} fontWeight={700}>
+    <MyContainer
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
+      <Title
+        mb={{
+          md: 20,
+          sm: 4,
+          xs: 4,
+        }}
+      >
+        Join Our Community
+      </Title>
+      <Text
+        textAlign={'center'}
+        fontSize={{
+          md: 28,
+          sm: 14,
+          xs: 14,
+        }}
+        mb={{
+          md: 8,
+          sm: 10,
+          xs: 10,
+        }}
+        fontWeight={700}
+      >
         <Highlight query={'5 USDT + 500 BUSD'} styles={{ color: 'primary' }}>
           Follow us & Grab a 5 USDT + 500 BUSD Registration Reward
         </Highlight>
@@ -188,12 +217,26 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <StaticImage
-            src={'../../images/social/twitter.png'}
-            alt={''}
-            height={35}
+          <ResponsiveBox
+            mobile={
+              <StaticImage
+                src={'../../images/social/twitter.png'}
+                alt={''}
+                height={25}
+              />
+            }
+            pc={
+              <StaticImage
+                src={'../../images/social/twitter.png'}
+                alt={''}
+                height={35}
+              />
+            }
           />
-          <Text color={'font.tip'}>Twitter</Text>
+
+          <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
+            Twitter
+          </Text>
         </Box>
         <Box
           textAlign={'center'}
@@ -203,12 +246,26 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <StaticImage
-            src={'../../images/social/discord.png'}
-            alt={''}
-            height={35}
+          <ResponsiveBox
+            mobile={
+              <StaticImage
+                src={'../../images/social/discord.png'}
+                alt={''}
+                height={25}
+              />
+            }
+            pc={
+              <StaticImage
+                src={'../../images/social/discord.png'}
+                alt={''}
+                height={35}
+              />
+            }
           />
-          <Text color={'font.tip'}>Discord</Text>
+
+          <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
+            Discord
+          </Text>
         </Box>
         <Box
           textAlign={'center'}
@@ -218,12 +275,26 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <StaticImage
-            src={'../../images/social/linked.png'}
-            alt={''}
-            height={35}
+          <ResponsiveBox
+            mobile={
+              <StaticImage
+                src={'../../images/social/linked.png'}
+                alt={''}
+                height={25}
+              />
+            }
+            pc={
+              <StaticImage
+                src={'../../images/social/linked.png'}
+                alt={''}
+                height={35}
+              />
+            }
           />
-          <Text color={'font.tip'}>Linked in</Text>
+
+          <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
+            Linked in
+          </Text>
         </Box>
         <Box
           textAlign={'center'}
@@ -233,12 +304,26 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <StaticImage
-            src={'../../images/social/medium.png'}
-            alt={''}
-            height={35}
+          <ResponsiveBox
+            mobile={
+              <StaticImage
+                src={'../../images/social/medium.png'}
+                alt={''}
+                height={25}
+              />
+            }
+            pc={
+              <StaticImage
+                src={'../../images/social/medium.png'}
+                alt={''}
+                height={35}
+              />
+            }
           />
-          <Text color={'font.tip'}>Medium</Text>
+
+          <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
+            Medium
+          </Text>
         </Box>
       </Flex>
       {/* 评价 */}

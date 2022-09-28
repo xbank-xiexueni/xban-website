@@ -16,16 +16,34 @@ const DES = [
 
 const Footer = () => {
   return (
-    <MyContainer py={70}>
+    <MyContainer
+      py={{
+        md: 70,
+        sm: 10,
+        xs: 10,
+      }}
+    >
       <Flex alignItems={'center'}>
         {ICON}
-        <Text fontSize={40} color={'font.primary'}>
+        <Text
+          fontSize={{
+            md: 40,
+            sm: 14,
+            xs: 14,
+          }}
+          color={'font.primary'}
+        >
           &nbsp;xBank
         </Text>
       </Flex>
       <Flex justify={'space-between'} mb={70} gap={10} flexWrap='wrap'>
         <Box>
           <Text
+            fontSize={{
+              md: 14,
+              sm: 12,
+              xs: 12,
+            }}
             display={'flex'}
             alignItems='center'
             cursor={'pointer'}

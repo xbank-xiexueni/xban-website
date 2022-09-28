@@ -2,6 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { DIVIDE } from '../../constants/paddingY';
 import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 
@@ -152,8 +153,23 @@ const Backed = () => {
     }
   `);
   return (
-    <Box bg={'bg.gray'} pt={100}>
-      <Title>Backed By</Title>
+    <Box
+      bg={'bg.gray'}
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
+      <Title
+        mb={{
+          md: 20,
+          sm: 8,
+          xs: 8,
+        }}
+      >
+        Backed By
+      </Title>
 
       <Flex justify={'center'} gap={10} flexWrap='wrap'>
         {['b1', 'b2', 'b3', 'b4', 'b5', 'b6'].map((item) => (

@@ -80,7 +80,11 @@ const WhyChoose = () => {
       {DATA.map((item, index) => (
         <Box
           position={'sticky'}
-          top={130}
+          top={{
+            md: 130,
+            sm: 15,
+            xs: 15,
+          }}
           zIndex={11 + index}
           bg='bg.gray'
           key={item.key}

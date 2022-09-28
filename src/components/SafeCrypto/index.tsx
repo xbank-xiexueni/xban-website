@@ -6,6 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title';
 import { handleNavigate } from '../../utils/navigate';
 import ResponsiveBox from '../ResponsiveBox';
+import { DIVIDE } from '../../constants/paddingY';
 
 const SafeCrypto = () => {
   const query = useStaticQuery(graphql`
@@ -85,8 +86,22 @@ const SafeCrypto = () => {
   ];
 
   return (
-    <MyContainer py={100}>
-      <Title>Safe Crypto Service</Title>
+    <MyContainer
+      py={{
+        md: DIVIDE,
+        sm: 10,
+        xs: 10,
+      }}
+    >
+      <Title
+        mb={{
+          md: 20,
+          sm: 8,
+          xs: 8,
+        }}
+      >
+        Safe Crypto Service
+      </Title>
       <Flex justify={'space-around'} alignItems='center' flexWrap='wrap'>
         {DATA.map(({ url, key, style, styleM }) => (
           // <Box

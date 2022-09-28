@@ -1,6 +1,6 @@
 import React from 'react';
 import MyContainer from '../container';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
 
 const title = 'Maximize the Utilities of Your Cryptos and Digital Collectibles';
@@ -9,38 +9,51 @@ const des =
 
 const Utilities = () => {
   return (
-    <MyContainer py={40}>
-      <Box
-        justifyContent={'space-between'}
+    <MyContainer
+      py={{
+        md: 40,
+        xs: 10,
+        sm: 10,
+      }}
+    >
+      <Flex
+        justify={'space-between'}
         alignItems='center'
         gap={10}
-        display={{
-          sm: 'block',
-          md: 'flex',
+        flexWrap='wrap'
+        textAlign={{
+          md: 'left',
+          sm: 'center',
+          xs: 'center',
         }}
       >
-        <Box>
-          <Box
-            w={{
-              md: '40%',
-              sm: '100%',
-              xs: '100%',
-            }}
-            height={200}
-            bg='pink'
-          ></Box>
+        <Box
+          w={{
+            md: '40%',
+            sm: '100%',
+            xs: '100%',
+          }}
+          order={1}
+          display={{
+            md: 'block',
+            sm: 'none',
+            xs: 'none',
+          }}
+        >
+          <Box height={200} bg='pink'></Box>
         </Box>
-        <Box>
+        <Box
+          w={{
+            md: '50%',
+            sm: '100%',
+            xs: '100%',
+          }}
+        >
           <Heading
             fontSize={{
               md: 40,
               sm: 28,
               xs: 28,
-            }}
-            textAlign={{
-              md: 'left',
-              sm: 'center',
-              xs: 'center',
             }}
             // lineHeight='57px'
             fontWeight={700}
@@ -48,9 +61,23 @@ const Utilities = () => {
           >
             {title}
           </Heading>
+          <Box
+            w={'100%'}
+            display={{
+              md: 'none',
+              sm: 'block',
+              xs: 'block',
+            }}
+            my={8}
+          >
+            <Box height={200} bg='pink'></Box>
+          </Box>
           <Text
-            fontSize={16}
-            lineHeight='30px'
+            fontSize={{
+              md: 16,
+              sm: 12,
+              xs: 12,
+            }}
             color={'font.tip'}
             mt={6}
             mb={12}
@@ -74,7 +101,7 @@ const Utilities = () => {
             />
           </Box>
         </Box>
-      </Box>
+      </Flex>
     </MyContainer>
   );
 };

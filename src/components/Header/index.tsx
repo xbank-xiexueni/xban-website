@@ -39,8 +39,8 @@ const Header = () => {
   const isBrowser = typeof window !== 'undefined';
 
   const handleScroll = useCallback(() => {
-    if(!isBrowser) {
-      return
+    if (!isBrowser) {
+      return;
     }
     const scrollTop =
       document.documentElement.scrollTop ||
@@ -176,9 +176,17 @@ const Header = () => {
         </MyContainer>
       </Box>
 
-      <Collapse in={show} animateOpacity>
-        <StickySummary />
-      </Collapse>
+      <Box
+        display={{
+          md: 'block',
+          sm: 'none',
+          xs: 'none',
+        }}
+      >
+        <Collapse in={show} animateOpacity>
+          <StickySummary />
+        </Collapse>
+      </Box>
     </Box>
   );
 };
