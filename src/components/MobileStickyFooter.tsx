@@ -41,6 +41,7 @@ const MobileStickyFooter = () => {
           </Box>
           <ModalButton
             title='Get App'
+            arrow={false}
             w={'64px'}
             h='30px'
             borderRadius={20}
