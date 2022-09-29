@@ -1,12 +1,4 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  useFocusEffect,
-} from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 
@@ -38,17 +30,17 @@ const Content1 = () => {
     autoPlaySpeed: 200,
     adaptiveHeight: true,
   };
-  const [pl, setPl] = useState(isBrowser ? window?.innerWidth - 1200 : 0);
+  // const [pl, setPl] = useState(isBrowser ? window?.innerWidth - 1200 : 0);
 
-  useEffect(() => {
-    if (!isBrowser) return;
-    addEventListener('resize', () => {
-      setPl(window?.innerWidth - 1200);
-    });
-    return removeEventListener('resize', () => {
-      // console.log;
-    });
-  }, []);
+  // useEffect(() => {
+  //   if (!isBrowser) return;
+  //   addEventListener('resize', () => {
+  //     setPl(window?.innerWidth - 1200);
+  //   });
+  //   return removeEventListener('resize', () => {
+  //     // console.log;
+  //   });
+  // }, []);
 
   return (
     <Box position={'relative'}>
@@ -71,7 +63,7 @@ const Content1 = () => {
           xs: 12,
         }}
         pl={{
-          md: pl / 2,
+          md: isBrowser ? (window?.innerWidth - 1200) / 2 : 0,
         }}
       >
         <ResponsiveBox
