@@ -106,8 +106,8 @@ const WhyChoose = () => {
           <MyContainer
             py={{
               md: DIVIDE - 20,
-              sm: '60px',
-              xs: '60px',
+              sm: '25px',
+              xs: '25px',
             }}
           >
             <Item

@@ -1,5 +1,5 @@
 import { Box, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react';
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import Slider from 'react-slick';
 
 import Summary from '../Summary';
@@ -104,7 +104,7 @@ const Content1 = () => {
                 textAlign='center'
                 px={2}
               >
-                <Text>Your All-In-One Portal for</Text>
+                <Text>Your All-In-One Portal</Text>
                 <Text>
                   for
                   <Text
@@ -127,11 +127,21 @@ const Content1 = () => {
                 justify='center'
               >
                 <Text>Find the Hottest&nbsp;</Text>
-                <Box w={90} position='relative' top={1}>
+                <Box
+                  position='relative'
+                  top={1}
+                  display='inline-block'
+                  w='90px'
+                >
                   <Slider className='d-inline-block' {...settings}>
                     {['Assets', 'Web3 Events', 'Communities'].map((item) => (
                       <Box textAlign='center' key={item}>
-                        <Text color={'primary'} fontWeight={500} fontSize={14}>
+                        <Text
+                          color={'primary'}
+                          fontWeight={500}
+                          fontSize={14}
+                          as='span'
+                        >
                           {item}
                         </Text>
                       </Box>

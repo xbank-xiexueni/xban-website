@@ -170,8 +170,8 @@ const Item: React.FunctionComponent<ItemProps> = ({
             xs: 300,
           }}
           mb={{
-            sm: 4,
-            xs: 4,
+            sm: 10,
+            xs: 10,
           }}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}
@@ -238,8 +238,8 @@ export const Header = () => {
                 // w={{ md: '90px', sm: '40px', xs: '40px' }}
                 textAlign={{
                   md: 'right',
-                  sm: 'left',
-                  xs: 'left',
+                  sm: 'right',
+                  xs: 'right',
                 }}
                 key={item}
               >

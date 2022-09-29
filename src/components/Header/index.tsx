@@ -18,6 +18,7 @@ import {
   MenuItem,
   MenuDivider,
   MenuButton,
+  Divider,
 } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import MyContainer from '../container';
@@ -48,6 +49,13 @@ const ARROW = (
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const [focusId, setFocusId] = useState<
+    | 'ABOUT_US_ID'
+    | 'COMMUNITY_ID'
+    | 'CONVERT_MONEY_ID'
+    | 'DISCOVER_WEB3_ID'
+    | undefined
+  >();
   // const [show2, setShow2] = useState(true);
 
   useEffect(() => {
@@ -83,7 +91,7 @@ const Header = () => {
     window?.scrollTo(0, offset - 100);
   }, []);
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   return (
     <Box position={'sticky'} top={0} zIndex={21}>
@@ -118,6 +126,7 @@ const Header = () => {
                 }}
               >
                 <MyMenu
+                  focusId={focusId}
                   title={
                     <Text display={'flex'} alignItems='center'>
                       Products&nbsp;{ARROW}
@@ -126,19 +135,24 @@ const Header = () => {
                   data={[
                     {
                       label: 'Discover Web3',
+                      cId: DISCOVER_WEB3_ID,
                       onClick: () => {
                         scrollTo(DISCOVER_WEB3_ID);
+                        setFocusId(DISCOVER_WEB3_ID);
                       },
                     },
                     {
                       label: 'Convert Money',
+                      cId: CONVERT_MONEY_ID,
                       onClick: () => {
                         scrollTo(CONVERT_MONEY_ID);
+                        setFocusId(CONVERT_MONEY_ID);
                       },
                     },
                   ]}
                 />
                 <MyMenu
+                  focusId={focusId}
                   title={
                     <Text display={'flex'} alignItems='center'>
                       Company&nbsp;{ARROW}
@@ -147,14 +161,18 @@ const Header = () => {
                   data={[
                     {
                       label: 'About Us',
+                      cId: ABOUT_US_ID,
                       onClick: () => {
                         scrollTo(ABOUT_US_ID);
+                        setFocusId(ABOUT_US_ID);
                       },
                     },
                     {
                       label: 'Community',
+                      cId: COMMUNITY_ID,
                       onClick: () => {
                         scrollTo(COMMUNITY_ID);
+                        setFocusId(COMMUNITY_ID);
                       },
                     },
                   ]}
@@ -186,7 +204,7 @@ const Header = () => {
               borderRadius={26}
             />
 
-            <Menu>
+            <Menu isOpen={isOpen}>
               <MenuButton
                 display={{
                   md: 'none',
@@ -196,6 +214,7 @@ const Header = () => {
                 bg='#FFFFFF'
                 as={Box}
                 cursor='pointer'
+                onClick={onToggle}
               >
                 <svg
                   width='40'
@@ -209,44 +228,75 @@ const Header = () => {
                 </svg>
                 {/* <Box onClick={onOpen} cursor={'pointer'}></Box> */}
               </MenuButton>
-              <MenuList>
-                <MenuGroup title='Products'>
-                  <MenuItem
+              <MenuList p={3}>
+                <Text fontWeight={700} fontSize={16}>
+                  Products
+                </Text>
+                <Box fontSize={14}>
+                  <Box
+                    py={2}
                     onClick={() => {
-                      onClose();
                       scrollTo(DISCOVER_WEB3_ID);
+                      setFocusId(DISCOVER_WEB3_ID);
+                      onClose();
                     }}
+                    _active={{
+                      bg: 'bg.gray',
+                    }}
+                    bg={focusId === DISCOVER_WEB3_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     Discover Web3
-                  </MenuItem>
-                  <MenuItem
+                  </Box>
+                  <Box
+                    py={2}
                     onClick={() => {
-                      onClose();
                       scrollTo(CONVERT_MONEY_ID);
-                    }}
-                  >
-                    Convert Money{' '}
-                  </MenuItem>
-                </MenuGroup>
-                <MenuDivider />
-                <MenuGroup title='Company'>
-                  <MenuItem
-                    onClick={() => {
+                      setFocusId(CONVERT_MONEY_ID);
                       onClose();
-                      scrollTo(ABOUT_US_ID);
                     }}
+                    _active={{
+                      bg: 'bg.gray',
+                    }}
+                    bg={focusId === CONVERT_MONEY_ID ? 'bg.gray' : '#FFFFFF'}
+                  >
+                    Convert Money
+                  </Box>
+                </Box>
+
+                <Divider />
+                <Text pt={2} fontWeight={700}>
+                  Company
+                </Text>
+                <Box fontSize={14}>
+                  <Box
+                    py={2}
+                    onClick={() => {
+                      scrollTo(ABOUT_US_ID);
+                      setFocusId(ABOUT_US_ID);
+                      onClose();
+                    }}
+                    _active={{
+                      bg: 'bg.gray',
+                    }}
+                    bg={focusId === ABOUT_US_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     About Us
-                  </MenuItem>
-                  <MenuItem
+                  </Box>
+                  <Box
+                    py={2}
                     onClick={() => {
-                      onClose();
                       scrollTo(COMMUNITY_ID);
+                      setFocusId(COMMUNITY_ID);
+                      onClose();
                     }}
+                    _active={{
+                      bg: 'bg.gray',
+                    }}
+                    bg={focusId === COMMUNITY_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     Community
-                  </MenuItem>
-                </MenuGroup>
+                  </Box>
+                </Box>
               </MenuList>
             </Menu>
           </Flex>
