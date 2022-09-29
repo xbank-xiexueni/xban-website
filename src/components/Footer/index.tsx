@@ -95,10 +95,14 @@ const Footer = () => {
           {new Date().getFullYear()}2022 © All Rights Reserved
         </Text>
         <Text color={'font.primary'} opacity={0.5} fontSize={12} mt={3}>
-          <a href='https://xbank.plus/terms-of-service/en'>Terms of Services</a>
+          <a href='https://xbank.plus/terms-of-service/en' target='_blank'>
+            Terms of Services
+          </a>
         </Text>
         <Text color={'font.primary'} opacity={0.5} fontSize={12} mt={3}>
-          <a href='https://xbank.plus/privacy-policy/en'>Private Policy</a>
+          <a href='https://xbank.plus/privacy-policy/en' target='_blank'>
+            Private Policy
+          </a>
         </Text>
       </Box>
     </MyContainer>

@@ -24,12 +24,16 @@ const COMMENT_DATA = [
       <Box>
         So excited with
         <Text color='primary' as='span'>
-          <a href={TWITTER_URL}>&nbsp;@xBank_Official&nbsp;</a>
+          <a href={TWITTER_URL} target='_blank'>
+            &nbsp;@xBank_Official&nbsp;
+          </a>
         </Text>
         long time i am a part of xBank, I bought bitcoin and earned up to 5.56%
         APY with Crypto2. The best for crypto beginners. Come to xBank
         <Text color='primary' as='span'>
-          <a href={'http://www.bit.ly/3pMAIYw'}>&nbsp;bit.ly/3pMAIYw&nbsp;</a>
+          <a href={'http://www.bit.ly/3pMAIYw'} target='_blank'>
+            &nbsp;bit.ly/3pMAIYw&nbsp;
+          </a>
         </Text>
         ,
       </Box>
@@ -44,7 +48,9 @@ const COMMENT_DATA = [
         #NFT #web3 #xbank xBank is a platform that helps web2 users buy NFTs and
         digital currency directly
         <Text color='primary' as='span'>
-          <a href={TWITTER_URL}>&nbsp;@xBank_Official&nbsp;</a>
+          <a href={TWITTER_URL} target='_blank'>
+            &nbsp;@xBank_Official&nbsp;
+          </a>
         </Text>
       </Box>
     ),

@@ -237,7 +237,7 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
             xs: 3,
           }}
         >
-          <Box>{checked ? CHECKED_ICON : UNCHECKED_ICON}</Box>
+          <Box mt={1}>{checked ? CHECKED_ICON : UNCHECKED_ICON}</Box>
           <Text
             fontSize={{
               md: 20,

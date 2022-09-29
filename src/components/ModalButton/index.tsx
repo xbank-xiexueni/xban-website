@@ -100,7 +100,17 @@ const ModalButton: React.FunctionComponent<
             <AlertDialogCloseButton />
 
             <AlertDialogBody>
-              <Flex pb={8} gap={4} flexWrap='wrap'>
+              <Flex
+                pb={8}
+                gap={4}
+                flexWrap='wrap'
+                justify={{
+                  md: 'space-between',
+                  sm: 'center',
+                  xs: 'center',
+                }}
+                alignItems='center'
+              >
                 <Box>
                   <GatsbyImage
                     loading='lazy'
@@ -110,7 +120,13 @@ const ModalButton: React.FunctionComponent<
                     style={{ width: 167 }}
                   />
                 </Box>
-                <Box>
+                <Box
+                  w={{
+                    md: '60%',
+                    sm: '100%',
+                    xs: '100%',
+                  }}
+                >
                   <Text fontSize={14} fontWeight={700}>
                     <Highlight
                       query={'5 USDT + 500 BUSD'}
@@ -122,7 +138,6 @@ const ModalButton: React.FunctionComponent<
                     </Highlight>
                   </Text>
                   <Flex alignItems={'center'} mt={4}>
-                    {/* 按钮 */}
                     <Box mr={6}>
                       <Box
                         onClick={() => {
