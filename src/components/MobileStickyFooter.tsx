@@ -63,7 +63,7 @@ const MobileStickyFooter = () => {
             gap={'10px'}
             height={20}
           >
-            <Image src={Icon} alt='' width={50} height={50} />
+            <Image src={Icon} alt='logo' width={50} height={50} />
             <Box>
               <Text fontSize={16} fontWeight={700} color='font.primary'>
                 xBank Apps

@@ -178,14 +178,14 @@ const Backed = () => {
             mobile={
               <GatsbyImage
                 image={query[item]?.childImageSharp?.gatsbyImageData}
-                alt={''}
+                alt={'backed'}
                 style={{ width: 80, height: 80 }}
               />
             }
             pc={
               <GatsbyImage
                 image={query[item]?.childImageSharp?.gatsbyImageData}
-                alt={''}
+                alt={'backed'}
                 style={{ width: 150, height: 150 }}
               />
             }

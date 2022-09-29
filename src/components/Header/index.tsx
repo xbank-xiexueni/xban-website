@@ -113,7 +113,7 @@ const Header = () => {
                 }}
                 alignItems='center'
               >
-                <Image src={Icon} h={25} />
+                <Image src={Icon} h={25} alt='icon' />
                 <Text color={'font.primary'} fontSize={30} fontWeight={500}>
                   xBank
                 </Text>

@@ -14,10 +14,10 @@ const Team = () => {
   return (
     <Box bg='bg.gray' pos='relative'>
       <Box position={'absolute'} bottom={0} left={0}>
-        <Image src={left} />
+        <Image src={left} alt='bg' />
       </Box>
       <Box position={'absolute'} bottom={0} right={0}>
-        <Image src={right} />
+        <Image src={right} alt='bg' />
       </Box>
       <MyContainer>
         <Item3 />
@@ -160,7 +160,7 @@ const Item3 = () => {
                     <GatsbyImage
                       loading='lazy'
                       image={query[item]?.childImageSharp?.gatsbyImageData}
-                      alt=''
+                      alt='index'
                       title=''
                       key={item}
                       style={{
@@ -233,7 +233,7 @@ const Item3 = () => {
                               image={
                                 query[item]?.childImageSharp?.gatsbyImageData
                               }
-                              alt=''
+                              alt='index'
                               title=''
                               key={item}
                               style={{
@@ -269,7 +269,7 @@ const Item3 = () => {
                 <GatsbyImage
                   loading='lazy'
                   image={query[item]?.childImageSharp?.gatsbyImageData}
-                  alt=''
+                  alt='index'
                   title=''
                   key={item}
                   // 最大宽度 高度

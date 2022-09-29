@@ -55,7 +55,7 @@ const Pay = () => {
         >
           <GatsbyImage
             image={query?.pay?.childImageSharp?.gatsbyImageData}
-            alt=''
+            alt='pay'
             loading='lazy'
           />
         </Box>
@@ -108,7 +108,7 @@ const Pay = () => {
           >
             <GatsbyImage
               image={query?.pay?.childImageSharp?.gatsbyImageData}
-              alt=''
+              alt='pay'
               loading='lazy'
             />
           </Box>

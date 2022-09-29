@@ -122,7 +122,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
             <Box mb={6}>
               <GatsbyImage
                 image={extra}
-                alt=''
+                alt='item'
                 loading='lazy'
                 style={{ width: 250 }}
               />
@@ -174,7 +174,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
             xs: 10,
           }}
         >
-          {image && <GatsbyImage image={image} alt='' loading='lazy' />}
+          {image && <GatsbyImage image={image} alt='item' loading='lazy' />}
           {!image && (
             <Box
               h={{

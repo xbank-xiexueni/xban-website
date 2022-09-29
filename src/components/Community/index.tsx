@@ -230,14 +230,14 @@ const Community = () => {
             mobile={
               <StaticImage
                 src={'../../images/social/twitter.png'}
-                alt={''}
+                alt={'twitter'}
                 height={25}
               />
             }
             pc={
               <StaticImage
                 src={'../../images/social/twitter.png'}
-                alt={''}
+                alt={'twitter'}
                 height={35}
               />
             }
@@ -259,14 +259,14 @@ const Community = () => {
             mobile={
               <StaticImage
                 src={'../../images/social/discord.png'}
-                alt={''}
+                alt={'discord'}
                 height={25}
               />
             }
             pc={
               <StaticImage
                 src={'../../images/social/discord.png'}
-                alt={''}
+                alt={'discord'}
                 height={35}
               />
             }
@@ -288,14 +288,14 @@ const Community = () => {
             mobile={
               <StaticImage
                 src={'../../images/social/linked.png'}
-                alt={''}
+                alt={'linked'}
                 height={25}
               />
             }
             pc={
               <StaticImage
                 src={'../../images/social/linked.png'}
-                alt={''}
+                alt={'linked'}
                 height={35}
               />
             }
@@ -317,14 +317,14 @@ const Community = () => {
             mobile={
               <StaticImage
                 src={'../../images/social/medium.png'}
-                alt={''}
+                alt={'medium'}
                 height={25}
               />
             }
             pc={
               <StaticImage
                 src={'../../images/social/medium.png'}
-                alt={''}
+                alt={'medium'}
                 height={35}
               />
             }
@@ -351,7 +351,11 @@ const Community = () => {
               {comment}
             </CardBorder>
             <Flex ml={10} mt={-8}>
-              <StaticImage src='../../images/comment.png' alt='' height={44} />
+              <StaticImage
+                src='../../images/comment.png'
+                alt='comment'
+                height={44}
+              />
               <Box ml={4}>
                 <Text color={'font.primary'} fontSize={13}>
                   {p}

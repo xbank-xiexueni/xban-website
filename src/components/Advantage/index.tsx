@@ -341,7 +341,7 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
           xs: 'none',
         }}
       >
-        {image && <GatsbyImage image={image} alt='' loading='lazy' />}
+        {image && <GatsbyImage image={image} alt='adv' loading='lazy' />}
         {!image && <Box height={500} bg='lightgray' />}
       </Box>
     </Box>

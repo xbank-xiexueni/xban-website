@@ -142,7 +142,7 @@ const ModalButton: React.FunctionComponent<
                   <GatsbyImage
                     loading='lazy'
                     image={query.modal?.childImageSharp?.gatsbyImageData}
-                    alt=''
+                    alt='app'
                     title=''
                     style={{ width: 167 }}
                   />

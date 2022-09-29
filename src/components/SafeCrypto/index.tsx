@@ -123,7 +123,7 @@ const SafeCrypto = () => {
               <GatsbyImage
                 loading='lazy'
                 image={query[key]?.childImageSharp?.gatsbyImageData}
-                alt=''
+                alt='safe'
                 style={style}
               />
             }
@@ -140,7 +140,7 @@ const SafeCrypto = () => {
                 <GatsbyImage
                   loading='lazy'
                   image={query[key]?.childImageSharp?.gatsbyImageData}
-                  alt=''
+                  alt='safe'
                   style={styleM}
                 />
               </Flex>

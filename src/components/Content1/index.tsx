@@ -65,7 +65,7 @@ const Content1 = () => {
       >
         <Image
           src={bg}
-          alt=''
+          alt='bg'
           w={{
             md: '50%',
             sm: '100%',
@@ -84,7 +84,7 @@ const Content1 = () => {
           xs: 'block',
         }}
       >
-        <Image src={bgM} alt='' />
+        <Image src={bgM} alt='bgm' />
       </Box>
       <MyContainer
         id='content1'
@@ -152,7 +152,7 @@ const Content1 = () => {
               </Flex>
 
               <Flex justify={'center'} mb={6}>
-                <Image src={mobileImg} alt='' />
+                <Image src={mobileImg} alt='main' />
                 {/* <GatsbyImage
                   alt={''}
                   image={query?.mobile?.childImageSharp?.gatsbyImageData}
@@ -307,7 +307,7 @@ const Content1 = () => {
                   }}
                 >
                   <GatsbyImage
-                    alt={''}
+                    alt={'main'}
                     image={query?.main?.childImageSharp?.gatsbyImageData}
                     loading='lazy'
                     style={{
@@ -324,7 +324,7 @@ const Content1 = () => {
                   }}
                 >
                   <GatsbyImage
-                    alt={''}
+                    alt={'main'}
                     image={query?.main?.childImageSharp?.gatsbyImageData}
                     loading='lazy'
                     style={{
