@@ -9,6 +9,7 @@ import bg from '../../images/content1-bg.png';
 import { DIVIDE } from '../../constants/paddingY';
 import ResponsiveBox from '../ResponsiveBox';
 import MyContainer from '../container';
+import { relative } from 'path/posix';
 
 const LIST = [
   'xBank is the First Platform Making Web3 and Crypto As Easy As Shopping Online ',
@@ -55,15 +56,12 @@ const Content1 = () => {
           }}
         />
       </Box>
-      <Box
+      <MyContainer
         id='content1'
         pt={{
           md: DIVIDE,
           sm: 12,
           xs: 12,
-        }}
-        pl={{
-          md: isBrowser ? (window?.innerWidth - 1200) / 2 : 0,
         }}
       >
         <ResponsiveBox
@@ -145,7 +143,7 @@ const Content1 = () => {
           }
           pc={
             <Flex alignItems={'center'} mb={8}>
-              <Box w='40%'>
+              <Box w={480}>
                 <Heading
                   fontSize={60}
                   // lineHeight='70px'
@@ -226,17 +224,20 @@ const Content1 = () => {
                 />
               </Box>
               <Box
-                bg='lightgray'
-                w={'60%'}
-                h='300px'
+                ml={20}
+                position={'relative'}
+                w={'50%'}
+                height={435}
                 display={{ md: 'block', sm: 'none', xs: 'none' }}
-              ></Box>
+              >
+                <Box bg='lightgray' w={750} position={'absolute'} h={435}></Box>
+              </Box>
             </Flex>
           }
         />
 
         <Divider />
-      </Box>
+      </MyContainer>
       <MyContainer>
         <Summary />
       </MyContainer>
