@@ -1,5 +1,5 @@
 import { Box, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 
 import Summary from '../Summary';
@@ -9,14 +9,11 @@ import bg from '../../images/content1-bg.png';
 import { DIVIDE } from '../../constants/paddingY';
 import ResponsiveBox from '../ResponsiveBox';
 import MyContainer from '../container';
-import { relative } from 'path/posix';
 
 const LIST = [
   'xBank is the First Platform Making Web3 and Crypto As Easy As Shopping Online ',
   'Explore Web3 and Crypto Opportunities, Set Up Multi-Chain Identities, Pay with Trustful Gateway, Hold Digital Assets Safely and More, In One Single Place, with One Single Tap',
 ];
-
-const isBrowser = typeof window !== 'undefined';
 
 const Content1 = () => {
   const settings = {
@@ -72,7 +69,7 @@ const Content1 = () => {
                 // lineHeight='70px'
                 fontWeight={900}
                 textAlign='center'
-                px={3}
+                px={2}
               >
                 <Text>Your All-In-One Portal for</Text>
                 <Text>
@@ -98,7 +95,7 @@ const Content1 = () => {
                 justify='center'
               >
                 <Text>Find the Hottest&nbsp;</Text>
-                <Box w={90} position='relative' top={1.5}>
+                <Box w={90} position='relative' top={1}>
                   <Slider className='d-inline-block' {...settings}>
                     {['Assets', 'Web3 Events', 'Communities'].map((item) => (
                       <Box textAlign='center' key={item}>
@@ -224,7 +221,7 @@ const Content1 = () => {
                 />
               </Box>
               <Box
-                ml={20}
+                ml={10}
                 position={'relative'}
                 w={'50%'}
                 height={435}

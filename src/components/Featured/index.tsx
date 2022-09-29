@@ -66,7 +66,7 @@ const Featured = () => {
         As Featured In
       </Title>
       <AutoSlider data={DATA} mb={5} />
-      <AutoSlider data={DATA} isRtl />
+      {/* <AutoSlider data={DATA} isRtl /> */}
     </Box>
   );
 };
