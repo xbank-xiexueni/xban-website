@@ -91,9 +91,14 @@ const ModalButton: React.FunctionComponent<
             }}
           >
             <AlertDialogHeader
-              fontSize={24}
+              fontSize={{
+                md: 24,
+                sm: 18,
+                xs: 18,
+              }}
               fontWeight={700}
               color='font.primary'
+              w={{ md: '100%', sm: '90%', xs: '90%' }}
             >
               Find the Hottest Web3 Services in xBank
             </AlertDialogHeader>

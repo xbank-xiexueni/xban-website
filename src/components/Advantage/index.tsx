@@ -142,59 +142,11 @@ const Advantage = () => {
             translate='yes'
             translateX={'-50%'}
             translateY='-80%'
-            fontSize={16}
+            fontSize={14}
             fontWeight={700}
           >
             VS
           </Box>
-          {/* <ResponsiveBox
-            mobile={
-              <Box
-                w={34}
-                h={34}
-                borderRadius={'50%'}
-                border={'4px solid #F2F5FA'}
-                backgroundColor='#FFFFFF'
-                position={'absolute'}
-                display='flex'
-                alignItems={'center'}
-                justifyContent='center'
-                top='50%'
-                left='50%'
-                transform={'auto'}
-                translate='yes'
-                translateX={'-30%'}
-                translateY='-50%'
-                fontSize={16}
-                fontWeight={700}
-              >
-                VS
-              </Box>
-            }
-            pc={
-              <Box
-                w={137}
-                h={137}
-                borderRadius={'50%'}
-                border={'10px solid #F2F5FA'}
-                backgroundColor='#FFFFFF'
-                position={'absolute'}
-                display='flex'
-                alignItems={'center'}
-                justifyContent='center'
-                top='50%'
-                left='50%'
-                transform={'auto'}
-                translate='yes'
-                translateX={'-35%'}
-                translateY='-50%'
-                fontSize={58}
-                fontWeight={700}
-              >
-                VS
-              </Box>
-            }
-          /> */}
 
           <ItemCard title='With xBank' data={WITH} checked />
           <ItemCard title='Without xBank' data={WITHOUT} checked={false} />
