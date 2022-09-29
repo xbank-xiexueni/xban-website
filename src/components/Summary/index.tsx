@@ -26,8 +26,12 @@ const Summary = () => {
         sm: 8,
         xs: 8,
       }}
+      gap={{
+        sm: 3,
+        xs: 3,
+      }}
     >
-      {DATA.map(({ label, value }, index) => (
+      {DATA.map(({ label, value }) => (
         <Flex justify={'center'} key={value} w='30%'>
           <Box textAlign={'center'}>
             <Text

@@ -34,7 +34,7 @@ const Content1 = () => {
 
   const query = useStaticQuery(graphql`
     query {
-      main: file(relativePath: { eq: "content1.png" }) {
+      main: file(relativePath: { eq: "content.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }

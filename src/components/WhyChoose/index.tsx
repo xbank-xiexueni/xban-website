@@ -79,9 +79,17 @@ const WhyChoose = () => {
   `);
 
   return (
-    <Box bg='bg.gray' py={DIVIDE}>
+    <Box bg='bg.gray'>
       {/* <MyContainer> */}
-      <Header />
+      <Box
+        pt={{
+          md: DIVIDE,
+          sm: '60px',
+          xs: '60px',
+        }}
+      >
+        <Header />
+      </Box>
       {DATA.map((item, index) => (
         <Box
           position={'sticky'}
@@ -95,7 +103,13 @@ const WhyChoose = () => {
           key={item.key}
         >
           {index !== 0 && <Divider color={'gray'} borderWidth={2} />}
-          <MyContainer>
+          <MyContainer
+            py={{
+              md: DIVIDE - 20,
+              sm: '60px',
+              xs: '60px',
+            }}
+          >
             <Item
               {...item}
               id={item.key}
