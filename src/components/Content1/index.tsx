@@ -134,7 +134,7 @@ const Content1 = () => {
             />
           </Box>
           <Box
-            bg='pink'
+            bg='lightgray'
             w={{
               md: '60%',
               sm: '100%',

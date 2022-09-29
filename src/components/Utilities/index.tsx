@@ -40,7 +40,7 @@ const Utilities = () => {
             xs: 'none',
           }}
         >
-          <Box height={200} bg='pink'></Box>
+          <Box height={500} bg='lightgray'></Box>
         </Box>
         <Box
           w={{
@@ -70,7 +70,7 @@ const Utilities = () => {
             }}
             my={8}
           >
-            <Box height={200} bg='pink'></Box>
+            <Box height={300} bg='lightgray'></Box>
           </Box>
           <Text
             fontSize={{

@@ -53,17 +53,17 @@ const Summary = () => {
               {label}
             </Text>
           </Box>
-          {index !== DATA.length - 1 && (
+          {/* {index !== DATA.length - 1 && (
             <Divider
               orientation='vertical'
-              mx={10}
+              // mx={10}
               display={{
                 xs: 'none',
                 sm: 'none',
                 md: 'block',
               }}
             />
-          )}
+          )} */}
         </Flex>
       ))}
     </Flex>

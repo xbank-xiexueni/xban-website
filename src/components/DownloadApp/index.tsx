@@ -15,7 +15,7 @@ const DownloadApp = () => {
       }}
     >
       <MyContainer bg='primary' borderRadius={26}>
-        <Flex justify={'center'} py={12} flexWrap={'wrap'}>
+        <Flex justify={'center'} py={12} flexWrap={'wrap'} gap={4}>
           <Box
             w={{
               md: '40%',
@@ -23,7 +23,7 @@ const DownloadApp = () => {
               xs: '100%',
             }}
             height={200}
-            bg='pink'
+            bg='lightgray'
           ></Box>
           <Box
             color={'#FFFFFF'}

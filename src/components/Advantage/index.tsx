@@ -1,8 +1,9 @@
 import { Box, BoxProps, Center, Flex, Highlight, Text } from '@chakra-ui/react';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
 import MyContainer from '../container';
+import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 
 const WITH = [
@@ -92,43 +93,55 @@ const Advantage = () => {
           }}
           position='relative'
         >
-          <Box
-            w={{
-              md: 137,
-              xs: 34,
-              xm: 34,
-            }}
-            h={{
-              md: 137,
-              xs: 34,
-              xm: 34,
-            }}
-            borderRadius={'50%'}
-            border={{
-              md: '10px solid #F2F5FA',
-              sm: '4px solid #F2F5FA',
-              xs: '4px solid #F2F5FA',
-            }}
-            backgroundColor='#FFFFFF'
-            position={'absolute'}
-            display='flex'
-            alignItems={'center'}
-            justifyContent='center'
-            top='50%'
-            left='50%'
-            transform={'auto'}
-            translate='yes'
-            translateX={'-50%'}
-            translateY='-50%'
-            fontSize={{
-              md: 58,
-              sm: 16,
-              xs: 16,
-            }}
-            fontWeight={700}
-          >
-            VS
-          </Box>
+          <ResponsiveBox
+            mobile={
+              <Box
+                w={34}
+                h={34}
+                borderRadius={'50%'}
+                border={'4px solid #F2F5FA'}
+                backgroundColor='#FFFFFF'
+                position={'absolute'}
+                display='flex'
+                alignItems={'center'}
+                justifyContent='center'
+                top='50%'
+                left='50%'
+                transform={'auto'}
+                translate='yes'
+                translateX={'-30%'}
+                translateY='-50%'
+                fontSize={16}
+                fontWeight={700}
+              >
+                VS
+              </Box>
+            }
+            pc={
+              <Box
+                w={137}
+                h={137}
+                borderRadius={'50%'}
+                border={'10px solid #F2F5FA'}
+                backgroundColor='#FFFFFF'
+                position={'absolute'}
+                display='flex'
+                alignItems={'center'}
+                justifyContent='center'
+                top='50%'
+                left='50%'
+                transform={'auto'}
+                translate='yes'
+                translateX={'-35%'}
+                translateY='-50%'
+                fontSize={58}
+                fontWeight={700}
+              >
+                VS
+              </Box>
+            }
+          />
+
           <ItemCard title='With xBank' data={WITH} checked />
           <ItemCard title='Without xBank' data={WITHOUT} checked={false} />
         </Flex>
@@ -252,6 +265,9 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
           </Text>
         </Flex>
       ))}
+
+      {image && <GatsbyImage image={image} alt='' loading='lazy' />}
+      {!image && <Box height={500} bg='lightgray' />}
     </Box>
   );
 };

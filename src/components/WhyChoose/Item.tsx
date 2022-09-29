@@ -122,19 +122,14 @@ const Item: React.FunctionComponent<ItemProps> = ({
             sm: '100%',
             xs: '100%',
           }}
+          order={{
+            md: 2,
+            sm: 1,
+            xs: 1,
+          }}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}
-          {!image && (
-            <Box
-              w={{
-                md: '40%',
-                sm: '100%',
-                xs: '100%',
-              }}
-              height={200}
-              bg='pink'
-            />
-          )}
+          {!image && <Box height={500} bg='lightgray' />}
         </Box>
       </Flex>
     </Box>

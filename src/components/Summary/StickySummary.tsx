@@ -36,7 +36,7 @@ const StickySummary = () => {
           </Box>
 
           {index !== DATA.length - 1 && (
-            <Divider orientation='vertical' mx={10} borderColor={'pink'} />
+            <Divider orientation='vertical' mx={10} borderColor={'lightgray'} />
           )}
         </Flex>
       ))}
