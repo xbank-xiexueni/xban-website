@@ -28,6 +28,10 @@ const Pay = () => {
         // xs: '60px',
         // sm: '60px',
       }}
+      pb={{
+        xs: '60px',
+        sm: '60px',
+      }}
     >
       <Flex
         justify={'space-between'}

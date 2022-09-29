@@ -191,9 +191,9 @@ const CHECKED_ICON_M = (
     <path
       d='M2.33594 7.53479L5.61365 10.8125L12.1691 4.25708'
       stroke='#50B64D'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
@@ -234,16 +234,16 @@ const UNCHECKED_ICON_M = (
     <path
       d='M3.5 10.5574C5.95 8.10737 10.5 3.55737 10.5 3.55737'
       stroke='#F35C59'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M10.5 10.5574C8.05 8.10737 3.5 3.55737 3.5 3.55737'
       stroke='#F35C59'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );

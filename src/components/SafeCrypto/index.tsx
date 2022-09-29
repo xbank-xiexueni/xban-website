@@ -118,6 +118,7 @@ const SafeCrypto = () => {
           //   />
           // </Box>
           <ResponsiveBox
+            key={key}
             pc={
               <GatsbyImage
                 loading='lazy'

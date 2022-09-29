@@ -12,6 +12,7 @@ import ResponsiveBox from '../ResponsiveBox';
 import MyContainer from '../container';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import mobileImg from '../../images/content-mobile.png';
 
 const LIST = [
   'xBank is the First Platform Making Web3 and Crypto As Easy As Shopping Online ',
@@ -140,16 +141,17 @@ const Content1 = () => {
                 <Text>&nbsp;in xBank</Text>
               </Flex>
 
-              <Flex justify={'center'}>
-                <GatsbyImage
+              <Flex justify={'center'} mb={6}>
+                <Image src={mobileImg} alt='' />
+                {/* <GatsbyImage
                   alt={''}
-                  image={query?.main?.childImageSharp?.gatsbyImageData}
+                  image={query?.mobile?.childImageSharp?.gatsbyImageData}
                   loading='lazy'
                   style={{
                     width: 293,
                     height: 230,
                   }}
-                />
+                /> */}
               </Flex>
 
               {/* <Box
