@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Text } from '@chakra-ui/react';
+import { Box, Divider, Flex, Text, Image } from '@chakra-ui/react';
 import React from 'react';
 import {
   DISCORD_URL,
@@ -8,6 +8,7 @@ import {
 } from '../../constants/URL';
 import MyContainer from '../container';
 import { handleNavigate } from '../../utils/navigate';
+import LOGO from '../../images/xbank.png';
 
 const DES = [
   'Initial Blockchain Tech Inc (EntityID#20218185210) is a company registered with the office of the secretary of state of the state of Colorado, with its principal office address at 4255 South Buckley Road#1296, Aurora, Colorado. It is a regulated money service provider which has registered with FinCEN as a Money Service Business (MSB) with the registration number of 31000205541338.',
@@ -24,26 +25,23 @@ const Footer = () => {
       }}
     >
       <Flex alignItems={'center'}>
-        {ICON}
+        <Image src={LOGO} h={{ md: 30, sm: 5, xs: 5 }} />
         <Text
           fontSize={{
-            md: 40,
-            sm: 14,
-            xs: 14,
+            md: 30,
+            sm: 16,
+            xs: 16,
           }}
           color={'font.primary'}
         >
           &nbsp;xBank
         </Text>
       </Flex>
-      <Flex justify={'space-between'} mb={70} gap={10} flexWrap='wrap'>
+      <Flex justify={'space-between'} mb={6} gap={10} flexWrap='wrap' mt={8}>
         <Box>
           <Text
-            fontSize={{
-              md: 14,
-              sm: 12,
-              xs: 12,
-            }}
+            fontSize={14}
+            fontWeight={700}
             display={'flex'}
             alignItems='center'
             cursor={'pointer'}
@@ -67,7 +65,7 @@ const Footer = () => {
             ))}
           </Flex> */}
         </Box>
-        <Flex direction={'column'} gap={6}>
+        <Flex direction={'column'} gap={4}>
           {DES.map((item) => (
             <Text
               color={'font.primary'}
@@ -91,15 +89,27 @@ const Footer = () => {
         justifyContent='space-between'
         flexWrap='wrap'
       >
-        <Text color={'font.primary'} fontSize={12} mt={3}>
+        <Text color={'font.primary'} fontSize={12} mt={3} lineHeight={'26px'}>
           {new Date().getFullYear()}2022 © All Rights Reserved
         </Text>
-        <Text color={'font.primary'} opacity={0.5} fontSize={12} mt={3}>
+        <Text
+          color={'font.primary'}
+          opacity={0.5}
+          fontSize={12}
+          mt={3}
+          lineHeight={'26px'}
+        >
           <a href='https://xbank.plus/terms-of-service/en' target='_blank'>
             Terms of Services
           </a>
         </Text>
-        <Text color={'font.primary'} opacity={0.5} fontSize={12} mt={3}>
+        <Text
+          color={'font.primary'}
+          opacity={0.5}
+          fontSize={12}
+          mt={3}
+          lineHeight={'26px'}
+        >
           <a href='https://xbank.plus/privacy-policy/en' target='_blank'>
             Private Policy
           </a>

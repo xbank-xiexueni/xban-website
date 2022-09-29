@@ -18,24 +18,19 @@ import CardBorder from './CardBorder';
 const COMMENT_DATA = [
   {
     state: 'United Kingdom',
-    name: '@qazim_rama',
-    p: 'Qazim Rama | xbank.plus',
+    name: 'Solala',
+    p: '@_euxo1uvss',
     comment: (
       <Box>
-        So excited with
+        Thank you so much sir @furrincrypto for hosting this Giveaway and to
+        thesponsor
         <Text color='primary' as='span'>
           <a href={TWITTER_URL} target='_blank'>
             &nbsp;@xBank_Official&nbsp;
           </a>
         </Text>
-        long time i am a part of xBank, I bought bitcoin and earned up to 5.56%
-        APY with Crypto2. The best for crypto beginners. Come to xBank
-        <Text color='primary' as='span'>
-          <a href={'http://www.bit.ly/3pMAIYw'} target='_blank'>
-            &nbsp;bit.ly/3pMAIYw&nbsp;
-          </a>
-        </Text>
-        ,
+        my greatest Thank you! Another Blessing to begrateful for! Bless you
+        more, sir! Stay safe x
       </Box>
     ),
   },
@@ -157,6 +152,14 @@ const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
         arrows: false,
       },
     },
@@ -299,7 +302,7 @@ const Community = () => {
           />
 
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
-            Linked in
+            Linkedin
           </Text>
         </Box>
         <Box

@@ -1,7 +1,8 @@
 import React from 'react';
 import MyContainer from '../container';
-import { Box, Heading, Text, Flex } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex, Highlight, Divider } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
+import ResponsiveBox from '../ResponsiveBox';
 
 const title = 'Maximize the Utilities of Your Cryptos and Digital Collectibles';
 const des =
@@ -33,7 +34,7 @@ const Utilities = () => {
             sm: '100%',
             xs: '100%',
           }}
-          order={1}
+          order={2}
           display={{
             md: 'block',
             sm: 'none',
@@ -48,19 +49,40 @@ const Utilities = () => {
             sm: '100%',
             xs: '100%',
           }}
+          order={2}
         >
-          <Heading
-            fontSize={{
-              md: 40,
-              sm: 28,
-              xs: 28,
-            }}
-            // lineHeight='57px'
-            fontWeight={700}
-            color='font.primary'
-          >
-            {title}
-          </Heading>
+          <ResponsiveBox
+            pc={
+              <Heading
+                fontSize={40}
+                // lineHeight='57px'
+                fontWeight={700}
+                color='font.primary'
+              >
+                {title}
+              </Heading>
+            }
+            mobile={
+              <Heading
+                fontSize={14}
+                // lineHeight='57px'
+                fontWeight={700}
+                color='font.primary'
+              >
+                <Highlight
+                  query={'Maximize the Utilities'}
+                  styles={{
+                    fontSize: 28,
+                    display: 'block',
+                    color: 'primary',
+                  }}
+                >
+                  {title}
+                </Highlight>
+              </Heading>
+            }
+          />
+
           <Box
             w={'100%'}
             display={{
@@ -93,6 +115,11 @@ const Utilities = () => {
                 sm: 12,
                 xs: 12,
               }}
+              w={{
+                md: 300,
+                sm: 230,
+                xs: 230,
+              }}
               fontSize={{
                 md: 26,
                 sm: 12,
@@ -102,6 +129,16 @@ const Utilities = () => {
           </Box>
         </Box>
       </Flex>
+      <Box
+        display={{
+          md: 'none',
+          sm: 'block',
+          xs: 'block',
+        }}
+        mt={16}
+      >
+        <Divider />
+      </Box>
     </MyContainer>
   );
 };

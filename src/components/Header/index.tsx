@@ -1,9 +1,29 @@
-import { Box, Button, Collapse, Flex, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Image,
+  Collapse,
+  Flex,
+  Text,
+  useDisclosure,
+  // Button,
+  // Drawer,
+  // DrawerOverlay,
+  // DrawerContent,
+  // DrawerCloseButton,
+  // DrawerBody,
+  // DrawerHeader,
+  Menu,
+  MenuList,
+  MenuGroup,
+  MenuItem,
+  MenuDivider,
+  MenuButton,
+} from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import MyContainer from '../container';
 import './index.scss';
 import MyMenu from './MyMenu';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 import StickySummary from '../Summary/StickySummary';
 import {
   ABOUT_US_ID,
@@ -12,6 +32,7 @@ import {
   DISCOVER_WEB3_ID,
 } from '../../constants/ID';
 import ModalButton from '../ModalButton';
+import Icon from '../../images/xbank.png';
 
 const ARROW = (
   <svg
@@ -62,6 +83,8 @@ const Header = () => {
     window?.scrollTo(0, offset - 100);
   }, []);
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box position={'sticky'} top={0} zIndex={21}>
       <Box
@@ -73,21 +96,20 @@ const Header = () => {
         <MyContainer>
           <Flex justify={'space-between'} h={58} alignItems='center'>
             <Flex>
-              <Box
+              <Flex
+                gap={2}
                 onClick={() => {
                   if (isBrowser) {
                     window?.scrollTo(0, 0);
                   }
                 }}
+                alignItems='center'
               >
-                <StaticImage
-                  src='../../images/LOGO_NAME.png'
-                  loading='lazy'
-                  title='logo'
-                  alt='logo'
-                  width={127}
-                />
-              </Box>
+                <Image src={Icon} h={25} />
+                <Text color={'font.primary'} fontSize={30} fontWeight={500}>
+                  xBank
+                </Text>
+              </Flex>
 
               <Flex
                 display={{
@@ -130,7 +152,7 @@ const Header = () => {
                       },
                     },
                     {
-                      label: 'Comminitty',
+                      label: 'Community',
                       onClick: () => {
                         scrollTo(COMMUNITY_ID);
                       },
@@ -163,15 +185,70 @@ const Header = () => {
               color='#FFF'
               borderRadius={26}
             />
-            <Button
-              display={{
-                xs: 'block',
-                sm: 'none',
-              }}
-              colorScheme='primary'
-            >
-              展开
-            </Button>
+
+            <Menu>
+              <MenuButton
+                display={{
+                  md: 'none',
+                  xs: 'block',
+                  sm: 'block',
+                }}
+                bg='#FFFFFF'
+                as={Box}
+                cursor='pointer'
+              >
+                <svg
+                  width='40'
+                  height='40'
+                  viewBox='0 0 40 40'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M5 14H35' stroke='black' strokeWidth='3' />
+                  <path d='M5 26H35' stroke='black' strokeWidth='3' />
+                </svg>
+                {/* <Box onClick={onOpen} cursor={'pointer'}></Box> */}
+              </MenuButton>
+              <MenuList>
+                <MenuGroup title='Products'>
+                  <MenuItem
+                    onClick={() => {
+                      onClose();
+                      scrollTo(DISCOVER_WEB3_ID);
+                    }}
+                  >
+                    Discover Web3
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      onClose();
+                      scrollTo(CONVERT_MONEY_ID);
+                    }}
+                  >
+                    Convert Money{' '}
+                  </MenuItem>
+                </MenuGroup>
+                <MenuDivider />
+                <MenuGroup title='Company'>
+                  <MenuItem
+                    onClick={() => {
+                      onClose();
+                      scrollTo(ABOUT_US_ID);
+                    }}
+                  >
+                    About Us
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      onClose();
+                      scrollTo(COMMUNITY_ID);
+                    }}
+                  >
+                    Community
+                  </MenuItem>
+                </MenuGroup>
+              </MenuList>
+            </Menu>
           </Flex>
         </MyContainer>
       </Box>
@@ -187,6 +264,21 @@ const Header = () => {
           <StickySummary />
         </Collapse>
       </Box>
+      {/* 
+      <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader display={'flex'} alignItems='center' gap={4}>
+            <Image src={Icon} h={25} />
+            <Text color={'font.primary'} fontSize={30} fontWeight={500}>
+              xBank
+            </Text>
+          </DrawerHeader>
+
+          <DrawerBody>1212</DrawerBody>
+        </DrawerContent>
+      </Drawer> */}
     </Box>
   );
 };

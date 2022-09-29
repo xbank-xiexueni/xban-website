@@ -3,7 +3,6 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
 import MyContainer from '../container';
-import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 
 const WITH = [
@@ -92,6 +91,11 @@ const Advantage = () => {
             xs: 8,
           }}
           position='relative'
+          flexWrap={{
+            md: 'nowrap',
+            sm: 'wrap',
+            xs: 'wrap',
+          }}
         >
           <Box
             w={137}
@@ -119,10 +123,10 @@ const Advantage = () => {
             VS
           </Box>
           <Box
-            w={34}
-            h={34}
+            w={10}
+            h={10}
             borderRadius={'50%'}
-            border={'4px solid #F2F5FA'}
+            border={'5px solid #F2F5FA'}
             backgroundColor='#FFFFFF'
             position={'absolute'}
             display={{
@@ -137,7 +141,7 @@ const Advantage = () => {
             transform={'auto'}
             translate='yes'
             translateX={'-50%'}
-            translateY='-50%'
+            translateY='-80%'
             fontSize={16}
             fontWeight={700}
           >
@@ -224,6 +228,23 @@ const CHECKED_ICON = (
     />
   </svg>
 );
+const CHECKED_ICON_M = (
+  <svg
+    width='14'
+    height='15'
+    viewBox='0 0 14 15'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M2.33594 7.53479L5.61365 10.8125L12.1691 4.25708'
+      stroke='#50B64D'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+    />
+  </svg>
+);
 
 const UNCHECKED_ICON = (
   <svg
@@ -250,6 +271,30 @@ const UNCHECKED_ICON = (
   </svg>
 );
 
+const UNCHECKED_ICON_M = (
+  <svg
+    width='14'
+    height='15'
+    viewBox='0 0 14 15'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M3.5 10.5574C5.95 8.10737 10.5 3.55737 10.5 3.55737'
+      stroke='#F35C59'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+    />
+    <path
+      d='M10.5 10.5574C8.05 8.10737 3.5 3.55737 3.5 3.55737'
+      stroke='#F35C59'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+    />
+  </svg>
+);
 const ItemCard: React.FunctionComponent<ItemCardProps> = ({
   title,
   checked,
@@ -270,7 +315,11 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
         sm: 4,
         xs: 4,
       }}
-      w={'49%'}
+      w={{
+        md: '49%',
+        sm: '100%',
+        xs: '100%',
+      }}
     >
       <Text
         fontSize={{
@@ -300,13 +349,31 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
             xs: 3,
           }}
         >
-          <Box mt={1}>{checked ? CHECKED_ICON : UNCHECKED_ICON}</Box>
+          <Box
+            display={{
+              md: 'block',
+              sm: 'none',
+              xs: 'none',
+            }}
+          >
+            <Box mt={1}>{checked ? CHECKED_ICON : UNCHECKED_ICON}</Box>
+          </Box>
+          <Box
+            display={{
+              md: 'none',
+              sm: 'block',
+              xs: 'block',
+            }}
+          >
+            <Box mt={1}>{checked ? CHECKED_ICON_M : UNCHECKED_ICON_M}</Box>
+          </Box>
           <Text
             fontSize={{
-              md: 20,
+              md: 18,
               sm: 12,
               xs: 12,
             }}
+            letterSpacing={'-0.1px'}
             // noOfLines={4}
           >
             <Highlight query={highlight} styles={{ fontWeight: 700 }}>
@@ -315,9 +382,16 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
           </Text>
         </Flex>
       ))}
-
-      {image && <GatsbyImage image={image} alt='' loading='lazy' />}
-      {!image && <Box height={500} bg='lightgray' />}
+      <Box
+        display={{
+          md: 'block',
+          sm: 'none',
+          xs: 'none',
+        }}
+      >
+        {image && <GatsbyImage image={image} alt='' loading='lazy' />}
+        {!image && <Box height={500} bg='lightgray' />}
+      </Box>
     </Box>
   );
 };

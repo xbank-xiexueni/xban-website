@@ -14,6 +14,7 @@ type ItemProps = {
   buttonTitle: string;
   titleHighlight?: string[];
   image: IGatsbyImageData;
+  id: string;
 };
 
 const Item: React.FunctionComponent<ItemProps> = ({
@@ -23,6 +24,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
   titleHighlight,
   image,
   extra,
+  id,
 }) => {
   return (
     <Box
@@ -61,21 +63,42 @@ const Item: React.FunctionComponent<ItemProps> = ({
             xs: 'center',
           }}
         >
-          <Text
-            fontSize={{
-              md: 40,
-              sm: 18,
-              xs: 18,
-            }}
-            fontWeight={700}
-          >
-            <Highlight
-              query={titleHighlight || ''}
-              styles={{ color: 'var(--chakra-colors-primary)' }}
+          {id === 'why1' ? (
+            <Text
+              fontSize={{
+                md: 40,
+                sm: 18,
+                xs: 18,
+              }}
+              fontWeight={700}
             >
-              {title}
-            </Highlight>
-          </Text>
+              <Text>
+                <Highlight
+                  query={titleHighlight || ''}
+                  styles={{ color: 'var(--chakra-colors-primary)' }}
+                >
+                  NFT lowest as $10,
+                </Highlight>
+              </Text>
+              Join to Free Mint & Pre-Mint
+            </Text>
+          ) : (
+            <Text
+              fontSize={{
+                md: 40,
+                sm: 18,
+                xs: 18,
+              }}
+              fontWeight={700}
+            >
+              <Highlight
+                query={titleHighlight || ''}
+                styles={{ color: 'var(--chakra-colors-primary)' }}
+              >
+                {title}
+              </Highlight>
+            </Text>
+          )}
 
           <Text
             fontSize={{
@@ -102,7 +125,15 @@ const Item: React.FunctionComponent<ItemProps> = ({
 
           <ModalButton
             title={buttonTitle}
-            w={{ md: 316, sm: 201, xs: 201 }}
+            w={
+              id === 'why3'
+                ? { md: 330, sm: 230, xs: 230 }
+                : {
+                    md: 300,
+                    sm: 230,
+                    xs: 230,
+                  }
+            }
             h={{
               md: 70,
               sm: 12,
@@ -127,6 +158,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
             sm: 1,
             xs: 1,
           }}
+          h={500}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}
           {!image && <Box height={500} bg='lightgray' />}

@@ -8,11 +8,11 @@ export const DATA = [
   },
   {
     label: 'Supported NFT/DAO/Defi/Game projects',
-    value: '200,000+',
+    value: '2,000,000',
   },
   {
     label: 'Available Cryptos',
-    value: '1000+',
+    value: '90+',
   },
 ];
 

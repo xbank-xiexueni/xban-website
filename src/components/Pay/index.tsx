@@ -1,9 +1,10 @@
 import React from 'react';
 import MyContainer from '../container';
-import { Box, Heading, Text, Flex } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex, Highlight } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
+import ResponsiveBox from '../ResponsiveBox';
 
 const title = 'Pay with Credit Card and Get Your First Crypto Asset';
 const des =
@@ -56,22 +57,43 @@ const Pay = () => {
         </Box>
         <Box
           w={{
-            md: '40%',
+            md: '45%',
             sm: '100%',
             xs: '100%',
           }}
         >
-          <Heading
-            fontSize={{
-              md: 40,
-              sm: 28,
-              xs: 28,
-            }}
-            fontWeight={700}
-            color='font.primary'
-          >
-            {title}
-          </Heading>
+          <ResponsiveBox
+            pc={
+              <Heading
+                fontSize={40}
+                // lineHeight='57px'
+                fontWeight={700}
+                color='font.primary'
+              >
+                {title}
+              </Heading>
+            }
+            mobile={
+              <Heading
+                fontSize={14}
+                // lineHeight='57px'
+                fontWeight={700}
+                color='font.primary'
+              >
+                <Highlight
+                  query={'Pay with Credit Card'}
+                  styles={{
+                    fontSize: 28,
+                    display: 'block',
+                    color: 'primary',
+                  }}
+                >
+                  {title}
+                </Highlight>
+              </Heading>
+            }
+          />
+
           <Box
             display={{
               md: 'none',

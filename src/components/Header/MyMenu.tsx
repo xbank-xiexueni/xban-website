@@ -13,7 +13,7 @@ const MyMenu: React.FunctionComponent<MyMenuProps> = ({ title, data }) => {
         {title}
       </MenuButton>
       <Portal>
-        <MenuList zIndex={20}>
+        <MenuList zIndex={99}>
           {data?.map(({ label, onClick }) => (
             <MenuItem onClick={onClick} key={label}>
               {label}

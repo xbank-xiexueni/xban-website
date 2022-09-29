@@ -70,6 +70,11 @@ const WhyChoose = () => {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
+      why4extra: file(relativePath: { eq: "why/process4.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
     }
   `);
 
@@ -93,6 +98,7 @@ const WhyChoose = () => {
           <MyContainer>
             <Item
               {...item}
+              id={item.key}
               extra={
                 query[`${item?.key}extra`]?.childImageSharp?.gatsbyImageData
               }
