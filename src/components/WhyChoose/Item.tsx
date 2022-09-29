@@ -158,10 +158,23 @@ const Item: React.FunctionComponent<ItemProps> = ({
             sm: 1,
             xs: 1,
           }}
-          h={500}
+          h={{
+            md: 500,
+            sm: 300,
+            xs: 300,
+          }}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}
-          {!image && <Box height={500} bg='lightgray' />}
+          {!image && (
+            <Box
+              h={{
+                md: 500,
+                sm: 300,
+                xs: 300,
+              }}
+              bg='lightgray'
+            />
+          )}
         </Box>
       </Flex>
     </Box>
