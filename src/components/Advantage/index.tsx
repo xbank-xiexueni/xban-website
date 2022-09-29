@@ -93,7 +93,57 @@ const Advantage = () => {
           }}
           position='relative'
         >
-          <ResponsiveBox
+          <Box
+            w={137}
+            h={137}
+            borderRadius={'50%'}
+            border={'10px solid #F2F5FA'}
+            backgroundColor='#FFFFFF'
+            position={'absolute'}
+            display={{
+              md: 'flex',
+              sm: 'none',
+              xs: 'none',
+            }}
+            alignItems={'center'}
+            justifyContent='center'
+            top='50%'
+            left='50%'
+            transform={'auto'}
+            translate='yes'
+            translateX={'-50%'}
+            translateY='-50%'
+            fontSize={58}
+            fontWeight={700}
+          >
+            VS
+          </Box>
+          <Box
+            w={34}
+            h={34}
+            borderRadius={'50%'}
+            border={'4px solid #F2F5FA'}
+            backgroundColor='#FFFFFF'
+            position={'absolute'}
+            display={{
+              md: 'none',
+              sm: 'flex',
+              xs: 'flex',
+            }}
+            alignItems={'center'}
+            justifyContent='center'
+            top='50%'
+            left='50%'
+            transform={'auto'}
+            translate='yes'
+            translateX={'-50%'}
+            translateY='-50%'
+            fontSize={16}
+            fontWeight={700}
+          >
+            VS
+          </Box>
+          {/* <ResponsiveBox
             mobile={
               <Box
                 w={34}
@@ -140,7 +190,7 @@ const Advantage = () => {
                 VS
               </Box>
             }
-          />
+          /> */}
 
           <ItemCard title='With xBank' data={WITH} checked />
           <ItemCard title='Without xBank' data={WITHOUT} checked={false} />

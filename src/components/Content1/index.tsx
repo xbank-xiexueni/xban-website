@@ -48,7 +48,7 @@ const Content1 = () => {
         pt={DIVIDE}
       >
         <Flex alignItems={'center'} mb={70} flexWrap='wrap'>
-          <Box pr={19} w={{ md: '35%', sm: '100%', xs: '100%' }}>
+          <Box pr={19} w={{ md: '40%', sm: '100%', xs: '100%' }}>
             <Heading
               fontSize={{
                 md: 60,
@@ -136,7 +136,7 @@ const Content1 = () => {
           <Box
             bg='lightgray'
             w={{
-              md: '60%',
+              md: '55%',
               sm: '100%',
               xs: '100%',
             }}
