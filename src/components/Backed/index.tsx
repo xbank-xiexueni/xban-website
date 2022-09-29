@@ -157,8 +157,8 @@ const Backed = () => {
       bg={'bg.gray'}
       py={{
         md: DIVIDE,
-        sm: 10,
-        xs: 10,
+        sm: '60px',
+        xs: '60px',
       }}
     >
       <Title

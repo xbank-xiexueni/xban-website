@@ -25,8 +25,8 @@ const Pay = () => {
     <MyContainer
       py={{
         md: 40,
-        xs: 10,
-        sm: 10,
+        // xs: '60px',
+        // sm: '60px',
       }}
     >
       <Flex

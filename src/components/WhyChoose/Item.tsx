@@ -106,9 +106,15 @@ const Item: React.FunctionComponent<ItemProps> = ({
               sm: 12,
               xs: 12,
             }}
-            lineHeight={'24px'}
             color='font.tip'
-            my={6}
+            mb={{
+              md: 6,
+              sm: 4,
+              xs: 4,
+            }}
+            mt={{
+              md: 6,
+            }}
           >
             {description}
           </Text>
@@ -162,6 +168,10 @@ const Item: React.FunctionComponent<ItemProps> = ({
             md: 500,
             sm: 300,
             xs: 300,
+          }}
+          mb={{
+            sm: 4,
+            xs: 4,
           }}
         >
           {image && <GatsbyImage image={image} alt='' loading='lazy' />}

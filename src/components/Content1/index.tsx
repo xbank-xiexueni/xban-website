@@ -6,9 +6,12 @@ import Summary from '../Summary';
 import ModalButton from '../ModalButton';
 import '@/style/global.scss';
 import bg from '../../images/content1-bg.png';
+import bgM from '../../images/content-bg-mobile.png';
 import { DIVIDE } from '../../constants/paddingY';
 import ResponsiveBox from '../ResponsiveBox';
 import MyContainer from '../container';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const LIST = [
   'xBank is the First Platform Making Web3 and Crypto As Easy As Shopping Online ',
@@ -28,6 +31,16 @@ const Content1 = () => {
     autoPlaySpeed: 200,
     adaptiveHeight: true,
   };
+
+  const query = useStaticQuery(graphql`
+    query {
+      main: file(relativePath: { eq: "content1.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+    }
+  `);
   // const [pl, setPl] = useState(isBrowser ? window?.innerWidth - 1200 : 0);
 
   // useEffect(() => {
@@ -42,7 +55,13 @@ const Content1 = () => {
 
   return (
     <Box position={'relative'}>
-      <Box position={'absolute'} zIndex={2} left={0} top={-10}>
+      <Box
+        position={'absolute'}
+        zIndex={2}
+        left={0}
+        top={-10}
+        display={{ md: 'block', sm: 'none', xs: 'none' }}
+      >
         <Image
           src={bg}
           alt=''
@@ -52,6 +71,19 @@ const Content1 = () => {
             xs: '100%',
           }}
         />
+      </Box>
+      <Box
+        position={'absolute'}
+        zIndex={2}
+        left={-5}
+        top={-20}
+        display={{
+          md: 'none',
+          sm: 'block',
+          xs: 'block',
+        }}
+      >
+        <Image src={bgM} alt='' />
       </Box>
       <MyContainer
         id='content1'
@@ -90,8 +122,7 @@ const Content1 = () => {
                 flexWrap='wrap'
                 fontSize={14}
                 fontWeight={500}
-                lineHeight='28px'
-                my={4}
+                mt={4}
                 justify='center'
               >
                 <Text>Find the Hottest&nbsp;</Text>
@@ -109,13 +140,25 @@ const Content1 = () => {
                 <Text>&nbsp;in xBank</Text>
               </Flex>
 
-              <Box
+              <Flex justify={'center'}>
+                <GatsbyImage
+                  alt={''}
+                  image={query?.main?.childImageSharp?.gatsbyImageData}
+                  loading='lazy'
+                  style={{
+                    width: 293,
+                    height: 230,
+                  }}
+                />
+              </Flex>
+
+              {/* <Box
                 bg='lightgray'
                 h='300px'
                 mx={4}
                 display={{ md: 'none', sm: 'block', xs: 'block' }}
-              ></Box>
-              <Flex justify={'center'} my={4}>
+              ></Box> */}
+              <Flex justify={'center'} mt={4} mb={8}>
                 <ModalButton
                   title='Try it !'
                   color={'#FFFFFF'}
@@ -139,10 +182,18 @@ const Content1 = () => {
             </Box>
           }
           pc={
-            <Flex alignItems={'center'} mb={8}>
-              <Box w={480}>
+            <Flex mb={8}>
+              <Box
+                w={{
+                  lg: 480,
+                  md: 360,
+                }}
+              >
                 <Heading
-                  fontSize={60}
+                  fontSize={{
+                    lg: 60,
+                    md: 48,
+                  }}
                   // lineHeight='70px'
                   fontWeight={900}
                 >
@@ -165,7 +216,10 @@ const Content1 = () => {
                 <Flex
                   alignItems='center'
                   flexWrap='wrap'
-                  fontSize={24}
+                  fontSize={{
+                    lg: 24,
+                    md: 18,
+                  }}
                   fontWeight={500}
                   lineHeight='28px'
                   mt={10}
@@ -179,7 +233,10 @@ const Content1 = () => {
                           <Text
                             color={'primary'}
                             fontWeight={500}
-                            fontSize={24}
+                            fontSize={{
+                              lg: 24,
+                              md: 18,
+                            }}
                           >
                             {item}
                           </Text>
@@ -221,13 +278,49 @@ const Content1 = () => {
                 />
               </Box>
               <Box
-                ml={10}
+                ml={8}
                 position={'relative'}
-                w={'50%'}
-                height={435}
+                w={'10%'}
+                top={{
+                  lg: '-100px',
+                }}
+                height={639}
                 display={{ md: 'block', sm: 'none', xs: 'none' }}
               >
-                <Box bg='lightgray' w={750} position={'absolute'} h={435}></Box>
+                <Box
+                  display={{
+                    xl: 'block',
+                    lg: 'block',
+                    md: 'none',
+                  }}
+                >
+                  <GatsbyImage
+                    alt={''}
+                    image={query?.main?.childImageSharp?.gatsbyImageData}
+                    loading='lazy'
+                    style={{
+                      width: 766,
+                      height: 639,
+                    }}
+                  />
+                </Box>
+                <Box
+                  display={{
+                    xl: 'none',
+                    lg: 'none',
+                    md: 'block',
+                  }}
+                >
+                  <GatsbyImage
+                    alt={''}
+                    image={query?.main?.childImageSharp?.gatsbyImageData}
+                    loading='lazy'
+                    style={{
+                      width: 574,
+                      height: 480,
+                    }}
+                  />
+                </Box>
               </Box>
             </Flex>
           }

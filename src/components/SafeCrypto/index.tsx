@@ -89,8 +89,8 @@ const SafeCrypto = () => {
     <MyContainer
       py={{
         md: DIVIDE,
-        sm: 10,
-        xs: 10,
+        sm: '60px',
+        xs: '60px',
       }}
     >
       <Title

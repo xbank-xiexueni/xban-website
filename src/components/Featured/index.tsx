@@ -50,7 +50,7 @@ const Featured = () => {
   return (
     <Box
       bg='bg.gray'
-      py={{
+      pb={{
         md: DIVIDE,
         sm: 10,
         xs: 10,

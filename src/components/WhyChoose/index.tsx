@@ -87,8 +87,8 @@ const WhyChoose = () => {
           position={'sticky'}
           top={{
             md: 130,
-            sm: 15,
-            xs: 15,
+            sm: '60px',
+            xs: '60px',
           }}
           zIndex={11 + index}
           bg='bg.gray'

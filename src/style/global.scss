@@ -22,6 +22,10 @@
   -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0, 0, 0, 0.1);
 }

@@ -37,7 +37,21 @@ const Footer = () => {
           &nbsp;xBank
         </Text>
       </Flex>
-      <Flex justify={'space-between'} mb={6} gap={10} flexWrap='wrap' mt={8}>
+      <Flex
+        justify={'space-between'}
+        mb={6}
+        gap={{
+          md: 10,
+          sm: 6,
+          xs: 6,
+        }}
+        flexWrap='wrap'
+        mt={{
+          md: 8,
+          sm: 4,
+          xs: 4,
+        }}
+      >
         <Box>
           <Text
             fontSize={14}
