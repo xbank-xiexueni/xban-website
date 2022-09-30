@@ -193,7 +193,7 @@ const Item3 = () => {
                               </Text>
                             </Text>
 
-                            <Text fontSize={12} mt={3}>
+                            <Text fontSize={12} mt={2}>
                               {AVATAR_DATA.get(item)?.intro}
                             </Text>
                             <Box mt={4}>
@@ -228,10 +228,10 @@ const Item3 = () => {
                                 borderRadius: '10px',
                               }}
                             /> */}
-                            <Box w={120}>
+                            <Box w={135}>
                               <Image
                                 src={AVATAR_DATA.get(item)?.image}
-                                w='120px'
+                                w='135px'
                                 h='129px'
                                 borderRadius={'10px'}
                                 alt='team'
