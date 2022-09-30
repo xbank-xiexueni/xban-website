@@ -2,10 +2,11 @@ import { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `xbank`,
+    title: `xBank— Web3 and Cryptos All-In-One Portal`,
     siteUrl: `https://www.xbank.plus`,
     author: 'xBank',
-    description: '',
+    description:
+      'xBank is the first Web3 and Crypto platform that takes you into the best Web3 projects & cryptos including NFT, Game, DAO, digital collectibles and Web3 community. ',
     twitterUsername: `xBank_Official`,
     keyword: '',
   },
