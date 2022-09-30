@@ -150,7 +150,9 @@ const settings = {
   dotsClass: 'dots-class',
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
-  appendDots: (dots: any) => <Box mt={{ md: '60px' }}>{dots}</Box>,
+  appendDots: (dots: any) => (
+    <Box mt={{ md: '60px', sm: '20px', xs: '20px' }}>{dots}</Box>
+  ),
   responsive: [
     {
       breakpoint: 780,
@@ -223,7 +225,11 @@ const Community = () => {
         </Highlight>
       </Text>
       {/* 社媒 */}
-      <Flex alignItems={'center'} justify='center' mb={{ md: '90px' }}>
+      <Flex
+        alignItems={'center'}
+        justify='center'
+        mb={{ md: '90px', sm: '20px', xs: '20px' }}
+      >
         <Box
           textAlign={'center'}
           onClick={() => {
