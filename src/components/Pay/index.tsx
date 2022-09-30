@@ -38,7 +38,7 @@ const Pay = () => {
           }}
           w={'45%'}
         >
-          <Image src={payImg} alt='pay' loading='lazy' h={451} w={621} />
+          <Image src={payImg} alt='pay' loading='lazy' h={387} w={585} />
         </Box>
         <Box
           w={{
