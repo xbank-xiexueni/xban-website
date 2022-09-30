@@ -150,6 +150,7 @@ const settings = {
   dotsClass: 'dots-class',
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
+  appendDots: (dots: any) => <Box mt={{ md: '60px' }}>{dots}</Box>,
   responsive: [
     {
       breakpoint: 780,
@@ -196,7 +197,7 @@ const Community = () => {
     >
       <Title
         mb={{
-          md: 20,
+          md: 8,
           sm: 4,
           xs: 4,
         }}
@@ -222,7 +223,7 @@ const Community = () => {
         </Highlight>
       </Text>
       {/* 社媒 */}
-      <Flex alignItems={'center'} justify='center' mb={10}>
+      <Flex alignItems={'center'} justify='center' mb={{ md: '90px' }}>
         <Box
           textAlign={'center'}
           onClick={() => {
@@ -230,7 +231,12 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Flex justify={'center'}>
+          <Flex
+            justify={'center'}
+            mb={{
+              md: '10px',
+            }}
+          >
             <Image
               src={p1}
               alt='twitter'
@@ -251,7 +257,12 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Flex justify={'center'}>
+          <Flex
+            justify={'center'}
+            mb={{
+              md: '10px',
+            }}
+          >
             <Image
               src={p2}
               alt='twitter'
@@ -272,7 +283,12 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Flex justify={'center'}>
+          <Flex
+            justify={'center'}
+            mb={{
+              md: '10px',
+            }}
+          >
             <Image
               src={p3}
               alt='twitter'
@@ -294,7 +310,12 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Flex justify={'center'}>
+          <Flex
+            justify={'center'}
+            mb={{
+              md: '10px',
+            }}
+          >
             <Image
               src={p4}
               alt='twitter'
@@ -316,7 +337,7 @@ const Community = () => {
             <CardBorder
               p={6}
               mr={{
-                md: (index + 1) % 3 === 0 ? 0 : 6,
+                md: 6,
                 sm: 0,
                 xs: 0,
               }}

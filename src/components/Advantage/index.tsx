@@ -271,7 +271,7 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
       bg='#FFFFFF'
       borderRadius={10}
       py={{
-        md: 15,
+        md: '60px',
         sm: 4,
         xs: 4,
       }}
@@ -306,7 +306,6 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
 
       {data.map(({ value, highlight }) => (
         <Flex
-          gap={2}
           key={value}
           mb={{
             md: 6,
@@ -320,6 +319,7 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
               sm: 'none',
               xs: 'none',
             }}
+            mr={'16px'}
           >
             <Box mt={1}>{checked ? CHECKED_ICON : UNCHECKED_ICON}</Box>
           </Box>
@@ -356,7 +356,15 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
         textAlign='center'
         justifyContent={'center'}
       >
-        {image && <Image src={image} alt='' w={340} loading='lazy' h={checked?671:824} />}
+        {image && (
+          <Image
+            src={image}
+            alt=''
+            w={340}
+            loading='lazy'
+            h={checked ? 671 : 824}
+          />
+        )}
         {!image && <Box height={500} bg='lightgray' />}
       </Box>
     </Box>
