@@ -12,12 +12,8 @@ const des =
 const Pay = () => {
   return (
     <MyContainer
-      py={{
-        md: 40,
-        // xs: '60px',
-        // sm: '60px',
-      }}
       pb={{
+        md: 40,
         xs: '60px',
         sm: '60px',
       }}

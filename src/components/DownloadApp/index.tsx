@@ -47,8 +47,7 @@ const DownloadApp = () => {
             <Heading>Download xBank Apps for iOS</Heading>
             {/* <Heading>Download xBank Apps for iOS & Android</Heading> */}
             <Text mt={5} mb={6}>
-              xBank currently support more than 70 different kinds of fiats to
-              purchase.
+              Sign up and get 5 USDT & 500 BUSD
             </Text>
 
             <DownloadButton dType='ios' bg='#6867F5' mr={2} />
