@@ -19,6 +19,50 @@ const LIST = [
   'Explore Web3 and Crypto Opportunities, Set Up Multi-Chain Identities, Pay with Trustful Gateway, Hold Digital Assets Safely and More, In One Single Place, with One Single Tap',
 ];
 
+const g = (
+  <svg
+    width='344'
+    height='420'
+    viewBox='0 0 344 420'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <g opacity='0.1' filter='url(#filter0_f_187_29304)'>
+      <ellipse
+        cx='250.23'
+        cy='209.94'
+        rx='141.837'
+        ry='95.2829'
+        transform='rotate(14.0872 250.23 209.94)'
+        fill='#E802E5'
+      />
+    </g>
+    <defs>
+      <filter
+        id='filter0_f_187_29304'
+        x='0.18454'
+        y='0.747528'
+        width='500.09'
+        height='418.385'
+        filterUnits='userSpaceOnUse'
+        colorInterpolationFilters='sRGB'
+      >
+        <feFlood floodOpacity='0' result='BackgroundImageFix' />
+        <feBlend
+          mode='normal'
+          in='SourceGraphic'
+          in2='BackgroundImageFix'
+          result='shape'
+        />
+        <feGaussianBlur
+          stdDeviation='55.2554'
+          result='effect1_foregroundBlur_187_29304'
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
 const Content1 = () => {
   const settings = {
     // dots: false,
@@ -96,7 +140,10 @@ const Content1 = () => {
       >
         <ResponsiveBox
           mobile={
-            <Box>
+            <Box position={'relative'}>
+              <Box position='absolute' top={'100px'} right={-10}>
+                {g}
+              </Box>
               <Heading
                 fontSize={28}
                 // lineHeight='70px'
@@ -157,7 +204,7 @@ const Content1 = () => {
                   alt='main'
                   style={{
                     width: 293,
-                    height: 230,
+                    height: 293,
                   }}
                 />
                 {/* <GatsbyImage
