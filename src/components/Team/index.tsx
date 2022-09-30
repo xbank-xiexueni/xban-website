@@ -12,7 +12,7 @@ import ResponsiveBox from '../ResponsiveBox';
 import kaiyang from '../../images/team/kaiyang.png';
 import dx from '../../images/team/XD.png';
 import rayi from '../../images/team/rayi.png';
-import LUO from '../../images/team/Luo.png';
+import LUO from '../../images/team/LUO.png';
 import waiguoren from '../../images/team/waiguoren.png';
 import langren from '../../images/team/langren.png';
 
