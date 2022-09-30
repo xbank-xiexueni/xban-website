@@ -130,6 +130,14 @@ const Content1 = () => {
       >
         <Image src={bgM} alt='bgm' loading='lazy' />
       </Box>
+      <Box
+        position='absolute'
+        top={'150px'}
+        right={0}
+        display={{ md: 'none', sm: 'block', xs: 'block' }}
+      >
+        {g}
+      </Box>
       <MyContainer
         id='content1'
         pt={{
@@ -141,9 +149,6 @@ const Content1 = () => {
         <ResponsiveBox
           mobile={
             <Box position={'relative'}>
-              <Box position='absolute' top={'100px'} right={-4}>
-                {g}
-              </Box>
               <Heading
                 fontSize={28}
                 // lineHeight='70px'
