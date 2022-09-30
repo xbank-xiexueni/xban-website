@@ -17,9 +17,11 @@ import {
   Box,
   Text,
   ButtonProps,
+  Image,
 } from '@chakra-ui/react';
 import { handleNavigate } from '../../utils/navigate';
 import { IOS_URL } from '../../constants/URL';
+import icon from '../../images/modal-icon.png';
 
 const ARROW = (
   <svg
@@ -138,7 +140,7 @@ const ModalButton: React.FunctionComponent<
                 }}
                 alignItems='center'
               >
-                <Box>
+                <Box position={'relative'}>
                   <GatsbyImage
                     loading='lazy'
                     image={query.modal?.childImageSharp?.gatsbyImageData}
@@ -146,6 +148,28 @@ const ModalButton: React.FunctionComponent<
                     title=''
                     style={{ width: 167 }}
                   />
+                  <Box
+                    bgGradient={
+                      'linear-gradient(351.25deg, #FFFFFF 20.84%, rgba(234, 241, 254, 0) 82.31%)'
+                    }
+                    h={8}
+                    position='absolute'
+                    bottom={0}
+                    w='100%'
+                    zIndex={3}
+                  />
+                  <Box position={'absolute'} left={-5} bottom={-2}>
+                    <Image
+                      src={icon}
+                      alt='icon'
+                      w={{
+                        md: 61,
+                        sm: 16,
+                        xs: 16,
+                      }}
+                      h={{ md: 59, sm: 16, xs: 16 }}
+                    />
+                  </Box>
                 </Box>
                 <Box
                   w={{
