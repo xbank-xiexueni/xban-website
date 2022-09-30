@@ -2,10 +2,10 @@ import { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `xbank-website`,
+    title: `xbank`,
     siteUrl: `https://www.xbank.plus`,
     author: 'xBank',
-    description: `Example project for the Gatsby Head API`,
+    description: '',
     twitterUsername: `xBank_Official`,
     keyword: '',
   },
