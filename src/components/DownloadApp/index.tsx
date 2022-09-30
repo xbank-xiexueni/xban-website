@@ -51,7 +51,7 @@ const DownloadApp = () => {
               purchase.
             </Text>
 
-            <DownloadButton dType='ios' bg='#6867F5' mr={2} w={130} />
+            <DownloadButton dType='ios' bg='#6867F5' mr={2} />
             {/* <DownloadButton dType='android' bg='#6867F5' w={130} /> */}
           </Box>
         </Flex>

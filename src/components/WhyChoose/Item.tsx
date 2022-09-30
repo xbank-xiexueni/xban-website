@@ -37,7 +37,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
   return (
     <Box
       py={{
-        md: DIVIDE,
+        md: DIVIDE - 12,
         sm: 10,
         xs: 10,
       }}
@@ -139,9 +139,14 @@ const Item: React.FunctionComponent<ItemProps> = ({
                 src={extra}
                 alt='item'
                 w={{
-                  md: 250,
+                  md: 252,
                   sm: 192,
                   xs: 192,
+                }}
+                h={{
+                  md: 82,
+                  sm: '64px',
+                  xs: '64px',
                 }}
               />
               {/* <ResponsiveBox
@@ -189,7 +194,8 @@ const Item: React.FunctionComponent<ItemProps> = ({
             color='#FFF'
           />
         </Box>
-        <Box
+        <Flex
+          alignItems={'center'}
           w={{
             md: '45%',
             sm: '100%',
@@ -214,7 +220,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
                 }
           }
         >
-          {image && <Image src={image} alt='' />}
+          {image && <Image src={image} alt='' loading='lazy' />}
           {!image && (
             <Box
               h={{
@@ -225,7 +231,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
               bg='lightgray'
             />
           )}
-        </Box>
+        </Flex>
       </Flex>
     </Box>
   );

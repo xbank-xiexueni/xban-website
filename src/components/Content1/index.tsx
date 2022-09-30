@@ -128,7 +128,7 @@ const Content1 = () => {
           xs: 'block',
         }}
       >
-        <Image src={bgM} alt='bgm' />
+        <Image src={bgM} alt='bgm' loading='lazy' />
       </Box>
       <MyContainer
         id='content1'
@@ -141,7 +141,7 @@ const Content1 = () => {
         <ResponsiveBox
           mobile={
             <Box position={'relative'}>
-              <Box position='absolute' top={'100px'} right={-10}>
+              <Box position='absolute' top={'100px'} right={-4}>
                 {g}
               </Box>
               <Heading
@@ -369,6 +369,7 @@ const Content1 = () => {
                     // position='absolute'
                     src={img}
                     alt='main'
+                    loading='lazy'
                     style={{
                       width: 766,
                       height: 700,
@@ -384,7 +385,6 @@ const Content1 = () => {
                       height: 639,
                     }}
                   /> */}
-                  <Image />
                 </Box>
 
                 <Box

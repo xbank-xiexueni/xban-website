@@ -3,9 +3,9 @@ import React from 'react';
 // import ReactPageScroller from 'react-page-scroller';
 import MyContainer from '../container';
 import Item, { Header } from './Item';
-import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql, useStaticQuery } from 'gatsby';
 import { DIVIDE } from '../../constants/paddingY';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 
 import why1 from '../../images/why/why1.png';
 import why2 from '../../images/why/why2.png';
@@ -117,7 +117,7 @@ const WhyChoose = () => {
           {index !== 0 && <Divider color={'gray'} borderWidth={2} />}
           <MyContainer
             py={{
-              md: DIVIDE - 20,
+              // md: DIVIDE - 20,
               sm: '25px',
               xs: '25px',
             }}

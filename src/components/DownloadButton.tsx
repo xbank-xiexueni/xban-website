@@ -20,7 +20,7 @@ const DownloadButton: React.FunctionComponent<
       justifyContent='center'
       borderRadius={10}
       py={2}
-      px={dType === 'ios' ? 2 : 1}
+      px={dType === 'ios' ? 4 : 1}
       // onMouseOver={onHover}
       // onMouseLeave={onLeave}
       cursor='pointer'

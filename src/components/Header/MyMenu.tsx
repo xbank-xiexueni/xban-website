@@ -25,6 +25,7 @@ const MyMenu: React.FunctionComponent<MyMenuProps> = ({
   focusId,
 }) => {
   const { isOpen, onClose, onToggle } = useDisclosure();
+  console.log(isOpen);
   return (
     <Menu isOpen={isOpen}>
       <MenuButton ml={10} id='menu-button' onClick={onToggle}>

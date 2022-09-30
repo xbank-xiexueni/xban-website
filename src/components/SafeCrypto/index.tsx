@@ -141,7 +141,7 @@ const SafeCrypto = () => {
                   handleNavigate(url, true);
                 }}
               >
-                <Image src={image} h={h} w={w} alt='safe' />
+                <Image src={image} h={h} w={w} alt='safe' loading='lazy' />
               </Flex>
             }
           />

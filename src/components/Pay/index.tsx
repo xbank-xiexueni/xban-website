@@ -42,7 +42,7 @@ const Pay = () => {
           }}
           w={'45%'}
         >
-          <Image src={payImg} alt='pay' />
+          <Image src={payImg} alt='pay' loading='lazy' h={451} w={621} />
         </Box>
         <Box
           w={{
@@ -86,12 +86,13 @@ const Pay = () => {
           <Box
             display={{
               md: 'none',
-              sm: 'block',
-              xs: 'block',
+              sm: 'flex',
+              xs: 'flex',
             }}
             my={8}
+            justifyContent='center'
           >
-            <Image src={payImg} alt='pay' />
+            <Image src={payImg} alt='pay' loading='lazy' w={282} h={186} />
           </Box>
           <Text
             fontSize={{

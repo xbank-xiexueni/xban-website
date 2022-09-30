@@ -19,6 +19,7 @@ import {
   MenuDivider,
   MenuButton,
   Divider,
+  Portal,
 } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import MyContainer from '../container';
@@ -56,6 +57,10 @@ const Header = () => {
     | 'DISCOVER_WEB3_ID'
     | undefined
   >();
+
+  const [currentOpen, setCurrentOpen] = useState<
+    'product' | 'company' | undefined
+  >(undefined);
   // const [show2, setShow2] = useState(true);
 
   useEffect(() => {
@@ -65,6 +70,7 @@ const Header = () => {
       removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   const isBrowser = typeof window !== 'undefined';
 
   const handleScroll = useCallback(() => {
@@ -125,58 +131,123 @@ const Header = () => {
                   sm: 'flex',
                 }}
               >
-                <MyMenu
-                  focusId={focusId}
-                  title={
+                <Menu isOpen={currentOpen === 'product'}>
+                  <MenuButton
+                    ml={10}
+                    id='menu-button'
+                    onClick={() => {
+                      if (currentOpen === 'product') {
+                        setCurrentOpen(undefined);
+                      } else {
+                        setCurrentOpen('product');
+                      }
+                    }}
+                  >
                     <Text display={'flex'} alignItems='center'>
                       Products&nbsp;{ARROW}
                     </Text>
-                  }
-                  data={[
-                    {
-                      label: 'Discover Web3',
-                      cId: DISCOVER_WEB3_ID,
-                      onClick: () => {
-                        scrollTo(DISCOVER_WEB3_ID);
-                        setFocusId(DISCOVER_WEB3_ID);
-                      },
-                    },
-                    {
-                      label: 'Convert Money',
-                      cId: CONVERT_MONEY_ID,
-                      onClick: () => {
-                        scrollTo(CONVERT_MONEY_ID);
-                        setFocusId(CONVERT_MONEY_ID);
-                      },
-                    },
-                  ]}
-                />
-                <MyMenu
-                  focusId={focusId}
-                  title={
+                  </MenuButton>
+                  <Portal>
+                    <MenuList zIndex={99}>
+                      {[
+                        {
+                          label: 'Discover Web3',
+                          cId: DISCOVER_WEB3_ID,
+                          onClick: () => {
+                            scrollTo(DISCOVER_WEB3_ID);
+                            setFocusId(DISCOVER_WEB3_ID);
+                          },
+                        },
+                        {
+                          label: 'Convert Money',
+                          cId: CONVERT_MONEY_ID,
+                          onClick: () => {
+                            scrollTo(CONVERT_MONEY_ID);
+                            setFocusId(CONVERT_MONEY_ID);
+                          },
+                        },
+                      ]?.map(({ label, onClick, cId }) => (
+                        <Box
+                          cursor={'pointer'}
+                          fontSize={16}
+                          onClick={() => {
+                            onClick();
+                            onClose();
+                          }}
+                          // color={}
+                          key={label}
+                          py={2}
+                          px={3}
+                          _active={{
+                            bg: 'bg.gray',
+                          }}
+                          bg={focusId === cId ? 'bg.gray' : '#FFFFFF'}
+                        >
+                          {label}
+                        </Box>
+                      ))}
+                    </MenuList>
+                  </Portal>
+                </Menu>
+
+                <Menu isOpen={currentOpen === 'company'}>
+                  <MenuButton
+                    ml={10}
+                    id='menu-button1'
+                    onClick={() => {
+                      if (currentOpen === 'company') {
+                        setCurrentOpen(undefined);
+                      } else {
+                        setCurrentOpen('company');
+                      }
+                    }}
+                  >
                     <Text display={'flex'} alignItems='center'>
                       Company&nbsp;{ARROW}
                     </Text>
-                  }
-                  data={[
-                    {
-                      label: 'About Us',
-                      cId: ABOUT_US_ID,
-                      onClick: () => {
-                        scrollTo(ABOUT_US_ID);
-                        setFocusId(ABOUT_US_ID);
-                      },
-                    },
-                    {
-                      label: 'Community',
-                      cId: COMMUNITY_ID,
-                      onClick: () => {
-                        scrollTo(COMMUNITY_ID);
-                        setFocusId(COMMUNITY_ID);
-                      },
-                    },
-                  ]}
-                />
+                  </MenuButton>
+                  <Portal>
+                    <MenuList zIndex={99}>
+                      {[
+                        {
+                          label: 'About Us',
+                          cId: ABOUT_US_ID,
+                          onClick: () => {
+                            scrollTo(ABOUT_US_ID);
+                            setFocusId(ABOUT_US_ID);
+                          },
+                        },
+                        {
+                          label: 'Community',
+                          cId: COMMUNITY_ID,
+                          onClick: () => {
+                            scrollTo(COMMUNITY_ID);
+                            setFocusId(COMMUNITY_ID);
+                          },
+                        },
+                      ]?.map(({ label, onClick, cId }) => (
+                        <Box
+                          cursor={'pointer'}
+                          fontSize={16}
+                          onClick={() => {
+                            onClick();
+                            onClose();
+                          }}
+                          // color={}
+                          key={label}
+                          py={2}
+                          px={3}
+                          _active={{
+                            bg: 'bg.gray',
+                          }}
+                          bg={focusId === cId ? 'bg.gray' : '#FFFFFF'}
+                        >
+                          {label}
+                        </Box>
+                      ))}
+                    </MenuList>
+                  </Portal>
+                </Menu>
               </Flex>
             </Flex>
             {/* <Button

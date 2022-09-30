@@ -356,7 +356,7 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
         textAlign='center'
         justifyContent={'center'}
       >
-        {image && <Image src={image} alt='' w={340} />}
+        {image && <Image src={image} alt='' w={340} loading='lazy' h={checked?671:824} />}
         {!image && <Box height={500} bg='lightgray' />}
       </Box>
     </Box>

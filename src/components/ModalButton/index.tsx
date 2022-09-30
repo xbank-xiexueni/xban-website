@@ -195,7 +195,7 @@ const ModalButton: React.FunctionComponent<
                           handleNavigate(IOS_URL, true);
                         }}
                       >
-                        <DownloadButton dType='ios' bg='#000000' w={120} />
+                        <DownloadButton dType='ios' bg='#000000' />
                       </Box>
                       {/* <Box
                         mt={2}

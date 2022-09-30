@@ -104,7 +104,7 @@ const Footer = () => {
         flexWrap='wrap'
       >
         <Text color={'font.primary'} fontSize={12} mt={3} lineHeight={'26px'}>
-          {new Date().getFullYear()}2022 © All Rights Reserved
+          {new Date().getFullYear()} © All Rights Reserved
         </Text>
         <Text
           color={'font.primary'}

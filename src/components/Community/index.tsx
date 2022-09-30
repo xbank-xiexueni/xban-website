@@ -230,7 +230,15 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Image src={p1} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
+          <Flex justify={'center'}>
+            <Image
+              src={p1}
+              alt='twitter'
+              w={{ md: '44px', sm: '28px', xs: '28px' }}
+              h={{ md: '36px', sm: 23, xs: 23 }}
+              loading='lazy'
+            />
+          </Flex>
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Twitter
           </Text>
@@ -243,7 +251,14 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Image src={p2} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
+          <Flex justify={'center'}>
+            <Image
+              src={p2}
+              alt='twitter'
+              w={{ md: 45, sm: 29, xs: 22 }}
+              h={{ md: 35, sm: 29, xs: 22 }}
+            />
+          </Flex>
 
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Discord
@@ -257,13 +272,21 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Image src={p3} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
+          <Flex justify={'center'}>
+            <Image
+              src={p3}
+              alt='twitter'
+              w={{ md: 39, sm: 25, xs: 25 }}
+              h={{ md: 39, sm: 25, xs: 25 }}
+              loading='lazy'
+            />
+          </Flex>
 
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Linkedin
           </Text>
         </Box>
-        <Flex
+        <Box
           ml={10}
           justifyContent='center'
           onClick={() => {
@@ -271,11 +294,20 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <Image src={p4} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
+          <Flex justify={'center'}>
+            <Image
+              src={p4}
+              alt='twitter'
+              w={{ md: 39, sm: 25, xs: 25 }}
+              h={{ md: 35, sm: 26, xs: 26 }}
+              display='block'
+            />
+          </Flex>
+
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Medium
           </Text>
-        </Flex>
+        </Box>
       </Flex>
       {/* 评价 */}
       <Slider {...settings}>
@@ -297,6 +329,7 @@ const Community = () => {
                 src={commentImg}
                 alt='comment'
                 h={{ md: '44px', sm: 10, xs: 10 }}
+                w={{ md: '44px', sm: 10, xs: 10 }}
               />
               <Box ml={4}>
                 <Text color={'font.primary'} fontSize={13}>

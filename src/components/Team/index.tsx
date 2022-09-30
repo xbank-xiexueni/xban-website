@@ -20,10 +20,10 @@ const Team = () => {
   return (
     <Box bg='bg.gray' pos='relative'>
       <Box position={'absolute'} bottom={0} left={0}>
-        <Image src={left} alt='bg' />
+        <Image src={left} alt='bg' loading='lazy' />
       </Box>
       <Box position={'absolute'} bottom={0} right={0}>
-        <Image src={right} alt='bg' />
+        <Image src={right} alt='bg' loading='lazy' />
       </Box>
       <MyContainer>
         <Item3 />
@@ -152,11 +152,9 @@ const Item3 = () => {
                     /> */}
                     <Image
                       src={AVATAR_DATA.get(item)?.image}
-                      style={{
-                        width: 158,
-                        height: 124,
-                        borderRadius: 10,
-                      }}
+                      w={158}
+                      h={124}
+                      borderRadius={10}
                     />
                     <Text fontSize={18} fontWeight={700} mt={3}>
                       {AVATAR_DATA.get(item)?.name}
@@ -235,11 +233,9 @@ const Item3 = () => {
                             <Box w={120}>
                               <Image
                                 src={AVATAR_DATA.get(item)?.image}
-                                style={{
-                                  width: 120,
-                                  height: 129,
-                                  borderRadius: '10px',
-                                }}
+                                w='120px'
+                                h='129px'
+                                borderRadius={'10px'}
                               />
                             </Box>
                           </Box>
@@ -269,11 +265,9 @@ const Item3 = () => {
                 >
                   <Image
                     src={AVATAR_DATA.get(item)?.image}
-                    style={{
-                      width: 384,
-                      height: 300,
-                      borderRadius: 10,
-                    }}
+                    w={384}
+                    h={300}
+                    borderRadius={10}
                   />
                   {/* <GatsbyImage
                     loading='lazy'
