@@ -104,7 +104,7 @@ const Header = () => {
       <Box
         bg='linear-gradient(270deg, #E404E6 0%, #5843F4 53.65%, #1EF6F0
       100%)'
-        h={3}
+        h={1}
       />
       <Box bg='#FFFFFF'>
         <MyContainer>

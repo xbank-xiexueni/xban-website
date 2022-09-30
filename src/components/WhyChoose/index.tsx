@@ -27,12 +27,13 @@ const DATA = [
   },
   {
     key: 'why2',
-    title: 'Early Bird Access to Hot Games',
+
+    title: 'Play Around and Earn Free Coins',
     titleHighlight: ['Hot Games'],
-    buttonTitle: 'Get hot games',
+    buttonTitle: 'Exploring Web3',
     image: why2,
     description:
-      'Onboard Blockchain Games without Hassles and Be Ready to Enjoy New Worlds All the Time.',
+      'Explore Token Bounties of Events and Applications of Web3 and Earn on Your Contributions',
   },
   {
     key: 'why3',
@@ -45,12 +46,13 @@ const DATA = [
   },
   {
     key: 'why4',
-    title: 'Play Around and Earn Free Coins',
-    buttonTitle: 'Exploring Web3',
+    title: 'Early Bird Access to Hot Games',
+    titleHighlight: ['Hot Games'],
+    buttonTitle: 'Get hot games',
     image: why4,
     extra: p4,
     description:
-      'Explore Token Bounties of Events and Applications of Web3 and Earn on Your Contributions',
+      'Onboard Blockchain Games without Hassles and Be Ready to Enjoy New Worlds All the Time.',
   },
 ];
 

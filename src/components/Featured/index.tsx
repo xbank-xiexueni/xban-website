@@ -106,7 +106,7 @@ const Featured = () => {
       >
         As Featured In
       </Title>
-      <Slider {...settings} rtl={true}>
+      <Slider {...settings} rtl={true} lazyLoad={'progressive'}>
         <Box
           mr={{
             md: 4,

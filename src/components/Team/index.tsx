@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import MyContainer from '../container';
 import '../../style/global.scss';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import Title from '../Title';
 import left from '../../images/team/team-bg-left.png';
 import right from '../../images/team/team-bg-right.png';
@@ -236,6 +234,7 @@ const Item3 = () => {
                                 w='120px'
                                 h='129px'
                                 borderRadius={'10px'}
+                                alt='team'
                               />
                             </Box>
                           </Box>

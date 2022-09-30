@@ -1,7 +1,6 @@
 import MyContainer from '../container';
 import React from 'react';
-import { Box, Flex, Image } from '@chakra-ui/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { Flex, Image } from '@chakra-ui/react';
 import Title from '../Title';
 import ResponsiveBox from '../ResponsiveBox';
 import { DIVIDE } from '../../constants/paddingY';
@@ -123,6 +122,7 @@ const SafeCrypto = () => {
                 h={h}
                 w={w}
                 alt='safe'
+                cursor={'pointer'}
                 onClick={() => {
                   handleNavigate(url, true);
                 }}

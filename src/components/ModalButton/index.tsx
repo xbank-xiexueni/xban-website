@@ -1,6 +1,4 @@
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery } from 'gatsby';
 import DownloadButton from '../DownloadButton';
 import { QRCodeSVG } from 'qrcode.react';
 import {
@@ -21,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { handleNavigate } from '../../utils/navigate';
 import { IOS_URL } from '../../constants/URL';
-import icon from '../../images/modal-icon.png';
+import modalImg from '../../images/modal-bg.png';
 
 const ARROW = (
   <svg
@@ -61,16 +59,6 @@ const ModalButton: React.FunctionComponent<
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef(null);
   const isBrowser = typeof window !== 'undefined';
-
-  const query = useStaticQuery(graphql`
-    query {
-      modal: file(relativePath: { eq: "modal-bg.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
 
   return (
     <>
@@ -132,7 +120,11 @@ const ModalButton: React.FunctionComponent<
               <Flex
                 pb={8}
                 gap={4}
-                flexWrap='wrap'
+                flexWrap={{
+                  md: 'nowrap',
+                  sm: 'wrap',
+                  xs: 'wrap',
+                }}
                 justify={{
                   md: 'space-between',
                   sm: 'center',
@@ -140,13 +132,18 @@ const ModalButton: React.FunctionComponent<
                 }}
                 alignItems='center'
               >
-                <Box position={'relative'}>
-                  <GatsbyImage
-                    loading='lazy'
-                    image={query.modal?.childImageSharp?.gatsbyImageData}
-                    alt='app'
-                    title=''
-                    style={{ width: 167 }}
+                <Box
+                  position={'relative'}
+                  ml={{
+                    sm: -4,
+                    xs: -4,
+                  }}
+                >
+                  <Image
+                    src={modalImg}
+                    alt='download'
+                    width={193}
+                    height={193}
                   />
                   <Box
                     bgGradient={
@@ -158,7 +155,7 @@ const ModalButton: React.FunctionComponent<
                     w='100%'
                     zIndex={3}
                   />
-                  <Box position={'absolute'} left={-5} bottom={-2}>
+                  {/* <Box position={'absolute'} left={-5} bottom={-2}>
                     <Image
                       src={icon}
                       alt='icon'
@@ -169,7 +166,7 @@ const ModalButton: React.FunctionComponent<
                       }}
                       h={{ md: 59, sm: 16, xs: 16 }}
                     />
-                  </Box>
+                  </Box> */}
                 </Box>
                 <Box
                   w={{
@@ -206,10 +203,11 @@ const ModalButton: React.FunctionComponent<
                     </Box>
                     {/* <ScaleFade initialScale={0.9} in={!!showIndex}> */}
                     <Box
-                      boxShadow={'gray 0px 0px 5px'}
+                      // boxShadow={'gray 0px 0px 5px'}
+                      filter='drop-shadow(0px 0px 4px rgba(170, 168, 230, 0.5))'
                       w={75}
                       h={75}
-                      borderRadius={10}
+                      borderRadius={'4px'}
                     >
                       <QRCodeSVG
                         value={
@@ -218,6 +216,9 @@ const ModalButton: React.FunctionComponent<
                         width={75}
                         height={75}
                         includeMargin
+                        style={{
+                          borderRadius: '4px',
+                        }}
                       />
                     </Box>
                     {/* </ScaleFade> */}
