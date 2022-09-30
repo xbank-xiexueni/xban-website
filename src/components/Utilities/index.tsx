@@ -3,12 +3,23 @@ import MyContainer from '../container';
 import { Box, Heading, Text, Flex, Highlight, Divider } from '@chakra-ui/react';
 import ModalButton from '../ModalButton';
 import ResponsiveBox from '../ResponsiveBox';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const title = 'Maximize the Utilities of Your Cryptos and Digital Collectibles';
 const des =
   'xBank Will Match Your Portfolio of Web3 Assets with Available Financial Services and Recommend You A Better Yield while Holding Them';
 
 const Utilities = () => {
+  const query = useStaticQuery(graphql`
+    query {
+      utilities: file(relativePath: { eq: "utilities.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+    }
+  `);
   return (
     <MyContainer
       py={{
@@ -41,7 +52,11 @@ const Utilities = () => {
             xs: 'none',
           }}
         >
-          <Box height={500} bg='lightgray'></Box>
+          <GatsbyImage
+            image={query?.utilities?.childImageSharp?.gatsbyImageData}
+            alt='pay'
+            loading='lazy'
+          />
         </Box>
         <Box
           w={{
@@ -92,7 +107,11 @@ const Utilities = () => {
             }}
             my={8}
           >
-            <Box height={300} bg='lightgray'></Box>
+            <GatsbyImage
+              image={query?.utilities?.childImageSharp?.gatsbyImageData}
+              alt='pay'
+              loading='lazy'
+            />
           </Box>
           <Text
             fontSize={{

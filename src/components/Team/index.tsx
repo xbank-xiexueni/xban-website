@@ -91,32 +91,32 @@ const AVATAR_DATA = new Map([
 const Item3 = () => {
   const query = useStaticQuery(graphql`
     query {
-      Kaiyang: file(relativePath: { eq: "team/avatar.png" }) {
+      Kaiyang: file(relativePath: { eq: "team/kaiyang.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      Dx: file(relativePath: { eq: "team/avatar.png" }) {
+      Dx: file(relativePath: { eq: "team/XD.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      Rayi: file(relativePath: { eq: "team/avatar.png" }) {
+      Rayi: file(relativePath: { eq: "team/rayi.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      Luo: file(relativePath: { eq: "team/avatar.png" }) {
+      Luo: file(relativePath: { eq: "team/LUO.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      BruceChen: file(relativePath: { eq: "team/avatar.png" }) {
+      BruceChen: file(relativePath: { eq: "team/langren.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
-      FlorianMSpiegal: file(relativePath: { eq: "team/avatar.png" }) {
+      FlorianMSpiegal: file(relativePath: { eq: "team/waiguoren.png" }) {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
@@ -146,8 +146,12 @@ const Item3 = () => {
         mobile={
           <Box>
             {MOBILE_DATA.map((f) => (
-              <Flex position={'relative'} justify={'space-between'}>
-                {f.map((item, index) => (
+              <Flex
+                position={'relative'}
+                justify={'space-between'}
+                key={f?.join()}
+              >
+                {f.map((item) => (
                   <Box
                     onMouseOver={() => setShowIndex(item)}
                     onMouseLeave={() => setShowIndex(undefined)}
@@ -166,6 +170,7 @@ const Item3 = () => {
                       style={{
                         width: 158,
                         height: 124,
+                        borderRadius: 10,
                       }}
                     />
                     <Text fontSize={18} fontWeight={700} mt={3}>
@@ -179,7 +184,7 @@ const Item3 = () => {
                         position={'absolute'}
                         zIndex={2}
                         top={0}
-                        bottom={2}
+                        bottom={4}
                         left={0}
                         right={0}
                         bg='rgba(0, 0, 0, 0.7)'
@@ -272,6 +277,11 @@ const Item3 = () => {
                   alt='index'
                   title=''
                   key={item}
+                  style={{
+                    width: 384,
+                    height: 300,
+                    borderRadius: 10,
+                  }}
                   // 最大宽度 高度
                   // width={380}
                   // height={560}

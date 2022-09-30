@@ -3,6 +3,10 @@ import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
 import AutoSlider from '../AutoSlider';
 import Title from '../Title';
+import Slider from 'react-slick';
+import { StaticImage } from 'gatsby-plugin-image';
+import ResponsiveBox from '../ResponsiveBox';
+import { handleNavigate } from '../../utils/navigate';
 
 const TEST_ICON = (
   <svg
@@ -46,6 +50,40 @@ const DATA = [
   },
 ];
 
+/**
+ * 
+ * Medium：https://medium.com/
+Hackernoon：https://hackernoon.com/
+Forums：https://forums.babypips.com/
+Quora：https://www.quora.com/
+Investscocial：https://investsocial.com/
+Bitco：https://bitco.in/forum/
+
+ */
+
+const settings = {
+  // dots: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 3500,
+  autoplaySpeed: 3500,
+  cssEase: 'linear',
+  variableWidth: true,
+  arrows: false,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 const Featured = () => {
   return (
     <Box
@@ -65,7 +103,186 @@ const Featured = () => {
       >
         As Featured In
       </Title>
-      <AutoSlider data={DATA} mb={5} />
+      <ResponsiveBox
+        mobile={
+          <Slider {...settings} rtl={true}>
+            <Box
+              mr={2}
+              onClick={() => {
+                handleNavigate('https://hackernoon.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/1.png'
+                alt='feature'
+                width={106}
+                height={40}
+              />
+            </Box>
+            <Box
+              mr={2}
+              onClick={() => {
+                handleNavigate('https://www.quora.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/2.png'
+                alt='feature'
+                width={106}
+                height={40}
+              />
+            </Box>
+            <Box
+              mr={2}
+              onClick={() => {
+                handleNavigate('https://medium.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/3.png'
+                alt='feature'
+                width={106}
+                height={40}
+              />
+            </Box>
+            <Box
+              mr={2}
+              onClick={() => {
+                handleNavigate('https://investsocial.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/4.png'
+                alt='feature'
+                width={106}
+                height={40}
+              />
+            </Box>
+            <Box
+              mr={2}
+              onClick={() => {
+                handleNavigate('https://bitco.in/forum/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/5.png'
+                alt='feature'
+                width={106}
+                height={40}
+              />
+            </Box>
+            <Box
+              mr={2}
+              onClick={() => {
+                handleNavigate('https://forums.babypips.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/6.png'
+                alt='feature'
+                width={106}
+                height={40}
+              />
+            </Box>
+          </Slider>
+        }
+        pc={
+          <Slider {...settings} rtl={true}>
+            <Box
+              mr={4}
+              onClick={() => {
+                handleNavigate('https://hackernoon.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/1.png'
+                alt='feature'
+                width={216}
+                height={80}
+              />
+            </Box>
+            <Box
+              mr={4}
+              onClick={() => {
+                handleNavigate('https://www.quora.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/2.png'
+                alt='feature'
+                width={216}
+                height={80}
+              />
+            </Box>
+            <Box
+              mr={4}
+              onClick={() => {
+                handleNavigate('https://medium.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/3.png'
+                alt='feature'
+                width={216}
+                height={80}
+              />
+            </Box>
+            <Box
+              mr={4}
+              onClick={() => {
+                handleNavigate('https://investsocial.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/4.png'
+                alt='feature'
+                width={216}
+                height={80}
+              />
+            </Box>
+            <Box
+              mr={4}
+              onClick={() => {
+                handleNavigate('https://bitco.in/forum/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/5.png'
+                alt='feature'
+                width={216}
+                height={80}
+              />
+            </Box>
+            <Box
+              mr={4}
+              onClick={() => {
+                handleNavigate('https://forums.babypips.com/', true);
+              }}
+              cursor='pointer'
+            >
+              <StaticImage
+                src='../../images/featured/6.png'
+                alt='feature'
+                width={216}
+                height={80}
+              />
+            </Box>
+          </Slider>
+        }
+      />
+      {/* <AutoSlider data={Object.values(query)} mb={5} /> */}
+
       {/* <AutoSlider data={DATA} isRtl /> */}
     </Box>
   );

@@ -6,6 +6,7 @@ import '../../style/global.scss';
 import ModalButton from '../ModalButton';
 import Title from '../Title';
 import { DIVIDE } from '../../constants/paddingY';
+import ResponsiveBox from '../ResponsiveBox';
 
 type ItemProps = {
   title: string;
@@ -120,11 +121,23 @@ const Item: React.FunctionComponent<ItemProps> = ({
           </Text>
           {extra && (
             <Box mb={6}>
-              <GatsbyImage
-                image={extra}
-                alt='item'
-                loading='lazy'
-                style={{ width: 250 }}
+              <ResponsiveBox
+                mobile={
+                  <GatsbyImage
+                    image={extra}
+                    alt='item'
+                    loading='lazy'
+                    style={{ width: 192 }}
+                  />
+                }
+                pc={
+                  <GatsbyImage
+                    image={extra}
+                    alt='item'
+                    loading='lazy'
+                    style={{ width: 250 }}
+                  />
+                }
               />
             </Box>
           )}
@@ -169,10 +182,14 @@ const Item: React.FunctionComponent<ItemProps> = ({
             sm: 300,
             xs: 300,
           }}
-          mb={{
-            sm: 10,
-            xs: 10,
-          }}
+          mb={
+            id === 'why2'
+              ? {}
+              : {
+                  sm: 10,
+                  xs: 10,
+                }
+          }
         >
           {image && <GatsbyImage image={image} alt='item' loading='lazy' />}
           {!image && (

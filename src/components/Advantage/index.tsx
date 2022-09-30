@@ -1,4 +1,5 @@
 import { Box, BoxProps, Center, Flex, Highlight, Text } from '@chakra-ui/react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
@@ -44,6 +45,20 @@ const WITHOUT = [
 ];
 
 const Advantage = () => {
+  const query = useStaticQuery(graphql`
+    query {
+      with: file(relativePath: { eq: "with-xBank.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      without: file(relativePath: { eq: "without-xBank.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+    }
+  `);
   return (
     <Box
       bg='bg.gray'
@@ -147,9 +162,18 @@ const Advantage = () => {
           >
             VS
           </Box>
-
-          <ItemCard title='With xBank' data={WITH} checked />
-          <ItemCard title='Without xBank' data={WITHOUT} checked={false} />
+          <ItemCard
+            title='With xBank'
+            data={WITH}
+            checked
+            image={query?.with?.childImageSharp?.gatsbyImageData}
+          />
+          <ItemCard
+            title='Without xBank'
+            data={WITHOUT}
+            checked={false}
+            image={query?.without?.childImageSharp?.gatsbyImageData}
+          />
         </Flex>
       </MyContainer>
     </Box>
@@ -340,8 +364,18 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
           sm: 'none',
           xs: 'none',
         }}
+        textAlign='center'
       >
-        {image && <GatsbyImage image={image} alt='adv' loading='lazy' />}
+        {image && (
+          <GatsbyImage
+            image={image}
+            alt='adv'
+            loading='lazy'
+            style={{
+              width: 340,
+            }}
+          />
+        )}
         {!image && <Box height={500} bg='lightgray' />}
       </Box>
     </Box>

@@ -3,8 +3,11 @@ import { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `xbank-website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.xbank.plus`,
     author: 'xBank',
+    description: `Example project for the Gatsby Head API`,
+    twitterUsername: `xBank_Official`,
+    keyword: '',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

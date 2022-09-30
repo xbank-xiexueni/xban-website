@@ -69,7 +69,7 @@ const MobileStickyFooter = () => {
                 xBank Apps
               </Text>
               <Text fontSize={12} color='font.primary'>
-                Support more than 70 kinds of fiats to purchase.
+                Sign up and get 5 USDT & 500 BUSD
               </Text>
             </Box>
             <ModalButton

@@ -25,6 +25,7 @@ import Advantage from '../components/Advantage';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MobileStickyFooter from '../components/MobileStickyFooter';
+import { SEO } from '../components/SEO';
 // import { Header as MyHeader } from '../components/WhyChoose/Item';
 
 const IndexPage = () => {
@@ -76,4 +77,4 @@ const IndexPage = () => {
 // `;
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home</title>;
+export const Head: HeadFC = () => <SEO />;

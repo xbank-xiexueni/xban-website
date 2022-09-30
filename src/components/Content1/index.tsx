@@ -12,7 +12,7 @@ import ResponsiveBox from '../ResponsiveBox';
 import MyContainer from '../container';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import mobileImg from '../../images/content-mobile.png';
+import mobileImg from '../../images/content.png';
 
 const LIST = [
   'xBank is the First Platform Making Web3 and Crypto As Easy As Shopping Online ',

@@ -61,9 +61,10 @@ const AutoSlider = ({
   return (
     <Box {...rest}>
       <Slider {...settings} rtl={isRtl}>
-        {data.map(({ url, icon }) => (
-          <FeaturedBox icon={icon} url={url} key={url} />
-        ))}
+        {/* {data.map((item) => (
+
+          <FeaturedBox key={ite} />
+        ))} */}
       </Slider>
     </Box>
   );
