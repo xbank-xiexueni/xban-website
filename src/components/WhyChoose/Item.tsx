@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Flex, Text, Highlight } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Text,
+  Highlight,
+  ImageProps,
+  Image,
+} from '@chakra-ui/react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import '../../style/global.scss';
@@ -11,10 +18,10 @@ import ResponsiveBox from '../ResponsiveBox';
 type ItemProps = {
   title: string;
   description: string;
-  extra?: IGatsbyImageData;
+  extra?: any;
   buttonTitle: string;
   titleHighlight?: string[];
-  image: IGatsbyImageData;
+  image: any;
   id: string;
 };
 
@@ -120,8 +127,24 @@ const Item: React.FunctionComponent<ItemProps> = ({
             {description}
           </Text>
           {extra && (
-            <Box mb={6}>
-              <ResponsiveBox
+            <Flex
+              mb={6}
+              justify={{
+                md: 'flex-start',
+                sm: 'center',
+                xs: 'center',
+              }}
+            >
+              <Image
+                src={extra}
+                alt='item'
+                w={{
+                  md: 250,
+                  sm: 192,
+                  xs: 192,
+                }}
+              />
+              {/* <ResponsiveBox
                 mobile={
                   <GatsbyImage
                     image={extra}
@@ -138,8 +161,8 @@ const Item: React.FunctionComponent<ItemProps> = ({
                     style={{ width: 250 }}
                   />
                 }
-              />
-            </Box>
+              /> */}
+            </Flex>
           )}
 
           <ModalButton
@@ -191,7 +214,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
                 }
           }
         >
-          {image && <GatsbyImage image={image} alt='item' loading='lazy' />}
+          {image && <Image src={image} alt='' />}
           {!image && (
             <Box
               h={{

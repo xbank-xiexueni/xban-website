@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Center, Divider, Flex, Highlight, Text } from '@chakra-ui/react';
+import { Box, Divider, Flex, Highlight, Text } from '@chakra-ui/react';
 import { DATA } from './index';
 import '../../style/global.scss';
 

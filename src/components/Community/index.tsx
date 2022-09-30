@@ -1,5 +1,4 @@
-import { Box, Flex, Highlight, Text } from '@chakra-ui/react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { Box, Flex, Highlight, Text, Image } from '@chakra-ui/react';
 import React from 'react';
 import Slider from 'react-slick';
 import { DIVIDE } from '../../constants/paddingY';
@@ -11,9 +10,14 @@ import {
 } from '../../constants/URL';
 import { handleNavigate } from '../../utils/navigate';
 import MyContainer from '../container';
-import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 import CardBorder from './CardBorder';
+
+import p1 from '../../images/social/twitter.png';
+import p2 from '../../images/social/discord.png';
+import p3 from '../../images/social/linked.png';
+import p4 from '../../images/social/medium.png';
+import commentImg from '../../images/comment.png';
 
 const COMMENT_DATA = [
   {
@@ -226,23 +230,7 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <ResponsiveBox
-            mobile={
-              <StaticImage
-                src={'../../images/social/twitter.png'}
-                alt={'twitter'}
-                height={25}
-              />
-            }
-            pc={
-              <StaticImage
-                src={'../../images/social/twitter.png'}
-                alt={'twitter'}
-                height={35}
-              />
-            }
-          />
-
+          <Image src={p1} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Twitter
           </Text>
@@ -255,22 +243,7 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <ResponsiveBox
-            mobile={
-              <StaticImage
-                src={'../../images/social/discord.png'}
-                alt={'discord'}
-                height={25}
-              />
-            }
-            pc={
-              <StaticImage
-                src={'../../images/social/discord.png'}
-                alt={'discord'}
-                height={35}
-              />
-            }
-          />
+          <Image src={p2} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
 
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Discord
@@ -284,56 +257,25 @@ const Community = () => {
           }}
           cursor='pointer'
         >
-          <ResponsiveBox
-            mobile={
-              <StaticImage
-                src={'../../images/social/linked.png'}
-                alt={'linked'}
-                height={25}
-              />
-            }
-            pc={
-              <StaticImage
-                src={'../../images/social/linked.png'}
-                alt={'linked'}
-                height={35}
-              />
-            }
-          />
+          <Image src={p3} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
 
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Linkedin
           </Text>
         </Box>
-        <Box
-          textAlign={'center'}
+        <Flex
           ml={10}
+          justifyContent='center'
           onClick={() => {
             handleNavigate(MEDIUM_URL, true);
           }}
           cursor='pointer'
         >
-          <ResponsiveBox
-            mobile={
-              <StaticImage
-                src={'../../images/social/medium.png'}
-                alt={'medium'}
-                height={25}
-              />
-            }
-            pc={
-              <StaticImage
-                src={'../../images/social/medium.png'}
-                alt={'medium'}
-                height={35}
-              />
-            }
-          />
-
+          <Image src={p4} alt='twitter' w={{ md: 35, sm: 25, xs: 25 }} />
           <Text color={'font.tip'} fontSize={{ md: 14, sm: 12, xs: 12 }}>
             Medium
           </Text>
-        </Box>
+        </Flex>
       </Flex>
       {/* 评价 */}
       <Slider {...settings}>
@@ -351,10 +293,10 @@ const Community = () => {
               {comment}
             </CardBorder>
             <Flex ml={10} mt={-8}>
-              <StaticImage
-                src='../../images/comment.png'
+              <Image
+                src={commentImg}
                 alt='comment'
-                height={44}
+                h={{ md: '44px', sm: 10, xs: 10 }}
               />
               <Box ml={4}>
                 <Text color={'font.primary'} fontSize={13}>

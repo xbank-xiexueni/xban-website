@@ -1,20 +1,10 @@
-import { Box, Heading, Text, Flex } from '@chakra-ui/react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { Box, Heading, Text, Flex, Image } from '@chakra-ui/react';
 import React from 'react';
 import MyContainer from '../container';
 import DownloadButton from '../DownloadButton';
+import main from '../../images/download.png';
 
 const DownloadApp = () => {
-  const query = useStaticQuery(graphql`
-    query {
-      down: file(relativePath: { eq: "download.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
   return (
     <Box
       bg='bg.gray'
@@ -36,12 +26,11 @@ const DownloadApp = () => {
             height={200}
             position={'relative'}
           >
-            <GatsbyImage
-              alt={'main'}
-              image={query?.down?.childImageSharp?.gatsbyImageData}
-              loading='lazy'
+            <Image
+              src={main}
+              alt='main'
+              height={500}
               style={{
-                height: 500,
                 position: 'absolute',
                 top: '-60%',
               }}

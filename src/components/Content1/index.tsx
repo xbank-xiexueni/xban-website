@@ -10,9 +10,9 @@ import bgM from '../../images/content-bg-mobile.png';
 import { DIVIDE } from '../../constants/paddingY';
 import ResponsiveBox from '../ResponsiveBox';
 import MyContainer from '../container';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import mobileImg from '../../images/content.png';
+// import { graphql, useStaticQuery } from 'gatsby';
+// import { GatsbyImage } from 'gatsby-plugin-image';
+import img from '../../images/content.png';
 
 const LIST = [
   'xBank is the First Platform Making Web3 and Crypto As Easy As Shopping Online ',
@@ -33,15 +33,15 @@ const Content1 = () => {
     adaptiveHeight: true,
   };
 
-  const query = useStaticQuery(graphql`
-    query {
-      main: file(relativePath: { eq: "content.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
+  // const query = useStaticQuery(graphql`
+  //   query {
+  //     main: file(relativePath: { eq: "content.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //   }
+  // `);
   // const [pl, setPl] = useState(isBrowser ? window?.innerWidth - 1200 : 0);
 
   // useEffect(() => {
@@ -152,7 +152,14 @@ const Content1 = () => {
               </Flex>
 
               <Flex justify={'center'} mb={6}>
-                <Image src={mobileImg} alt='main' />
+                <Image
+                  src={img}
+                  alt='main'
+                  style={{
+                    width: 293,
+                    height: 230,
+                  }}
+                />
                 {/* <GatsbyImage
                   alt={''}
                   image={query?.mobile?.childImageSharp?.gatsbyImageData}
@@ -290,13 +297,13 @@ const Content1 = () => {
                 />
               </Box>
               <Box
-                ml={8}
+                // ml={8}
                 position={'relative'}
-                w={'10%'}
+                // w={'10%'}
+                // height={639}
                 top={{
                   lg: '-100px',
                 }}
-                height={639}
                 display={{ md: 'block', sm: 'none', xs: 'none' }}
               >
                 <Box
@@ -305,8 +312,23 @@ const Content1 = () => {
                     lg: 'block',
                     md: 'none',
                   }}
+                  // position='absolute'
+                  // top={{
+                  //   lg: '-100px',
+                  // }}
+                  left={10}
                 >
-                  <GatsbyImage
+                  <Image
+                    // position='absolute'
+                    src={img}
+                    alt='main'
+                    style={{
+                      width: 766,
+                      height: 639,
+                    }}
+                  />
+
+                  {/* <GatsbyImage
                     alt={'main'}
                     image={query?.main?.childImageSharp?.gatsbyImageData}
                     loading='lazy'
@@ -314,8 +336,10 @@ const Content1 = () => {
                       width: 766,
                       height: 639,
                     }}
-                  />
+                  /> */}
+                  <Image />
                 </Box>
+
                 <Box
                   display={{
                     xl: 'none',
@@ -323,15 +347,7 @@ const Content1 = () => {
                     md: 'block',
                   }}
                 >
-                  <GatsbyImage
-                    alt={'main'}
-                    image={query?.main?.childImageSharp?.gatsbyImageData}
-                    loading='lazy'
-                    style={{
-                      width: 574,
-                      height: 480,
-                    }}
-                  />
+                  <Image src={img} alt='main' width={574} height={480} />
                 </Box>
               </Box>
             </Flex>

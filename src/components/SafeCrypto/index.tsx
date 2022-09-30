@@ -1,86 +1,76 @@
 import MyContainer from '../container';
 import React from 'react';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title';
-import { handleNavigate } from '../../utils/navigate';
 import ResponsiveBox from '../ResponsiveBox';
 import { DIVIDE } from '../../constants/paddingY';
+import one from '../../images/service/11.png';
+import two from '../../images/service/22.png';
+import three from '../../images/service/33.png';
+import four from '../../images/service/44.png';
+import { handleNavigate } from '../../utils/navigate';
 
 const SafeCrypto = () => {
-  const query = useStaticQuery(graphql`
-    query {
-      one: file(relativePath: { eq: "service/1.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      two: file(relativePath: { eq: "service/2.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      three: file(relativePath: { eq: "service/3.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      four: file(relativePath: { eq: "service/4.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
-
   const DATA = [
     {
       key: 'one',
       url: 'https://www.fincen.gov',
-      style: {
-        width: 169,
-        height: 111,
+      image: one,
+      h: {
+        md: 103,
+        sm: 68,
+        xs: 68,
       },
-      styleM: {
-        width: 104,
-        height: 68,
+      w: {
+        md: 103,
+        sm: 68,
+        xs: 68,
       },
     },
     {
       key: 'two',
       url: 'https://www.austrac.gov.au',
-      style: {
-        width: 214,
-        height: 70,
+      image: two,
+      h: {
+        md: 112,
+        sm: 68,
+        xs: 68,
       },
-      styleM: {
-        width: 118,
-        height: 40,
+      w: {
+        md: 178,
+        sm: 104,
+        xs: 104,
       },
     },
     {
       key: 'three',
+      image: three,
       url: 'https://www.fca.org.uk',
-      style: {
-        width: 112,
-        height: 112,
+      h: {
+        md: 71,
+        sm: '40px',
+        xs: '40px',
       },
-      styleM: {
-        width: 71,
-        height: 71,
+      w: {
+        md: 214,
+        sm: '118px',
+        xs: '118px',
       },
     },
     {
       key: 'four',
+      image: four,
       url: 'https://www.fintrac-canafe.gc.ca',
-      style: {
-        width: 174,
-        height: 106,
+      h: {
+        md: 106,
+        sm: '60px',
+        xs: '60px',
       },
-      styleM: {
-        width: 96,
-        height: 59,
+      w: {
+        md: 178,
+        sm: '100px',
+        xs: '100px',
       },
     },
   ];
@@ -103,7 +93,7 @@ const SafeCrypto = () => {
         Safe Crypto Service
       </Title>
       <Flex justify={'space-around'} alignItems='center' flexWrap='wrap'>
-        {DATA.map(({ url, key, style, styleM }) => (
+        {DATA.map(({ url, key, h, w, image }) => (
           // <Box
           //   key={key}
           //   onClick={() => {
@@ -117,14 +107,25 @@ const SafeCrypto = () => {
           //     style={style}
           //   />
           // </Box>
+          // <Image src={image} h={h} w={w} alt='safe' />
+
           <ResponsiveBox
             key={key}
             pc={
-              <GatsbyImage
-                loading='lazy'
-                image={query[key]?.childImageSharp?.gatsbyImageData}
+              // <GatsbyImage
+              //   loading='lazy'
+              //   image={query[key]?.childImageSharp?.gatsbyImageData}
+              //   alt='safe'
+              //   style={style}
+              // />
+              <Image
+                src={image}
+                h={h}
+                w={w}
                 alt='safe'
-                style={style}
+                onClick={() => {
+                  handleNavigate(url, true);
+                }}
               />
             }
             mobile={
@@ -136,13 +137,11 @@ const SafeCrypto = () => {
                 height={90}
                 mb={2}
                 borderRadius={10}
+                onClick={() => {
+                  handleNavigate(url, true);
+                }}
               >
-                <GatsbyImage
-                  loading='lazy'
-                  image={query[key]?.childImageSharp?.gatsbyImageData}
-                  alt='safe'
-                  style={styleM}
-                />
+                <Image src={image} h={h} w={w} alt='safe' />
               </Flex>
             }
           />

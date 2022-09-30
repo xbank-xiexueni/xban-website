@@ -1,12 +1,15 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
-import AutoSlider from '../AutoSlider';
 import Title from '../Title';
 import Slider from 'react-slick';
-import { StaticImage } from 'gatsby-plugin-image';
-import ResponsiveBox from '../ResponsiveBox';
 import { handleNavigate } from '../../utils/navigate';
+import f1 from '../../images/featured/1.png';
+import f2 from '../../images/featured/2.png';
+import f3 from '../../images/featured/3.png';
+import f4 from '../../images/featured/4.png';
+import f5 from '../../images/featured/5.png';
+import f6 from '../../images/featured/6.png';
 
 const TEST_ICON = (
   <svg
@@ -103,184 +106,116 @@ const Featured = () => {
       >
         As Featured In
       </Title>
-      <ResponsiveBox
-        mobile={
-          <Slider {...settings} rtl={true}>
-            <Box
-              mr={2}
-              onClick={() => {
-                handleNavigate('https://hackernoon.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/1.png'
-                alt='feature'
-                width={106}
-                height={40}
-              />
-            </Box>
-            <Box
-              mr={2}
-              onClick={() => {
-                handleNavigate('https://www.quora.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/2.png'
-                alt='feature'
-                width={106}
-                height={40}
-              />
-            </Box>
-            <Box
-              mr={2}
-              onClick={() => {
-                handleNavigate('https://medium.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/3.png'
-                alt='feature'
-                width={106}
-                height={40}
-              />
-            </Box>
-            <Box
-              mr={2}
-              onClick={() => {
-                handleNavigate('https://investsocial.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/4.png'
-                alt='feature'
-                width={106}
-                height={40}
-              />
-            </Box>
-            <Box
-              mr={2}
-              onClick={() => {
-                handleNavigate('https://bitco.in/forum/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/5.png'
-                alt='feature'
-                width={106}
-                height={40}
-              />
-            </Box>
-            <Box
-              mr={2}
-              onClick={() => {
-                handleNavigate('https://forums.babypips.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/6.png'
-                alt='feature'
-                width={106}
-                height={40}
-              />
-            </Box>
-          </Slider>
-        }
-        pc={
-          <Slider {...settings} rtl={true}>
-            <Box
-              mr={4}
-              onClick={() => {
-                handleNavigate('https://hackernoon.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/1.png'
-                alt='feature'
-                width={216}
-                height={80}
-              />
-            </Box>
-            <Box
-              mr={4}
-              onClick={() => {
-                handleNavigate('https://www.quora.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/2.png'
-                alt='feature'
-                width={216}
-                height={80}
-              />
-            </Box>
-            <Box
-              mr={4}
-              onClick={() => {
-                handleNavigate('https://medium.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/3.png'
-                alt='feature'
-                width={216}
-                height={80}
-              />
-            </Box>
-            <Box
-              mr={4}
-              onClick={() => {
-                handleNavigate('https://investsocial.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/4.png'
-                alt='feature'
-                width={216}
-                height={80}
-              />
-            </Box>
-            <Box
-              mr={4}
-              onClick={() => {
-                handleNavigate('https://bitco.in/forum/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/5.png'
-                alt='feature'
-                width={216}
-                height={80}
-              />
-            </Box>
-            <Box
-              mr={4}
-              onClick={() => {
-                handleNavigate('https://forums.babypips.com/', true);
-              }}
-              cursor='pointer'
-            >
-              <StaticImage
-                src='../../images/featured/6.png'
-                alt='feature'
-                width={216}
-                height={80}
-              />
-            </Box>
-          </Slider>
-        }
-      />
+      <Slider {...settings} rtl={true}>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate('https://hackernoon.com/', true);
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f1}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate('https://www.quora.com/', true);
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f2}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate('https://medium.com/', true);
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f3}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate('https://investsocial.com/', true);
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f4}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate('https://bitco.in/forum/', true);
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f5}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate('https://forums.babypips.com/', true);
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f6}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+      </Slider>
       {/* <AutoSlider data={Object.values(query)} mb={5} /> */}
 
       {/* <AutoSlider data={DATA} isRtl /> */}

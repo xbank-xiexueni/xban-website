@@ -1,10 +1,18 @@
-import { Box, BoxProps, Center, Flex, Highlight, Text } from '@chakra-ui/react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import {
+  Box,
+  BoxProps,
+  Center,
+  Flex,
+  Highlight,
+  Text,
+  Image,
+} from '@chakra-ui/react';
 import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
 import MyContainer from '../container';
 import Title from '../Title';
+import withImg from '../../images/with-xBank.png';
+import withoutImg from '../../images/without-xBank.png';
 
 const WITH = [
   {
@@ -45,20 +53,6 @@ const WITHOUT = [
 ];
 
 const Advantage = () => {
-  const query = useStaticQuery(graphql`
-    query {
-      with: file(relativePath: { eq: "with-xBank.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      without: file(relativePath: { eq: "without-xBank.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
   return (
     <Box
       bg='bg.gray'
@@ -162,17 +156,12 @@ const Advantage = () => {
           >
             VS
           </Box>
-          <ItemCard
-            title='With xBank'
-            data={WITH}
-            checked
-            image={query?.with?.childImageSharp?.gatsbyImageData}
-          />
+          <ItemCard title='With xBank' data={WITH} checked image={withImg} />
           <ItemCard
             title='Without xBank'
             data={WITHOUT}
             checked={false}
-            image={query?.without?.childImageSharp?.gatsbyImageData}
+            image={withoutImg}
           />
         </Flex>
       </MyContainer>
@@ -183,7 +172,7 @@ const Advantage = () => {
 type ItemCardProps = {
   checked?: boolean;
   data: { value: string; highlight: string }[];
-  image?: IGatsbyImageData;
+  image?: any;
   title: string;
 } & BoxProps;
 
@@ -360,22 +349,14 @@ const ItemCard: React.FunctionComponent<ItemCardProps> = ({
       ))}
       <Box
         display={{
-          md: 'block',
+          md: 'flex',
           sm: 'none',
           xs: 'none',
         }}
         textAlign='center'
+        justifyContent={'center'}
       >
-        {image && (
-          <GatsbyImage
-            image={image}
-            alt='adv'
-            loading='lazy'
-            style={{
-              width: 340,
-            }}
-          />
-        )}
+        {image && <Image src={image} alt='' w={340} />}
         {!image && <Box height={500} bg='lightgray' />}
       </Box>
     </Box>

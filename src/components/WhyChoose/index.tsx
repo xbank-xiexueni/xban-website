@@ -7,12 +7,20 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { DIVIDE } from '../../constants/paddingY';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import why1 from '../../images/why/why1.png';
+import why2 from '../../images/why/why2.png';
+import why3 from '../../images/why/why3.png';
+import why4 from '../../images/why/why4.png';
+import p1 from '../../images/why/process1.png';
+import p4 from '../../images/why/process4.png';
+
 const DATA = [
   {
     key: 'why1',
     title: 'NFT lowest as $10, Join to Free Mint & Pre-Mint',
     titleHighlight: ['NFT', '$10'],
-    extra: <StaticImage src='../../images/why/process1.png' alt={''} />,
+    extra: p1,
+    image: why1,
     buttonTitle: 'Buy my NFT',
     description:
       'Pick-Up and Own Your New Profile Picture by Artists; Find Interesting Digital Collectibles of Sport, Music and Photography.',
@@ -22,6 +30,7 @@ const DATA = [
     title: 'Early Bird Access to Hot Games',
     titleHighlight: ['Hot Games'],
     buttonTitle: 'Get hot games',
+    image: why2,
     description:
       'Onboard Blockchain Games without Hassles and Be Ready to Enjoy New Worlds All the Time.',
   },
@@ -30,6 +39,7 @@ const DATA = [
     title: 'Participate Popular DAO with Friends',
     titleHighlight: ['DAO'],
     buttonTitle: 'Connect my wallet',
+    image: why3,
     description:
       'Interact with Your New Friends From Decentralized Communities Based on Your Hobbies, Interests, Visions and Wishes..',
   },
@@ -37,46 +47,48 @@ const DATA = [
     key: 'why4',
     title: 'Play Around and Earn Free Coins',
     buttonTitle: 'Exploring Web3',
+    image: why4,
+    extra: p4,
     description:
       'Explore Token Bounties of Events and Applications of Web3 and Earn on Your Contributions',
   },
 ];
 
 const WhyChoose = () => {
-  const query = useStaticQuery(graphql`
-    query {
-      why1: file(relativePath: { eq: "why/why1.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      why1extra: file(relativePath: { eq: "why/process1.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      why2: file(relativePath: { eq: "why/why2.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      why3: file(relativePath: { eq: "why/why3.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      why4: file(relativePath: { eq: "why/why4.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      why4extra: file(relativePath: { eq: "why/process4.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
+  // const query = useStaticQuery(graphql`
+  //   query {
+  //     why1: file(relativePath: { eq: "why/why1.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //     why1extra: file(relativePath: { eq: "why/process1.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //     why2: file(relativePath: { eq: "why/why2.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //     why3: file(relativePath: { eq: "why/why3.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //     why4: file(relativePath: { eq: "why/why4.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //     why4extra: file(relativePath: { eq: "why/process4.png" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(layout: CONSTRAINED)
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <Box bg='bg.gray'>
@@ -113,10 +125,8 @@ const WhyChoose = () => {
             <Item
               {...item}
               id={item.key}
-              extra={
-                query[`${item?.key}extra`]?.childImageSharp?.gatsbyImageData
-              }
-              image={query[item?.key]?.childImageSharp?.gatsbyImageData}
+              extra={item.extra}
+              image={item.image}
             />
           </MyContainer>
         </Box>

@@ -1,62 +1,20 @@
-import { Box, Flex } from '@chakra-ui/react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { Box, Flex, Image } from '@chakra-ui/react';
 import React from 'react';
 import { DIVIDE } from '../../constants/paddingY';
 import MyContainer from '../container';
-import ResponsiveBox from '../ResponsiveBox';
 import Title from '../Title';
 
+import b1 from '../../images/backed/1.png';
+import b2 from '../../images/backed/2.png';
+import b3 from '../../images/backed/3.png';
+import b4 from '../../images/backed/4.png';
+import b5 from '../../images/backed/5.png';
+import b6 from '../../images/backed/6.png';
+import b7 from '../../images/backed/7.png';
+import b8 from '../../images/backed/8.png';
+import b9 from '../../images/backed/9.png';
+
 const Backed = () => {
-  const query = useStaticQuery(graphql`
-    query {
-      b1: file(relativePath: { eq: "backed/1.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b2: file(relativePath: { eq: "backed/2.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b3: file(relativePath: { eq: "backed/3.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b4: file(relativePath: { eq: "backed/4.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b5: file(relativePath: { eq: "backed/5.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b6: file(relativePath: { eq: "backed/6.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b7: file(relativePath: { eq: "backed/7.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b8: file(relativePath: { eq: "backed/8.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-      b9: file(relativePath: { eq: "backed/9.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-      }
-    }
-  `);
   return (
     <Box
       bg={'bg.gray'}
@@ -85,27 +43,23 @@ const Backed = () => {
           }}
           flexWrap='wrap'
         >
-          {['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9'].map(
-            (item) => (
-              <ResponsiveBox
-                key={item}
-                mobile={
-                  <GatsbyImage
-                    image={query[item]?.childImageSharp?.gatsbyImageData}
-                    alt={'backed'}
-                    style={{ width: 54, height: 54 }}
-                  />
-                }
-                pc={
-                  <GatsbyImage
-                    image={query[item]?.childImageSharp?.gatsbyImageData}
-                    alt={'backed'}
-                    style={{ width: 150, height: 150 }}
-                  />
-                }
-              />
-            )
-          )}
+          {[b1, b2, b3, b4, b5, b6, b7, b8, b9].map((item) => (
+            <Image
+              src={item}
+              w={{
+                md: 150,
+                sm: 54,
+                xs: 54,
+              }}
+              alt='backed'
+              h={{
+                md: 150,
+                sm: 54,
+                xs: 54,
+              }}
+              key={item.toString()}
+            />
+          ))}
         </Flex>
       </MyContainer>
     </Box>
