@@ -170,9 +170,13 @@ const Header = () => {
                         <Box
                           cursor={'pointer'}
                           fontSize={16}
+                          color={focusId === cId ? 'primary' : 'font.primary'}
                           onClick={() => {
                             onClick();
                             onClose();
+                          }}
+                          _hover={{
+                            color: 'primary',
                           }}
                           // color={}
                           key={label}
@@ -233,6 +237,10 @@ const Header = () => {
                             onClick();
                             onClose();
                           }}
+                          _hover={{
+                            color: 'primary',
+                          }}
+                          color={focusId === cId ? 'primary' : 'font.primary'}
                           // color={}
                           key={label}
                           py={2}
