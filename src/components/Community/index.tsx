@@ -337,7 +337,7 @@ const Community = () => {
         </Box>
       </Flex>
       {/* 评价 */}
-      <Slider {...settings}>
+      <Slider {...settings} lazyLoad={'progressive'}>
         {COMMENT_DATA.map(({ name, comment, p }, index) => (
           <Box key={name}>
             <CardBorder

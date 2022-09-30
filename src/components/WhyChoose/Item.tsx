@@ -278,7 +278,11 @@ export const Header = () => {
             xs: 0.5,
           }}
         >
-          <Slider {...settings} className='d-inline-block'>
+          <Slider
+            {...settings}
+            className='d-inline-block'
+            lazyLoad={'progressive'}
+          >
             {DATA.map((item) => (
               <Box
                 // w={{ md: '90px', sm: '40px', xs: '40px' }}
