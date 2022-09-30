@@ -2,7 +2,7 @@ import { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `xBank— Web3 and Cryptos All-In-One Portal`,
+    title: `xBank - Web3 and Cryptos All-In-One Portal`,
     siteUrl: `https://www.xbank.plus`,
     author: 'xBank',
     description:
