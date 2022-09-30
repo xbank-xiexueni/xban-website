@@ -156,6 +156,7 @@ const Header = () => {
                           onClick: () => {
                             scrollTo(DISCOVER_WEB3_ID);
                             setFocusId(DISCOVER_WEB3_ID);
+                            setCurrentOpen(undefined);
                           },
                         },
                         {
@@ -164,6 +165,7 @@ const Header = () => {
                           onClick: () => {
                             scrollTo(CONVERT_MONEY_ID);
                             setFocusId(CONVERT_MONEY_ID);
+                            setCurrentOpen(undefined);
                           },
                         },
                       ]?.map(({ label, onClick, cId }) => (
@@ -219,6 +221,7 @@ const Header = () => {
                           onClick: () => {
                             scrollTo(ABOUT_US_ID);
                             setFocusId(ABOUT_US_ID);
+                            setCurrentOpen(undefined);
                           },
                         },
                         {
@@ -227,6 +230,7 @@ const Header = () => {
                           onClick: () => {
                             scrollTo(COMMUNITY_ID);
                             setFocusId(COMMUNITY_ID);
+                            setCurrentOpen(undefined);
                           },
                         },
                       ]?.map(({ label, onClick, cId }) => (
