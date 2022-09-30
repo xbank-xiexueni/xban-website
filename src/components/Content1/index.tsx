@@ -344,12 +344,12 @@ const Content1 = () => {
                 />
               </Box>
               <Box
-                // ml={8}
+                ml={8}
                 position={'relative'}
                 // w={'10%'}
                 // height={639}
                 top={{
-                  lg: '-100px',
+                  lg: '-150px',
                 }}
                 display={{ md: 'block', sm: 'none', xs: 'none' }}
               >
@@ -371,7 +371,7 @@ const Content1 = () => {
                     alt='main'
                     style={{
                       width: 766,
-                      height: 639,
+                      height: 700,
                     }}
                   />
 
