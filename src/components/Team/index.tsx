@@ -267,6 +267,7 @@ const Item3 = () => {
                     w={384}
                     h={300}
                     borderRadius={10}
+                    alt='team'
                   />
                   {/* <GatsbyImage
                     loading='lazy'
