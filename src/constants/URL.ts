@@ -1,4 +1,5 @@
-export const ANDROID_URL = 'https://www.gatsbyjs.com/';
+export const ANDROID_URL =
+  'https://apps.apple.com/app/apple-store/id1481024258';
 export const IOS_URL = 'https://apps.apple.com/app/apple-store/id1481024258';
 
 export const TWITTER_URL = 'https://twitter.com/xBank_Official';

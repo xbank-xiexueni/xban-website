@@ -60,6 +60,8 @@ const ModalButton: React.FunctionComponent<
   const cancelRef = React.useRef(null);
   const isBrowser = typeof window !== 'undefined';
 
+  console.log(isBrowser ? `${window?.location?.origin}/download` : '');
+
   return (
     <>
       <Button
@@ -211,7 +213,9 @@ const ModalButton: React.FunctionComponent<
                     >
                       <QRCodeSVG
                         value={
-                          isBrowser ? `${window?.location?.host}/download` : ''
+                          isBrowser
+                            ? `${window?.location?.origin}/download`
+                            : ''
                         }
                         width={75}
                         height={75}
