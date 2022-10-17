@@ -181,7 +181,7 @@ const Header = () => {
                 }}
                 alignItems='center'
               >
-                <Image src={Icon} h={25} alt='icon' />
+                <Image src={Icon} h={25} alt='icon' loading='lazy' />
               </Flex>
 
               <Flex

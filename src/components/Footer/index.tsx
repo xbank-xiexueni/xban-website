@@ -25,7 +25,7 @@ const Footer = () => {
       }}
     >
       <Flex alignItems={'center'}>
-        <Image src={LOGO} h={{ md: 30, sm: 5, xs: 5 }} alt='logo' />
+        <Image src={LOGO} h={{ md: 30, sm: 5, xs: 5 }} alt='logo' loading='lazy' />
       </Flex>
       <Flex
         justify={'space-between'}
