@@ -34,7 +34,10 @@ import {
   DISCOVER_WEB3_ID,
 } from '../../constants/ID';
 import ModalButton from '../ModalButton';
-import Icon from '../../images/xbank.png';
+import Icon from '../../images/logo.png';
+import SoonImage from '../../images/soon-tag.png';
+
+// 48
 
 const ARROW = (
   <svg
@@ -49,31 +52,33 @@ const ARROW = (
 );
 
 const Tag = () => (
-  <Box
-    pos={'absolute'}
-    right={'-30px'}
-    top={'-12px'}
-    bgGradient='linear-gradient(225deg, #0000FF 0%, #9500E0 100%)'
-    borderRadius={'30px'}
-    paddingX={2}
-    py={0.5}
-  >
-    <Text fontSize={'8px'} textAlign='center' color={'white'} lineHeight='12px'>
-      Coming Soon
-    </Text>
+  <Box pos={'absolute'} right={'-30px'} top='-12px'>
+    <Image src={SoonImage} w='57px' h='12px' />
   </Box>
 );
 
 const ComingSoon = () => (
-  <Flex align={'center'} mx={'56px'}>
-    <Box pos={'relative'}>
-      <Text display={'flex'} alignItems='center'>
+  <Flex align={'center'} mx={12} h='20px'>
+    <Box pos={'relative'} h='20px'>
+      <Text
+        display={'flex'}
+        alignItems='center'
+        fontSize={14}
+        color={'font.primary'}
+        lineHeight='20px'
+      >
         Web3 Credit
       </Text>
       <Tag />
     </Box>
-    <Box ml='56px' pos={'relative'}>
-      <Text display={'flex'} alignItems='center'>
+    <Box ml={12} pos={'relative'} h='20px'>
+      <Text
+        display={'flex'}
+        alignItems='center'
+        fontSize={14}
+        color={'font.primary'}
+        lineHeight='20px'
+      >
         Liquidity
       </Text>
       <Tag />
@@ -82,15 +87,8 @@ const ComingSoon = () => (
 );
 
 const MobileTag = () => (
-  <Box
-    bgGradient='linear-gradient(225deg, #0000FF 0%, #9500E0 100%)'
-    borderRadius={'30px'}
-    paddingX={2}
-    h={'12px'}
-  >
-    <Text fontSize={'8px'} textAlign='center' color={'white'} lineHeight='12px'>
-      Coming Soon
-    </Text>
+  <Box>
+    <Image src={SoonImage} w='57px' h='12px' />
   </Box>
 );
 
@@ -98,7 +96,12 @@ const MobileComingSoon = () => (
   <Box my='12px'>
     {['Web3 Credit', 'Liquidity'].map((item) => (
       <Flex alignItems={'center'} gap={2} mb={'10px'}>
-        <Text display={'flex'} alignItems='center'>
+        <Text
+          display={'flex'}
+          alignItems='center'
+          color={'#000000'}
+          fontWeight={500}
+        >
           {item}
         </Text>
         <MobileTag />
@@ -179,9 +182,6 @@ const Header = () => {
                 alignItems='center'
               >
                 <Image src={Icon} h={25} alt='icon' />
-                <Text color={'font.primary'} fontSize={30} fontWeight={500}>
-                  xBank
-                </Text>
               </Flex>
 
               <Flex
@@ -193,7 +193,8 @@ const Header = () => {
               >
                 <Menu isOpen={currentOpen === 'product'}>
                   <MenuButton
-                    ml={10}
+                    h='20px'
+                    ml={'100px'}
                     id='menu-button'
                     onClick={() => {
                       if (currentOpen === 'product') {
@@ -203,7 +204,13 @@ const Header = () => {
                       }
                     }}
                   >
-                    <Text display={'flex'} alignItems='center'>
+                    <Text
+                      display={'flex'}
+                      alignItems='center'
+                      fontSize={14}
+                      color={'font.primary'}
+                      lineHeight='20px'
+                    >
                       Products&nbsp;{ARROW}
                     </Text>
                   </MenuButton>
@@ -261,6 +268,7 @@ const Header = () => {
                 <Menu isOpen={currentOpen === 'company'}>
                   <MenuButton
                     // ml={10}
+                    h='20px'
                     id='menu-button1'
                     onClick={() => {
                       if (currentOpen === 'company') {
@@ -270,7 +278,12 @@ const Header = () => {
                       }
                     }}
                   >
-                    <Text display={'flex'} alignItems='center'>
+                    <Text
+                      display={'flex'}
+                      alignItems='center'
+                      fontSize={14}
+                      color={'font.primary'}
+                    >
                       Company&nbsp;{ARROW}
                     </Text>
                   </MenuButton>
@@ -375,7 +388,7 @@ const Header = () => {
                 {/* <Box onClick={onOpen} cursor={'pointer'}></Box> */}
               </MenuButton>
               <MenuList p={3}>
-                <Text fontWeight={700} fontSize={16}>
+                <Text fontWeight={500} fontSize={16} color={'font.primary'}>
                   Products
                 </Text>
                 <Box fontSize={14}>
@@ -418,7 +431,7 @@ const Header = () => {
                 <MobileComingSoon />
 
                 <Divider />
-                <Text pt={2} fontWeight={700}>
+                <Text pt={2} fontWeight={500} color={'font.primary'}>
                   Company
                 </Text>
                 <Box fontSize={14}>

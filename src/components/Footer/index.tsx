@@ -8,7 +8,7 @@ import {
 } from '../../constants/URL';
 import MyContainer from '../container';
 import { handleNavigate } from '../../utils/navigate';
-import LOGO from '../../images/xbank.png';
+import LOGO from '../../images/logo.png';
 
 const DES = [
   'Initial Blockchain Tech Inc (EntityID#20218185210) is a company registered with the office of the secretary of state of the state of Colorado, with its principal office address at 4255 South Buckley Road#1296, Aurora, Colorado. It is a regulated money service provider which has registered with FinCEN as a Money Service Business (MSB) with the registration number of 31000205541338.',
@@ -26,16 +26,6 @@ const Footer = () => {
     >
       <Flex alignItems={'center'}>
         <Image src={LOGO} h={{ md: 30, sm: 5, xs: 5 }} alt='logo' />
-        <Text
-          fontSize={{
-            md: 30,
-            sm: 16,
-            xs: 16,
-          }}
-          color={'font.primary'}
-        >
-          &nbsp;xBank
-        </Text>
       </Flex>
       <Flex
         justify={'space-between'}
