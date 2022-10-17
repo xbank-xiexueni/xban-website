@@ -260,7 +260,7 @@ const Header = () => {
 
                 <Menu isOpen={currentOpen === 'company'}>
                   <MenuButton
-                    ml={10}
+                    // ml={10}
                     id='menu-button1'
                     onClick={() => {
                       if (currentOpen === 'company') {
