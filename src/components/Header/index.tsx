@@ -389,6 +389,8 @@ const Header = () => {
                     _active={{
                       bg: 'bg.gray',
                     }}
+                    px={1}
+                    borderRadius={4}
                     bg={focusId === DISCOVER_WEB3_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     Discover Web3
@@ -403,6 +405,8 @@ const Header = () => {
                     _active={{
                       bg: 'bg.gray',
                     }}
+                    px={1}
+                    borderRadius={4}
                     bg={focusId === CONVERT_MONEY_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     Convert Money
@@ -428,6 +432,8 @@ const Header = () => {
                     _active={{
                       bg: 'bg.gray',
                     }}
+                    px={1}
+                    borderRadius={4}
                     bg={focusId === ABOUT_US_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     About Us
@@ -442,6 +448,8 @@ const Header = () => {
                     _active={{
                       bg: 'bg.gray',
                     }}
+                    px={1}
+                    borderRadius={4}
                     bg={focusId === COMMUNITY_ID ? 'bg.gray' : '#FFFFFF'}
                   >
                     Community
