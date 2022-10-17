@@ -171,7 +171,7 @@ const Header = () => {
       <Box bg='#FFFFFF'>
         <MyContainer>
           <Flex justify={'space-between'} h={58} alignItems='center'>
-            <Flex>
+            <Flex alignItems={'center'}>
               <Flex
                 gap={2}
                 onClick={() => {
