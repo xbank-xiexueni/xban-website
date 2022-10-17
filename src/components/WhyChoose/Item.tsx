@@ -4,16 +4,16 @@ import {
   Flex,
   Text,
   Highlight,
-  ImageProps,
+  // ImageProps,
   Image,
 } from '@chakra-ui/react';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+// import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import '../../style/global.scss';
 import ModalButton from '../ModalButton';
 import Title from '../Title';
 import { DIVIDE } from '../../constants/paddingY';
-import ResponsiveBox from '../ResponsiveBox';
+// import ResponsiveBox from '../ResponsiveBox';
 
 type ItemProps = {
   title: string;
@@ -85,7 +85,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
                   query={titleHighlight || ''}
                   styles={{ color: 'var(--chakra-colors-primary)' }}
                 >
-                  NFT lowest as $10,
+                  NFT Below $5
                 </Highlight>
               </Text>
               Join to Free Mint & Pre-Mint

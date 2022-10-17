@@ -14,9 +14,9 @@ import {
   // DrawerHeader,
   Menu,
   MenuList,
-  MenuGroup,
-  MenuItem,
-  MenuDivider,
+  // MenuGroup,
+  // MenuItem,
+  // MenuDivider,
   MenuButton,
   Divider,
   Portal,
@@ -24,7 +24,7 @@ import {
 import React, { useCallback, useEffect, useState } from 'react';
 import MyContainer from '../container';
 import './index.scss';
-import MyMenu from './MyMenu';
+// import MyMenu from './MyMenu';
 // import { StaticImage } from 'gatsby-plugin-image';
 import StickySummary from '../Summary/StickySummary';
 import {
@@ -46,6 +46,65 @@ const ARROW = (
   >
     <path d='M1 1L4 3L7 1' stroke='#00000F' />
   </svg>
+);
+
+const Tag = () => (
+  <Box
+    pos={'absolute'}
+    right={'-30px'}
+    top={'-12px'}
+    bgGradient='linear-gradient(225deg, #0000FF 0%, #9500E0 100%)'
+    borderRadius={'30px'}
+    paddingX={2}
+    py={0.5}
+  >
+    <Text fontSize={'8px'} textAlign='center' color={'white'} lineHeight='12px'>
+      Coming Soon
+    </Text>
+  </Box>
+);
+
+const ComingSoon = () => (
+  <Flex align={'center'} mx={'56px'}>
+    <Box pos={'relative'}>
+      <Text display={'flex'} alignItems='center'>
+        Web3 Credit
+      </Text>
+      <Tag />
+    </Box>
+    <Box ml='56px' pos={'relative'}>
+      <Text display={'flex'} alignItems='center'>
+        Liquidity
+      </Text>
+      <Tag />
+    </Box>
+  </Flex>
+);
+
+const MobileTag = () => (
+  <Box
+    bgGradient='linear-gradient(225deg, #0000FF 0%, #9500E0 100%)'
+    borderRadius={'30px'}
+    paddingX={2}
+    h={'12px'}
+  >
+    <Text fontSize={'8px'} textAlign='center' color={'white'} lineHeight='12px'>
+      Coming Soon
+    </Text>
+  </Box>
+);
+
+const MobileComingSoon = () => (
+  <Box my='12px'>
+    {['Web3 Credit', 'Liquidity'].map((item) => (
+      <Flex alignItems={'center'} gap={2} mb={'10px'}>
+        <Text display={'flex'} alignItems='center'>
+          {item}
+        </Text>
+        <MobileTag />
+      </Flex>
+    ))}
+  </Box>
 );
 
 const Header = () => {
@@ -128,7 +187,8 @@ const Header = () => {
               <Flex
                 display={{
                   xs: 'none',
-                  sm: 'flex',
+                  sm: 'none',
+                  md: 'flex',
                 }}
               >
                 <Menu isOpen={currentOpen === 'product'}>
@@ -195,6 +255,8 @@ const Header = () => {
                     </MenuList>
                   </Portal>
                 </Menu>
+
+                <ComingSoon />
 
                 <Menu isOpen={currentOpen === 'company'}>
                   <MenuButton
@@ -279,8 +341,9 @@ const Header = () => {
               title='Get xBank'
               h={35}
               display={{
+                md: 'block',
                 xs: 'none',
-                sm: 'block',
+                sm: 'none',
               }}
               bg='secondary'
               color='#FFF'
@@ -345,6 +408,10 @@ const Header = () => {
                     Convert Money
                   </Box>
                 </Box>
+
+                <Divider />
+
+                <MobileComingSoon />
 
                 <Divider />
                 <Text pt={2} fontWeight={700}>

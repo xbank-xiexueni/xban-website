@@ -17,8 +17,8 @@ import p4 from '../../images/why/process4.png';
 const DATA = [
   {
     key: 'why1',
-    title: 'NFT lowest as $10, Join to Free Mint & Pre-Mint',
-    titleHighlight: ['NFT', '$10'],
+    title: 'NFT Below $5, Join to Free Mint & Pre-Mint',
+    titleHighlight: ['NFT', '$5'],
     extra: p1,
     image: why1,
     buttonTitle: 'Buy my NFT',
