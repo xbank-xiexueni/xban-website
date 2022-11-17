@@ -175,7 +175,7 @@ const ModalButton: React.FunctionComponent<
                   </Text>
                   <Flex
                     mt={4}
-                    alignItems='flex-end'
+                    alignItems='flex-start'
                     justify={{
                       md: 'start',
                       sm: 'space-around',
@@ -187,21 +187,21 @@ const ModalButton: React.FunctionComponent<
                         dType='ios'
                         bg='#000000'
                         mb={2}
-                        iconW='101'
-                        iconH='30'
+                        iconW='100px'
+                        iconH='30px'
                       />
                       <DownloadButton
                         dType='google'
                         mb={2}
                         bg='#000000'
-                        iconW='101'
-                        iconH='30'
+                        iconW='100px'
+                        iconH='30px'
                       />
                       <DownloadButton
                         dType='android'
                         bg='#000000'
-                        iconW='101'
-                        iconH='30'
+                        iconW='100px'
+                        iconH='30px'
                       />
                     </Box>
                     <Box
