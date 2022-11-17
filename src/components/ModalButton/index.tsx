@@ -17,8 +17,8 @@ import {
   ButtonProps,
   Image,
 } from '@chakra-ui/react';
-import { handleNavigate } from '../../utils/navigate';
-import { IOS_URL } from '../../constants/URL';
+// import { handleNavigate } from '../../utils/navigate';
+// import { IOS_URL } from '../../constants/URL';
 import modalImg from '../../images/modal-bg.png';
 
 const ARROW = (
@@ -177,6 +177,7 @@ const ModalButton: React.FunctionComponent<
                     mt={4}
                     alignItems='flex-end'
                     justify={{
+                      md: 'start',
                       sm: 'space-around',
                       xs: 'space-around',
                     }}

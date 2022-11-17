@@ -10,6 +10,7 @@ import f3 from '../../images/featured/3.png';
 import f4 from '../../images/featured/4.png';
 import f5 from '../../images/featured/5.png';
 import f6 from '../../images/featured/6.png';
+import f7 from '../../images/featured/7.png';
 
 const TEST_ICON = (
   <svg
@@ -210,6 +211,27 @@ const Featured = () => {
         >
           <Image
             src={f6}
+            alt='featured'
+            w={{ md: 216, sm: 106, xs: 106 }}
+            h={{ md: 20, xs: 10, sm: 10 }}
+          />
+        </Box>
+        <Box
+          mr={{
+            md: 4,
+            sm: 2,
+            xs: 2,
+          }}
+          onClick={() => {
+            handleNavigate(
+              'https://finance.yahoo.com/news/xbank-one-portal-web3-recently-191200439.html',
+              true
+            );
+          }}
+          cursor='pointer'
+        >
+          <Image
+            src={f7}
             alt='featured'
             w={{ md: 216, sm: 106, xs: 106 }}
             h={{ md: 20, xs: 10, sm: 10 }}

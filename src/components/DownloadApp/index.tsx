@@ -44,7 +44,7 @@ const DownloadApp = () => {
               xs: '80%',
             }}
           >
-            <Heading>Download xBank Apps for iOS</Heading>
+            <Heading>Download xBank Apps for</Heading>
             {/* <Heading>Download xBank Apps for iOS & Android</Heading> */}
             <Text mt={5} mb={6}>
               Sign up and get 5 USDT & 500 BUSD
