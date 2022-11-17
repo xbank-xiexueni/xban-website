@@ -60,8 +60,6 @@ const ModalButton: React.FunctionComponent<
   const cancelRef = React.useRef(null);
   const isBrowser = typeof window !== 'undefined';
 
-  console.log(isBrowser ? `${window?.location?.origin}/download` : '');
-
   return (
     <>
       <Button
@@ -157,18 +155,6 @@ const ModalButton: React.FunctionComponent<
                     w='100%'
                     zIndex={3}
                   />
-                  {/* <Box position={'absolute'} left={-5} bottom={-2}>
-                    <Image
-                      src={icon}
-                      alt='icon'
-                      w={{
-                        md: 61,
-                        sm: 16,
-                        xs: 16,
-                      }}
-                      h={{ md: 59, sm: 16, xs: 16 }}
-                    />
-                  </Box> */}
                 </Box>
                 <Box
                   w={{
@@ -187,25 +173,37 @@ const ModalButton: React.FunctionComponent<
                       Follow us & Grab a 5 USDT + 500 BUSD Registration Reward
                     </Highlight>
                   </Text>
-                  <Flex alignItems={'center'} mt={4}>
+                  <Flex
+                    mt={4}
+                    alignItems='flex-end'
+                    justify={{
+                      sm: 'space-around',
+                      xs: 'space-around',
+                    }}
+                  >
                     <Box mr={6}>
-                      <Box
-                        onClick={() => {
-                          handleNavigate(IOS_URL, true);
-                        }}
-                      >
-                        <DownloadButton dType='ios' bg='#000000' />
-                      </Box>
-                      {/* <Box
-                        mt={2}
-                        onClick={() => console.log('打开 google play')}
-                      >
-                        <DownloadButton dType='android' bg='#000000' w={120} />
-                      </Box> */}
+                      <DownloadButton
+                        dType='ios'
+                        bg='#000000'
+                        mb={2}
+                        iconW='101'
+                        iconH='30'
+                      />
+                      <DownloadButton
+                        dType='google'
+                        mb={2}
+                        bg='#000000'
+                        iconW='101'
+                        iconH='30'
+                      />
+                      <DownloadButton
+                        dType='android'
+                        bg='#000000'
+                        iconW='101'
+                        iconH='30'
+                      />
                     </Box>
-                    {/* <ScaleFade initialScale={0.9} in={!!showIndex}> */}
                     <Box
-                      // boxShadow={'gray 0px 0px 5px'}
                       filter='drop-shadow(0px 0px 4px rgba(170, 168, 230, 0.5))'
                       w={75}
                       h={75}

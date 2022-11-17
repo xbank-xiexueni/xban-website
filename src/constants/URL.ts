@@ -1,6 +1,11 @@
-export const ANDROID_URL =
-  'https://apps.apple.com/app/apple-store/id1481024258';
+export const ANDROID_DEV_URL =
+  'https://xbank.global/images/download/app-release.apk';
+export const ANDROID_PRO_URL =
+  'https://xbank.global/images/download/app-release.apk';
 export const IOS_URL = 'https://apps.apple.com/app/apple-store/id1481024258';
+
+export const GOOGLE_PLAY_URL =
+  'https://xbank.global/images/download/app-release.apk';
 
 export const TWITTER_URL = 'https://twitter.com/xBank_Official';
 

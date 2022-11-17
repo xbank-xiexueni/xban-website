@@ -50,8 +50,11 @@ const DownloadApp = () => {
               Sign up and get 5 USDT & 500 BUSD
             </Text>
 
-            <DownloadButton dType='ios' bg='#6867F5' mr={2} />
-            {/* <DownloadButton dType='android' bg='#6867F5' w={130} /> */}
+            <Flex>
+              <DownloadButton dType='ios' mr={3} />
+              <DownloadButton dType='google' mr={3} />
+              <DownloadButton dType='android' />
+            </Flex>
           </Box>
         </Flex>
       </MyContainer>
