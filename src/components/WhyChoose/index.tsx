@@ -39,7 +39,7 @@ const DATA = [
     key: 'why3',
     title: 'Participate Popular DAO with Friends',
     titleHighlight: ['DAO'],
-    buttonTitle: 'Connect my wallet',
+    buttonTitle: 'Play now',
     image: why3,
     description:
       'Interact with Your New Friends From Decentralized Communities Based on Your Hobbies, Interests, Visions and Wishes..',

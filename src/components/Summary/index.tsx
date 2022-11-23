@@ -7,7 +7,7 @@ export const DATA = [
     value: '70+',
   },
   {
-    label: 'Supported NFT/DAO/Defi/Game projects',
+    label: 'Supported NFT/DAO/Defi/Game Assets',
     value: '2,000,000+',
   },
   {

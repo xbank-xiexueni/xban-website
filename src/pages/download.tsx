@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import {
   IOS_URL,
-  ANDROID_DEV_URL,
+  // ANDROID_DEV_URL,
   GOOGLE_PLAY_URL,
-  ANDROID_PRO_URL,
+  // ANDROID_PRO_URL,
 } from '../constants/URL';
 import { handleNavigate } from '../utils/navigate';
 
@@ -41,11 +41,7 @@ const download = () => {
       if (!isBrowser) {
         return;
       }
-      if (window?.location?.host === 'xbank.plus') {
-        handleNavigate(ANDROID_PRO_URL);
-      } else {
-        handleNavigate(ANDROID_DEV_URL);
-      }
+      handleNavigate(GOOGLE_PLAY_URL);
     } else {
       console.error('error userAgent');
       // navigate('/');
