@@ -27,21 +27,21 @@ const SafeCrypto = () => {
         xs: 68,
       },
     },
-    {
-      key: 'two',
-      url: 'https://www.austrac.gov.au',
-      image: two,
-      h: {
-        md: 112,
-        sm: 68,
-        xs: 68,
-      },
-      w: {
-        md: 178,
-        sm: 104,
-        xs: 104,
-      },
-    },
+    // {
+    //   key: 'two',
+    //   url: 'https://www.austrac.gov.au',
+    //   image: two,
+    //   h: {
+    //     md: 112,
+    //     sm: 68,
+    //     xs: 68,
+    //   },
+    //   w: {
+    //     md: 178,
+    //     sm: 104,
+    //     xs: 104,
+    //   },
+    // },
     {
       key: 'three',
       image: three,

@@ -1,5 +1,5 @@
-export const ANDROID_DEV_URL = 'https://xbank.global/download/xbank.1.0.0.apk';
-export const ANDROID_PRO_URL = 'https://xbank.global/download/xbank.1.0.0.apk';
+export const ANDROID_DEV_URL = 'https://xbank.global/download/xbank.1.0.2.apk';
+export const ANDROID_PRO_URL = 'https://xbank.global/download/xbank.1.0.2.apk';
 export const IOS_URL = 'https://apps.apple.com/app/apple-store/id1481024258';
 
 export const GOOGLE_PLAY_URL =
