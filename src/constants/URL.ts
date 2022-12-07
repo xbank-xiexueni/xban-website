@@ -13,6 +13,6 @@ export const INS_URL = 'https://www.instagram.com/xbank.global/';
 
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/xbank-global';
 
-export const DISCORD_URL = 'https://discord.com/invite/AenVpQaXtf';
+export const DISCORD_URL = 'https://discord.gg/PGBVwcaeQE';
 
 export const MEDIUM_URL = 'https://medium.com/@xBankCrypto';
