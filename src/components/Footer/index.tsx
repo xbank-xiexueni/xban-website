@@ -12,7 +12,7 @@ import LOGO from '../../images/logo.png';
 
 const DES = [
   'Initial Blockchain Tech Inc (EntityID#20218185210) is a company registered with the office of the secretary of state of the state of Colorado, with its principal office address at 4255 South Buckley Road#1296, Aurora, Colorado. It is a regulated money service provider which has registered with FinCEN as a Money Service Business (MSB) with the registration number of 31000205541338.',
-  'Travel Tao AU PTY Ltd (Company Number 638433860) is a company registered in New South Wales of Australia, with its principal office address at 102 Level 1, 309 Pitt Street, Sydney. It is a regulated remittance service provider which has registered with AUSTRAC.',
+  // 'Travel Tao AU PTY Ltd (Company Number 638433860) is a company registered in New South Wales of Australia, with its principal office address at 102 Level 1, 309 Pitt Street, Sydney. It is a regulated remittance service provider which has registered with AUSTRAC.',
 ];
 
 const Footer = () => {
@@ -25,7 +25,12 @@ const Footer = () => {
       }}
     >
       <Flex alignItems={'center'}>
-        <Image src={LOGO} h={{ md: 30, sm: 5, xs: 5 }} alt='logo' loading='lazy' />
+        <Image
+          src={LOGO}
+          h={{ md: 30, sm: 5, xs: 5 }}
+          alt='logo'
+          loading='lazy'
+        />
       </Flex>
       <Flex
         justify={'space-between'}
