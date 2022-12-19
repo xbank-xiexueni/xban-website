@@ -37,6 +37,8 @@ import ModalButton from '../ModalButton';
 import Icon from '../../images/logo.png';
 import SoonImage from '../../images/soon-tag.png';
 
+import ChristmasLogo from './christmas-logo.svg';
+
 // 48
 
 const ARROW = (
@@ -181,7 +183,8 @@ const Header = () => {
                 }}
                 alignItems='center'
               >
-                <Image src={Icon} h={25} alt='icon' loading='lazy' />
+                <Image src={ChristmasLogo} loading='lazy' alt='icon' />
+                {/* <Image src={Icon} h={25} alt='icon' loading='lazy' /> */}
               </Flex>
 
               <Flex
